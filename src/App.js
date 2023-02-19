@@ -1,6 +1,10 @@
+import BackgroundColorDisplayer from "./components/Day 3 - Background Color Displayer/BackgroundColorDisplayer";
+
 function App() {
     return (
-        <p>App</p>
+        <div className='app'>
+            <BackgroundColorDisplayer/>
+        </div>
     );
 }
 
