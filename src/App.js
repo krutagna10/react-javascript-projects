@@ -1,9 +1,9 @@
-import BackgroundColorDisplayer from "./components/Day 3 - Background Color Displayer/BackgroundColorDisplayer";
+import Counter from './components/Day 4 - Counter/Counter';
 
 function App() {
     return (
         <div className='app'>
-            <BackgroundColorDisplayer/>
+            <Counter/>
         </div>
     );
 }
