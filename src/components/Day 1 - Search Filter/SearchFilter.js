@@ -1,5 +1,5 @@
 import {useState} from "react";
-import JSONDATA from './components/Day 1 - Search Filter/MOCK_DATA.json';
+import JSONDATA from './MOCK_DATA.json';
 
 function SearchFilter() {
     const [searchTerm, setSearchTerm] = useState('');

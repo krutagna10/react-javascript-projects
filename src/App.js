@@ -1,9 +1,9 @@
-import Counter from './components/Day 4 - Counter/Counter';
+import BirthdayRemainder from "./components/Day 2 - Birthday Remainder/BirthdayRemainder";
 
 function App() {
     return (
         <div className='app'>
-            <Counter/>
+            <BirthdayRemainder/>
         </div>
     );
 }
