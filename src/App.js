@@ -1,9 +1,9 @@
-import Store from "./components/Day 4 - Store/Store";
+import Artists from "./components/Day 5 - Artists/Artists";
 
 function App() {
     return (
         <div className='app'>
-            <Store/>
+            <Artists/>
         </div>
     );
 }
