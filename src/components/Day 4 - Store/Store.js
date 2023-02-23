@@ -1,5 +1,4 @@
 import data from "./data.js";
-import './Store.css';
 import {useState} from "react";
 
 const ProductTableHeader = () => {

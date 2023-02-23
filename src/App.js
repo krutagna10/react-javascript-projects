@@ -1,9 +1,9 @@
-import Artists from "./components/Day 5 - Artists/Artists";
+import Counters from "./components/Day 6 - Counters/Counters";
 
 function App() {
     return (
         <div className='app'>
-            <Artists/>
+            <Counters/>
         </div>
     );
 }

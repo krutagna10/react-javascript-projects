@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import ArtistsList from "./ArtistsList";
 import ArtistsForm from "./ArtistsForm";
-import './Artists.css';
 
 const initialArtists = [
     {id: 0, name: 'Marta Colvin Andrade'},
