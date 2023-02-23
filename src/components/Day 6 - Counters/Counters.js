@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 const Counters = () => {
-    const [counters, setCounters] = useState([0, 0, 0, 0, 0]);
+    const [counters, setCounters] = useState([0, 0, 0]);
 
     const handleIncrement = (inputIndex) => {
         const nextCounters = counters
