@@ -41,7 +41,7 @@ const AddBookForm = ({onAddBook}) => {
             {!isFormVisible ? (
                 <button onClick={handleAddBookClick} style={{width: '100%'}}>Add Book</button>
             ) : (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} style={{display: 'flex', justifyContent: 'space-between', gap: '1rem'}}>
                     <input
                         type='text'
                         placeholder='Book Name'

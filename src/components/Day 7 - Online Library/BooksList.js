@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BooksList = ({books, onDelete}) => {
+const BooksList = ({books, onDelete, onShowEditForm, editIndex}) => {
     return (
         <table>
             <thead>
@@ -10,6 +10,7 @@ const BooksList = ({books, onDelete}) => {
                 <th>Author</th>
                 <th>Pages</th>
                 <th>Delete Button</th>
+                <th>Edit Button</th>
             </tr>
             </thead>
             <tbody>
@@ -26,8 +27,16 @@ const BooksList = ({books, onDelete}) => {
                             <td>{book.author}</td>
                             <td>{book.pages}</td>
                             <td>
-                                <button onClick={() => onDelete(index)}>
+                                <button
+                                    disabled={editIndex === index}
+                                    onClick={() => onDelete(index)}
+                                >
                                     Delete Book
+                                </button>
+                            </td>
+                            <td>
+                                <button onClick={() => onShowEditForm(index)}>
+                                    Edit Book Data
                                 </button>
                             </td>
                         </tr>
