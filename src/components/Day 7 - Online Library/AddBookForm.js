@@ -7,6 +7,8 @@ const AddBookForm = ({onAddBook}) => {
         pages: '',
     });
 
+    const [isFormVisible, setIsFormVisible] = useState(false);
+
     const handleNameChange = (event) => {
         setBookData({...bookData, name: event.target.value});
     };
@@ -24,34 +26,47 @@ const AddBookForm = ({onAddBook}) => {
 
         onAddBook({...bookData});
 
+        setIsFormVisible(false);
+
+        // Resetting values
         setBookData({name: '', author: '', pages: ''});
     };
 
+    const handleAddBookClick = () => {
+        setIsFormVisible(true);
+    };
+
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type='text'
-                placeholder='Book Name'
-                onChange={handleNameChange}
-                value={bookData.name}
-                required
-            />
-            <input
-                type='text'
-                placeholder='Book Author'
-                onChange={handleAuthorChange}
-                value={bookData.author}
-                required
-            />
-            <input
-                type='num'
-                placeholder='Book Pages'
-                onChange={handlePagesChange}
-                value={bookData.pages}
-                required
-            />
-            <button type='Submit'>Add Book</button>
-        </form>
+        <div className='form-wrapper'>
+            {!isFormVisible ? (
+                <button onClick={handleAddBookClick} style={{width: '100%'}}>Add Book</button>
+            ) : (
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type='text'
+                        placeholder='Book Name'
+                        onChange={handleNameChange}
+                        value={bookData.name}
+                        required
+                    />
+                    <input
+                        type='text'
+                        placeholder='Book Author'
+                        onChange={handleAuthorChange}
+                        value={bookData.author}
+                        required
+                    />
+                    <input
+                        type='num'
+                        placeholder='Book Pages'
+                        onChange={handlePagesChange}
+                        value={bookData.pages}
+                        required
+                    />
+                    <button type='Submit'>Add Book</button>
+                </form>
+            )}
+        </div>
     );
 };
 
