@@ -116,6 +116,8 @@ p {
 body {
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
+    display: grid;
+    place-content: center;
 }
 
 .flow > * + * {
@@ -143,6 +145,7 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
 
 /* Firefox */
 input[type=number] {

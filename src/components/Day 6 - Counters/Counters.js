@@ -22,7 +22,7 @@ const Counters = () => {
     };
 
     return (
-        <div style={{textAlign: 'center', minHeight: '100vh', display: 'grid', placeContent: 'center'}}>
+        <div>
             <h1>Counters</h1>
             <table>
                 <thead>

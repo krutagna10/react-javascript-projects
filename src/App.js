@@ -1,9 +1,9 @@
-import Counters from "./components/Day 6 - Counters/Counters";
+import OnlineLibrary from "./components/Day 7 - Online Library/OnlineLibrary";
 
 function App() {
     return (
         <div className='app'>
-            <Counters/>
+            <OnlineLibrary/>
         </div>
     );
 }

@@ -38,16 +38,20 @@ const Artists = () => {
     }
 
     return (
-        <div className='artists' style={{minHeight: '100vh', display: 'grid', placeContent: 'center'}}>
+        <div className='artists' style={{minHeight: '100vh', display: 'grid', placeContent: 'center', textAlign: 'center'}}>
             <h2 style={{textAlign: 'center', marginBottom: '1rem'}}>Inspiring Sculptors</h2>
             <ArtistsForm
                 onAddArtist={handleAddArtist}
                 artists={artists}
             />
-            <ArtistsList
-                artists={artists}
-                onDelete={handleDelete}
-            />
+            {artists.length === 0 ? (
+                <h3>No artists found</h3>
+            ) : (
+                <ArtistsList
+                    artists={artists}
+                    onDelete={handleDelete}
+                />
+            )}
         </div>
     );
 };
