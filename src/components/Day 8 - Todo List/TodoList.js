@@ -1,15 +1,20 @@
+const TodoListHeader = () => {
+  return (
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Title</th>
+        <th>Done</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+  );
+};
+
 const TodoList = ({ todos, onDeleteTodo }) => {
   return (
     <table>
-      <thead>
-        <tr>
-          <th>Index</th>
-          <th>Title</th>
-          <th>Done</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
+      <TodoListHeader />
       <tbody>
         {todos.length === 0 ? (
           <tr>
@@ -23,9 +28,6 @@ const TodoList = ({ todos, onDeleteTodo }) => {
                 <td>{todo.title}</td>
                 <td>
                   <input type="checkbox" />
-                </td>
-                <td>
-                  <button>Edit</button>
                 </td>
                 <td>
                   <button

@@ -19,15 +19,21 @@ const TodoApp = () => {
     setTodos([...todos, newTodo]);
   };
 
-  const handleDeleteTodo = (inputIndex) => {
-    const nextTodos = todos.filter((_, index) => inputIndex !== index);
+  const handleDeleteTodo = (deleteIndex) => {
+    const nextTodos = todos.filter((_, index) => deleteIndex !== index);
     setTodos([...nextTodos]);
   };
+
+  const handleDoneChange = (editIndex, nextDone) => {};
 
   return (
     <div className="todo">
       <AddTodo onAddTodo={handleAddTodo} />
-      <TodoList todos={todos} onDeleteTodo={handleDeleteTodo} />
+      <TodoList
+        todos={todos}
+        onDeleteTodo={handleDeleteTodo}
+        onDoneChange={handleDoneChange}
+      />
     </div>
   );
 };
