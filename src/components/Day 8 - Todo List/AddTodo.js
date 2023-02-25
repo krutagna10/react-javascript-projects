@@ -11,6 +11,8 @@ const AddTodo = ({ onAddTodo }) => {
     event.preventDefault();
 
     onAddTodo({ title: title });
+
+    setTitle("");
   };
 
   return (

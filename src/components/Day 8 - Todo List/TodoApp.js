@@ -24,7 +24,12 @@ const TodoApp = () => {
     setTodos([...nextTodos]);
   };
 
-  const handleDoneChange = (editIndex, nextDone) => {};
+  const handleTaskDoneChange = (editIndex, nextDone) => {
+    const nextTodos = todos.map((todo, index) => {
+      return editIndex === index ? { ...todo, done: nextDone } : todo;
+    });
+    setTodos([...nextTodos]);
+  };
 
   return (
     <div className="todo">
@@ -32,7 +37,7 @@ const TodoApp = () => {
       <TodoList
         todos={todos}
         onDeleteTodo={handleDeleteTodo}
-        onDoneChange={handleDoneChange}
+        onTaskDoneChange={handleTaskDoneChange}
       />
     </div>
   );

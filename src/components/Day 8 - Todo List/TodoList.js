@@ -11,7 +11,7 @@ const TodoListHeader = () => {
   );
 };
 
-const TodoList = ({ todos, onDeleteTodo }) => {
+const TodoList = ({ todos, onDeleteTodo, onTaskDoneChange }) => {
   return (
     <table>
       <TodoListHeader />
@@ -27,7 +27,13 @@ const TodoList = ({ todos, onDeleteTodo }) => {
                 <td>{index}</td>
                 <td>{todo.title}</td>
                 <td>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={todo.done}
+                    onChange={(event) => {
+                      onTaskDoneChange(index, event.target.checked);
+                    }}
+                  />
                 </td>
                 <td>
                   <button
