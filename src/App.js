@@ -1,11 +1,11 @@
-import OnlineLibrary from "./components/Day 7 - Online Library/OnlineLibrary";
+import TodoApp from "./components/Day 8 - Todo List/TodoApp";
 
 function App() {
-    return (
-        <div className='app'>
-            <OnlineLibrary/>
-        </div>
-    );
+  return (
+    <div className="app">
+      <TodoApp />
+    </div>
+  );
 }
 
 export default App;

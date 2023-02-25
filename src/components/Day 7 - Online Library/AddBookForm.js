@@ -1,71 +1,100 @@
 import {useState} from 'react';
 
 const AddBookForm = ({onAddBook}) => {
-    const [bookData, setBookData] = useState({
-        name: '',
-        author: '',
-        pages: '',
-    });
+    const [name, setName] = useState('');
+    const [author, setAuthor] = useState('');
+    const [pages, setPages] = useState('');
 
-    const [isFormVisible, setIsFormVisible] = useState(false);
+    const [nameError, setNameError] = useState(false);
+
+    const [authorError, setAuthorError] = useState(false);
+
+    const [pagesError, setPagesError] = useState(false);
 
     const handleNameChange = (event) => {
-        setBookData({...bookData, name: event.target.value});
+        setName(event.target.value);
+        if (event.target.value.trim() !== '') {
+            setNameError(false);
+        }
+
     };
 
     const handleAuthorChange = (event) => {
-        setBookData({...bookData, author: event.target.value});
+        setAuthor(event.target.value);
+        if (event.target.value.trim() !== '') {
+            setAuthorError(false);
+        }
     };
 
     const handlePagesChange = (event) => {
-        setBookData({...bookData, pages: event.target.value});
+        setPages(event.target.value);
+        if (event.target.value.trim() !== '') {
+            setPagesError(false);
+        }
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        onAddBook({...bookData});
+        // Validation
+        if (name.trim() === '') {
+            setNameError(true);
+            return;
+        }
 
-        setIsFormVisible(false);
+        if (author.trim() === '') {
+            setAuthorError(true);
+            return;
+        }
+
+        if (pages.trim() === '') {
+            setPagesError(true);
+            return;
+        }
+
+        // Sending data to parent
+        onAddBook({name: name, author: author, pages: pages});
 
         // Resetting values
-        setBookData({name: '', author: '', pages: ''});
+        setName('');
+        setAuthor('');
+        setPages('');
     };
 
-    const handleAddBookClick = () => {
-        setIsFormVisible(true);
-    };
+
 
     return (
         <div className='form-wrapper'>
-            {!isFormVisible ? (
-                <button onClick={handleAddBookClick} style={{width: '100%'}}>Add Book</button>
-            ) : (
                 <form onSubmit={handleSubmit} style={{display: 'flex', justifyContent: 'space-between', gap: '1rem'}}>
                     <input
                         type='text'
                         placeholder='Book Name'
                         onChange={handleNameChange}
-                        value={bookData.name}
-                        required
+                        value={name}
+                        style={{
+                            border: !nameError ? '1px solid black' : '1px solid red',
+                        }}
                     />
                     <input
                         type='text'
                         placeholder='Book Author'
                         onChange={handleAuthorChange}
-                        value={bookData.author}
-                        required
+                        value={author}
+                        style={{
+                            border: !authorError ? '1px solid black' : '1px solid red',
+                        }}
                     />
                     <input
-                        type='num'
+                        type='number'
                         placeholder='Book Pages'
                         onChange={handlePagesChange}
-                        value={bookData.pages}
-                        required
+                        value={pages}
+                        style={{
+                            border: !pagesError ? '1px solid black' : '1px solid red',
+                        }}
                     />
                     <button type='Submit'>Add Book</button>
                 </form>
-            )}
         </div>
     );
 };
