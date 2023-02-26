@@ -24,9 +24,16 @@ const TodoApp = () => {
     setTodos([...nextTodos]);
   };
 
-  const handleTaskDoneChange = (editIndex, nextDone) => {
+  const handleDoneChange = (todoIndex, nextDone) => {
     const nextTodos = todos.map((todo, index) => {
-      return editIndex === index ? { ...todo, done: nextDone } : todo;
+      return todoIndex === index ? { ...todo, done: nextDone } : todo;
+    });
+    setTodos([...nextTodos]);
+  };
+
+  const handleTitleChange = (todoIndex, nextTitle) => {
+    const nextTodos = todos.map((todo, index) => {
+      return todoIndex === index ? { ...todo, title: nextTitle } : todo;
     });
     setTodos([...nextTodos]);
   };
@@ -37,7 +44,8 @@ const TodoApp = () => {
       <TodoList
         todos={todos}
         onDeleteTodo={handleDeleteTodo}
-        onTaskDoneChange={handleTaskDoneChange}
+        onDoneChange={handleDoneChange}
+        onTitleChange={handleTitleChange}
       />
     </div>
   );

@@ -16,33 +16,32 @@ const Counter = () => {
   };
 
   return (
-    <div
-      style={{
-        textAlign: "center",
-        border: "1px solid black",
-        padding: "1.75rem",
-      }}
-      className="counter"
-    >
-      <h1>Counter</h1>
-      <h2>{counter}</h2>
-      <div>
-        <button
-          onClick={handleIncrement}
-          style={{ backgroundColor: "lightgreen", color: "white" }}
-        >
-          Increment
-        </button>
-        <button
-          onClick={handleDecrement}
-          style={{ backgroundColor: "coral", color: "white" }}
-        >
-          Decrement
-        </button>
-      </div>
-      <button onClick={handleReset} style={{ backgroundColor: "yellow" }}>
-        Reset
-      </button>
+    <div>
+      <h1 style={{ textAlign: "center" }}>Counter</h1>
+      <table>
+        <thead>
+          <tr>
+            <td>Counter Value</td>
+            <td>Increment Button</td>
+            <td>Decrement Button</td>
+            <td>Reset Buttton</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{counter}</td>
+            <td>
+              <button onClick={handleIncrement}>Increment</button>
+            </td>
+            <td>
+              <button onClick={handleDecrement}>Decrement</button>
+            </td>
+            <td>
+              <button onClick={handleReset}>Reset</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

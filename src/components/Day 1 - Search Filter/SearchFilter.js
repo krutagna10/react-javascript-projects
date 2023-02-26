@@ -1,27 +1,62 @@
-import {useState} from "react";
-import JSONDATA from './MOCK_DATA.json';
+import React, { useState } from "react";
+import data from "./data";
 
-function SearchFilter() {
-    const [searchTerm, setSearchTerm] = useState('');
-
-    const setTermHandler = (event) => {
-        setSearchTerm((event.target.value).toLowerCase());
-    }
-
-    return (
-        <div className="app" style={{display: 'grid', placeItems: 'center'}}>
-            <input
-                type='text'
-                placeholder='Search...'
-                onChange={setTermHandler}
-            />
-            {JSONDATA.filter(element => {
-                return element.first_name.toLowerCase().includes(searchTerm);
-            }).map((element, index) => (
-                <p key={index}>{element.first_name}</p>
+const StudentList = ({ students }) => {
+  return (
+    <table style={{ minWidth: "35rem" }}>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        {students.length === 0 ? (
+          <tr>
+            <td colSpan="4">No such students present</td>
+          </tr>
+        ) : (
+          <React.Fragment>
+            {students.map((student) => (
+              <tr key={student.id}>
+                <td>{student.id}</td>
+                <td>{student.name}</td>
+                <td>{student.age}</td>
+                <td>{student.gender}</td>
+              </tr>
             ))}
-        </div>
-    );
-}
+          </React.Fragment>
+        )}
+      </tbody>
+    </table>
+  );
+};
+
+const SearchFilter = () => {
+  const [students, setStudents] = useState(data);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchTermChange = (event) => {
+    setSearchTerm(event.target.value.toLowerCase());
+  };
+
+  return (
+    <div>
+      <input
+        style={{ width: "100%" }}
+        type="text"
+        placeholder="Search"
+        onChange={handleSearchTermChange}
+      />
+      <StudentList
+        students={students.filter((student) =>
+          student.name.toLowerCase().includes(searchTerm)
+        )}
+      />
+    </div>
+  );
+};
 
 export default SearchFilter;

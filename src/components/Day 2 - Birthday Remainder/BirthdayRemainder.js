@@ -1,42 +1,52 @@
-import './BirthdayRemainder.css';
-import data from './data'
-import {useState} from "react";
+import data from "./data";
+import { useState } from "react";
 
-const List = ({people}) => {
-    return (
-        <>
-            {people.map((person => {
-                const {id, name, age, image} = person;
-                return (
-                    <article key={id} className='person'>
-                        <img src={image} alt={name}/>
-                        <div>
-                            <h4>{name}</h4>
-                            <p>{age} years</p>
-                        </div>
-                    </article>
-                )
-            }))}
-        </>
-    );
-}
+const List = ({ persons }) => {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Name</td>
+          <td>Age</td>
+        </tr>
+      </thead>
+      <tbody>
+        {persons.map((person) => (
+          <tr key={person.id}>
+            <td>{person.id}</td>
+            <td>{person.name}</td>
+            <td>{person.age}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
 
 function BirthdayRemainder() {
-    const [people, setPeople] = useState(data);
+  const [persons, setPersons] = useState(data);
 
-    const handleClick = () => {
-        setPeople([]);
-    };
+  const handleClick = () => {
+    setPersons([]);
+  };
 
-    return (
-        <main>
-            <section className='container'>
-                <h3>{people.length} Birthdays Today</h3>
-                <List people={people}/>
-                <button onClick={handleClick}>Clear All</button>
-            </section>
-        </main>
-    )
+  return (
+    <main>
+      <section className="container">
+        <h2 style={{ textAlign: "center" }}>
+          {persons.length} Birthdays Today
+        </h2>
+        {persons.length > 0 && <List persons={persons} />}
+        <button
+          style={{ marginTop: "1.5rem", width: "100%" }}
+          onClick={handleClick}
+        >
+          Clear All
+        </button>
+      </section>
+    </main>
+  );
 }
 
 export default BirthdayRemainder;
