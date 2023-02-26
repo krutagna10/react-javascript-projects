@@ -7,100 +7,62 @@ const TodoListHeader = () => {
         <th>Index</th>
         <th>Done</th>
         <th>Title</th>
-        <th>Edit</th>
+        <th>Edit / Save</th>
         <th>Delete</th>
       </tr>
     </thead>
   );
 };
 
-const TodoItem = ({ todo, index, onDelete, onTitleChange, onDoneChange }) => {
-  const [title, setTitle] = useState(todo.title);
-  const [done, setDone] = useState(todo.done);
-
+const TodoItem = ({ index, todo, onDelete, onTitleChange, onDoneChange }) => {
   const [isEditing, setIsEditing] = useState(false);
 
-  const handleEnableEditing = () => {
-    setIsEditing(true);
+  const handleToggleEditing = () => {
+    setIsEditing((prevIsEditing) => !prevIsEditing);
   };
 
-  const handleTitleChange = (event) => {
-    setTitle(event.target.value);
-  };
-
-  const handleDoneChange = (event) => {
-    setDone(event.target.checked);
-  };
-
-  const handleSave = () => {
-    setIsEditing(false);
-  };
+  const todoContent = isEditing ? (
+    <td>
+      <input
+        style={{ textAlign: "center" }}
+        type="text"
+        value={todo.title}
+        onChange={(event) => {
+          onTitleChange(todo.id, event.target.value);
+        }}
+      />
+    </td>
+  ) : (
+    <td>{todo.title}</td>
+  );
 
   return (
     <tr>
-      {isEditing ? (
-        <>
-          <td>{index}</td>
-          <td>
-            <input
-              type="checkbox"
-              checked={todo.done}
-              onChange={(event) => {
-                onDoneChange(index, event.target.checked);
-              }}
-            />
-          </td>
-          <td>
-            <input
-              style={{ textAlign: "center" }}
-              type="text"
-              value={todo.title}
-              onChange={(event) => {
-                onTitleChange(index, event.target.value);
-              }}
-              required
-            />
-          </td>
-          <td>
-            <button onClick={handleSave}>Save</button>
-          </td>
-          <td>
-            <button
-              onClick={() => {
-                onDelete(index);
-              }}
-            >
-              Delete
-            </button>
-          </td>
-        </>
-      ) : (
-        <>
-          <td>{index}</td>
-          <td>
-            <input
-              type="checkbox"
-              checked={todo.done}
-              onChange={(event) => {
-                onDoneChange(index, event.target.checked);
-              }}
-            />
-          </td>
-          <td>{todo.title}</td>
-          <td>
-            <button onClick={handleEnableEditing}>Edit</button>
-          </td>
-          <td>
-            <button
-              onClick={() => {
-                onDelete(index);
-              }}
-            >
-              Delete
-            </button>
-          </td>
-        </>
-      )}
+      <td>{index}</td>
+      <td>
+        <input
+          type="checkbox"
+          checked={todo.done}
+          onChange={(event) => {
+            onDoneChange(todo.id, event.target.checked);
+          }}
+        />
+      </td>
+      {todoContent}
+      <td>
+        <button onClick={handleToggleEditing}>
+          {isEditing ? "Save" : "Edit"}
+        </button>
+      </td>
+      <td>
+        <button
+          onClick={() => {
+            onDelete(todo.id);
+          }}
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   );
 };
@@ -118,9 +80,9 @@ const TodoList = ({ todos, onDeleteTodo, onDoneChange, onTitleChange }) => {
           <>
             {todos.map((todo, index) => (
               <TodoItem
-                key={index}
-                todo={todo}
+                key={todo.id}
                 index={index}
+                todo={todo}
                 onTitleChange={onTitleChange}
                 onDoneChange={onDoneChange}
                 onDelete={onDeleteTodo}
