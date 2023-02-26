@@ -22,16 +22,19 @@ const TodoApp = () => {
   };
 
   const handleDeleteTodo = (deleteId) => {
-    const nextTodos = todos.filter((todo) => deleteId !== todo.id);
-    setTodos([...nextTodos]);
+    setTodos((prevTodos) => {
+      const updatedTodos = prevTodos.filter((todo) => deleteId !== todo.id);
+      return updatedTodos;
+    });
   };
 
   const handleTodoChange = (nextTodo) => {
-    const nextTodos = todos.map((todo) => {
-      return nextTodo.id === todo.id ? nextTodo : todo;
+    setTodos((prevTodos) => {
+      const updatedTodos = prevTodos.map((todo) => {
+        return nextTodo.id === todo.id ? nextTodo : todo;
+      });
+      return updatedTodos;
     });
-
-    setTodos([...nextTodos]);
   };
 
   return (

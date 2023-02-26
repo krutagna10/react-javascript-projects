@@ -1,36 +1,47 @@
 import { useState } from "react";
 import ArtistsList from "./ArtistsList";
 import ArtistsForm from "./ArtistsForm";
+import uuid from "react-uuid";
 
 const initialArtists = [
-  { id: 0, name: "Marta Colvin Andrade" },
-  { id: 1, name: "Lamidi Olonade Fakeye" },
-  { id: 2, name: "Louise Nevelson" },
+  { id: uuid(), name: "Marta Colvin Andrade" },
+  { id: uuid(), name: "Lamidi Olonade Fakeye" },
+  { id: uuid(), name: "Louise Nevelson" },
 ];
 
 const Artists = () => {
   const [artists, setArtists] = useState(initialArtists);
 
-  const handleAddArtist = (data, index) => {
-    // Cases => index = 0 | index between 0 and n | index = n
-    let nextArtists;
+  const handleAddArtist = ({ name }, index) => {
+    const newArtist = {
+      id: uuid(),
+      name: name,
+    };
+
     if (index === 0) {
-      nextArtists = [data, ...artists];
+      setArtists((prevArtists) => [newArtist, ...prevArtists]);
     }
 
     if (index === artists.length) {
-      nextArtists = [...artists, data];
+      setArtists((prevArtists) => [...prevArtists, newArtist]);
     }
 
     if (index > 0 && index < artists.length) {
-      nextArtists = [...artists.slice(0, index), data, ...artists.slice(index)];
+      setArtists((prevArtists) => [
+        ...prevArtists.slice(0, index),
+        newArtist,
+        ...prevArtists.slice(index),
+      ]);
     }
-    setArtists([...nextArtists]);
   };
 
-  const handleDelete = (deleteIndex) => {
-    const nextArtists = artists.filter((_, index) => deleteIndex !== index);
-    setArtists([...nextArtists]);
+  const handleDelete = (deleteId) => {
+    setArtists((prevArtists) => {
+      const updatedArtists = prevArtists.filter((artist) => {
+        return deleteId !== artist.id;
+      });
+      return updatedArtists;
+    });
   };
 
   return (
