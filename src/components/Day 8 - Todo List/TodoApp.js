@@ -26,21 +26,13 @@ const TodoApp = () => {
     setTodos([...nextTodos]);
   };
 
-  const handleDoneChange = (todoId, nextDone) => {
+  const handleTodoChange = (nextTodo) => {
     const nextTodos = todos.map((todo) => {
-      return todoId === todo.id ? { ...todo, done: nextDone } : todo;
+      return nextTodo.id === todo.id ? nextTodo : todo;
     });
+
     setTodos([...nextTodos]);
   };
-
-  const handleTitleChange = (todoId, nextTitle) => {
-    const nextTodos = todos.map((todo) => {
-      return todoId === todo.id ? { ...todo, title: nextTitle } : todo;
-    });
-    setTodos([...nextTodos]);
-  };
-
-  console.log(todos);
 
   return (
     <div className="todo">
@@ -48,8 +40,7 @@ const TodoApp = () => {
       <TodoList
         todos={todos}
         onDeleteTodo={handleDeleteTodo}
-        onDoneChange={handleDoneChange}
-        onTitleChange={handleTitleChange}
+        onTodoChange={handleTodoChange}
       />
     </div>
   );

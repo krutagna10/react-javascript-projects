@@ -14,9 +14,16 @@ const TodoListHeader = () => {
   );
 };
 
-const TodoItem = ({ index, todo, onDelete, onTitleChange, onDoneChange }) => {
+const TodoItem = ({ index, todo, onDelete, onChange }) => {
   const [isEditing, setIsEditing] = useState(false);
 
+  const handleTitleChange = (event) => {
+    onChange({ ...todo, title: event.target.value });
+  };
+
+  const handleDoneChange = (event) => {
+    onChange({ ...todo, done: event.target.checked });
+  };
   const handleToggleEditing = () => {
     setIsEditing((prevIsEditing) => !prevIsEditing);
   };
@@ -27,9 +34,7 @@ const TodoItem = ({ index, todo, onDelete, onTitleChange, onDoneChange }) => {
         style={{ textAlign: "center" }}
         type="text"
         value={todo.title}
-        onChange={(event) => {
-          onTitleChange(todo.id, event.target.value);
-        }}
+        onChange={handleTitleChange}
       />
     </td>
   ) : (
@@ -43,9 +48,7 @@ const TodoItem = ({ index, todo, onDelete, onTitleChange, onDoneChange }) => {
         <input
           type="checkbox"
           checked={todo.done}
-          onChange={(event) => {
-            onDoneChange(todo.id, event.target.checked);
-          }}
+          onChange={handleDoneChange}
         />
       </td>
       {todoContent}
@@ -67,7 +70,7 @@ const TodoItem = ({ index, todo, onDelete, onTitleChange, onDoneChange }) => {
   );
 };
 
-const TodoList = ({ todos, onDeleteTodo, onDoneChange, onTitleChange }) => {
+const TodoList = ({ todos, onDeleteTodo, onTodoChange }) => {
   return (
     <table>
       <TodoListHeader />
@@ -83,8 +86,7 @@ const TodoList = ({ todos, onDeleteTodo, onDoneChange, onTitleChange }) => {
                 key={todo.id}
                 index={index}
                 todo={todo}
-                onTitleChange={onTitleChange}
-                onDoneChange={onDoneChange}
+                onChange={onTodoChange}
                 onDelete={onDeleteTodo}
               />
             ))}
