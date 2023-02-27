@@ -1,9 +1,9 @@
-import OnlineLibrary from "./components/Day 6 - Online Library/OnlineLibrary";
+import TourApp from "./components/Day 8 - Tours Component/TourApp";
 
 function App() {
   return (
     <div className="app">
-      <OnlineLibrary />
+      <TourApp />
     </div>
   );
 }
