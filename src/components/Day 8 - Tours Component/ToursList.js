@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ToursItem = ({ id, name, info, price, onDelete }) => {
+const ToursItem = ({ id, index, name, info, price, onDelete }) => {
   const style = {
     background: "transparent",
     border: "none",
@@ -16,9 +16,10 @@ const ToursItem = ({ id, name, info, price, onDelete }) => {
 
   return (
     <tr>
+      <td>{index}</td>
       <td>{name}</td>
       <td>
-        <span>{isTextVisible ? info : info.slice(0, 100)}</span>
+        <span>{isTextVisible ? info : `${info.slice(0, 100)}...`}</span>
         <button style={style} onClick={handleClick}>
           {isTextVisible ? "Show less" : "Read more"}
         </button>
@@ -42,6 +43,7 @@ const ToursList = ({ tours, onDeleteTour }) => {
     <table>
       <thead>
         <tr>
+          <th>Index</th>
           <th>Tour Name</th>
           <th>Tour Description</th>
           <th>Tour Price</th>
@@ -49,17 +51,14 @@ const ToursList = ({ tours, onDeleteTour }) => {
         </tr>
       </thead>
       <tbody>
-        {tours.length === 0 ? (
-          <tr>
-            <td colSpan="4">No Tours found</td>
-          </tr>
-        ) : (
-          <React.Fragment>
-            {tours.map((tour) => (
-              <ToursItem key={tour.id} {...tour} onDelete={onDeleteTour} />
-            ))}
-          </React.Fragment>
-        )}
+        {tours.map((tour, index) => (
+          <ToursItem
+            key={tour.id}
+            index={index}
+            {...tour}
+            onDelete={onDeleteTour}
+          />
+        ))}
       </tbody>
     </table>
   );

@@ -12,13 +12,17 @@ const TourApp = () => {
   const [tours, setTours] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  const handleFetchTours = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setTours(data);
         setIsLoading(false);
       });
+  };
+
+  useEffect(() => {
+    handleFetchTours();
   }, []);
 
   const handleDeleteTour = (deleteId) => {
@@ -30,14 +34,27 @@ const TourApp = () => {
     });
   };
 
+  const style = {
+    display: "grid",
+    placeItems: "center",
+  };
+
   return (
-    <div className="tours-app">
+    <div className="tours-app" style={style}>
       {isLoading ? (
         <Loading />
       ) : (
         <React.Fragment>
-          <h1 style={{ textAlign: "center" }}>Our Tours</h1>
-          <ToursList tours={tours} onDeleteTour={handleDeleteTour} />
+          <h1 style={{ textAlign: "center" }}>
+            {tours.length === 0 ? "No Tours Left" : "Our Tours"}
+          </h1>
+          {tours.length === 0 ? (
+            <div>
+              <button onClick={handleFetchTours}>Refresh Tours</button>
+            </div>
+          ) : (
+            <ToursList tours={tours} onDeleteTour={handleDeleteTour} />
+          )}
         </React.Fragment>
       )}
     </div>
