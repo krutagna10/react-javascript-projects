@@ -37,6 +37,7 @@ const TourApp = () => {
   const style = {
     display: "grid",
     placeItems: "center",
+    maxWidth: "50rem",
   };
 
   return (
