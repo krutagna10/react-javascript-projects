@@ -1,0 +1,28 @@
+.form {
+  box-shadow: 3px 10px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  min-width: 25rem;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.form input {
+  width: 100%;
+  padding: 0.35rem;
+}
+
+.form__btn {
+  width: 100%;
+}
+
+.form__error-message {
+  color: red;
+  font-size: 15px;
+}
+
+.error input {
+  border: 1px solid red;
+}

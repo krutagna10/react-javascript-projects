@@ -13,6 +13,20 @@ button {
     cursor: pointer;
 }
 
+/* Input Reset */
+input[type='checkbox'] {
+    cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -41,18 +55,18 @@ table, th, td {
     border-collapse: collapse;
 }
 
-/* Input Reset */
-input[type='checkbox'] {
-    cursor: pointer;
+.flex {
+    display: flex;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.flex--justify-space {
+    justify-content: space-between;
 }
 
-input[type=number] {
-    -moz-appearance: textfield;
+.flex-align-center {
+    align-items: center;
 }
+
+
+
 
