@@ -1,9 +1,9 @@
-import ExpenseTracker from "./components/Day 9 - Expense Tracker/ExpenseTracker";
+import Reviews from "./components/Days 10 - Reviews/Reviews";
 
 function App() {
   return (
     <div className="app">
-      <ExpenseTracker />
+      <Reviews />
     </div>
   );
 }

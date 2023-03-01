@@ -10,6 +10,7 @@
 - Day 7: Todo List
 - Day 8: Tours Component
 - Day 9: Expense Tracker
+- Day 10: Reviews
 
 ### Links
 
