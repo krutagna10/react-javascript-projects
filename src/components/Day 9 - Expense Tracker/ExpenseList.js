@@ -20,7 +20,7 @@ const ExpenseItem = ({ index, expense, onDelete, onEdit }) => {
   const handleClick = () => {
     if (isEditing) {
       setIsEditing(false);
-      onEdit({ ...expense, title: title, amount: amount });
+      onEdit({ ...expense, title: title, amount: Number(amount) });
     } else {
       setIsEditing(true);
     }
