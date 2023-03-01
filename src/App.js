@@ -1,9 +1,9 @@
-import Form from "./components/Day 9 - Form Validation/Form";
+import ExpenseTracker from "./components/Day 9 - Expense Tracker/ExpenseTracker";
 
 function App() {
   return (
     <div className="app">
-      <Form />
+      <ExpenseTracker />
     </div>
   );
 }
