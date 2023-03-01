@@ -7,11 +7,15 @@ const Reviews = () => {
   const [index, setIndex] = useState(0);
 
   const handleIncrement = () => {
-    setIndex((prevIndex) => prevIndex + 1);
+    setIndex((prevIndex) => {
+      return prevIndex === reviews.length - 1 ? 0 : prevIndex + 1;
+    });
   };
 
   const handleDecrement = () => {
-    setIndex((prevIndex) => prevIndex - 1);
+    setIndex((prevIndex) => {
+      return prevIndex === 0 ? reviews.length - 1 : prevIndex - 1;
+    });
   };
 
   return (
@@ -46,19 +50,10 @@ const Reviews = () => {
         <p>{reviews[index].job}</p>
         <p>{reviews[index].text}</p>
         <div>
-          <button
-            onClick={handleDecrement}
-            disabled={index === 0}
-            style={{ marginRight: "1rem" }}
-          >
+          <button onClick={handleDecrement} style={{ marginRight: "1rem" }}>
             Previous
           </button>
-          <button
-            onClick={handleIncrement}
-            disabled={index === reviews.length - 1}
-          >
-            Next
-          </button>
+          <button onClick={handleIncrement}>Next</button>
         </div>
       </div>
     </div>
