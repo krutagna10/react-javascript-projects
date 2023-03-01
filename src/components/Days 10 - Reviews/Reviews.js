@@ -1,4 +1,3 @@
-import { FaGithubSquare } from "react-icons/fa";
 import data from "./data";
 import { useState } from "react";
 
