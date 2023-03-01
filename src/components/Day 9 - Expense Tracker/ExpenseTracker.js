@@ -4,18 +4,18 @@ import ExpensesTable from "./ExpensesTable";
 import { useState } from "react";
 
 const INITIAL_EXPENSES = [
-  { id: crypto.randomUUID(), name: "Food", amount: 50 },
-  { id: crypto.randomUUID(), name: "Movie", amount: 30 },
+  { id: crypto.randomUUID(), title: "Food", amount: 50 },
+  { id: crypto.randomUUID(), title: "Movie", amount: 30 },
 ];
 
 const ExpenseTracker = () => {
   const [expenses, setExpenses] = useState(INITIAL_EXPENSES);
   const [income, setIncome] = useState(0);
 
-  const handleAddExpense = ({ name, amount }) => {
+  const handleAddExpense = ({ title, amount }) => {
     const newExpense = {
       id: crypto.randomUUID(),
-      name: name,
+      title: title,
       amount: Number(amount),
     };
     setExpenses((prevExpenses) => [...prevExpenses, newExpense]);

@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 const AddExpense = ({ onAddExpense }) => {
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
   };
 
   const handleAmountChange = (event) => {
@@ -15,10 +15,10 @@ const AddExpense = ({ onAddExpense }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onAddExpense({
-      name: name,
+      title: title,
       amount: amount,
     });
-    setName("");
+    setTitle("");
     setAmount("");
   };
 
@@ -26,10 +26,10 @@ const AddExpense = ({ onAddExpense }) => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        onChange={handleNameChange}
-        value={name}
+        onChange={handleTitleChange}
+        value={title}
         required
-        placeholder="Name"
+        placeholder="Title"
       />
       <input
         type="number"
