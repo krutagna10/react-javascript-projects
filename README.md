@@ -9,7 +9,7 @@
 - Day 6: Online Library
 - Day 7: Todo List
 - Day 8: Tours Component
-- Day 9: Form Validation
+- Day 9: Expense Tracker
 
 ### Links
 
