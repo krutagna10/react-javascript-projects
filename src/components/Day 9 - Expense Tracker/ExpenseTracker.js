@@ -30,12 +30,21 @@ const ExpenseTracker = () => {
     });
   };
 
+  const handleEditExpense = (editedExpense) => {
+    setExpenses((prevExpenses) => {
+      const updatedExpense = prevExpenses.map((expense) => {
+        return editedExpense.id === expense.id ? editedExpense : expense;
+      });
+      return updatedExpense;
+    });
+  };
+
   const handleIncomeChange = (event) => {
     setIncome(event.target.value);
   };
 
   return (
-    <div>
+    <div style={{ maxWidth: "36rem" }}>
       <h1 style={{ textAlign: "center" }}>Expense Tracker</h1>
       <input
         type="number"
@@ -46,7 +55,11 @@ const ExpenseTracker = () => {
       <ExpensesTable income={income} expenses={expenses} />
       <h2 style={{ textAlign: "center" }}>Expense List</h2>
       <AddExpense onAddExpense={handleAddExpense} />
-      <ExpenseList expenses={expenses} onDeleteExpense={handleDeleteExpense} />
+      <ExpenseList
+        expenses={expenses}
+        onDeleteExpense={handleDeleteExpense}
+        onEditExpense={handleEditExpense}
+      />
     </div>
   );
 };
