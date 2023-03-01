@@ -18,6 +18,8 @@ const AddExpense = ({ onAddExpense }) => {
       name: name,
       amount: amount,
     });
+    setName("");
+    setAmount("");
   };
 
   return (
