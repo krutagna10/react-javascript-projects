@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
 const ExpenseItem = ({ index, expense, onDelete, onEdit }) => {
+  const [title, setTitle] = useState(expense.title);
+  const [amount, setAmount] = useState(expense.amount);
   const [isEditing, setIsEditing] = useState(false);
 
   const handleTitleChange = (event) => {
-    onEdit({ ...expense, title: event.target.value });
+    setTitle(event.target.value);
   };
 
   const handleAmountChange = (event) => {
-    onEdit({ ...expense, amount: event.target.value });
+    setAmount(event.target.value);
   };
 
   const handleDelete = () => {
@@ -16,7 +18,12 @@ const ExpenseItem = ({ index, expense, onDelete, onEdit }) => {
   };
 
   const handleClick = () => {
-    setIsEditing((prevIsEditing) => !prevIsEditing);
+    if (isEditing) {
+      setIsEditing(false);
+      onEdit({ ...expense, title: title, amount: amount });
+    } else {
+      setIsEditing(true);
+    }
   };
 
   const content = isEditing ? (
@@ -25,7 +32,7 @@ const ExpenseItem = ({ index, expense, onDelete, onEdit }) => {
         <input
           type="text"
           onChange={handleTitleChange}
-          value={expense.title}
+          value={title}
           placeholder="Title"
           style={{ width: "100%" }}
         />
@@ -34,7 +41,7 @@ const ExpenseItem = ({ index, expense, onDelete, onEdit }) => {
         <input
           type="number"
           onChange={handleAmountChange}
-          value={expense.amount}
+          value={amount}
           placeholder="Amount"
           style={{ width: "100%" }}
         />
