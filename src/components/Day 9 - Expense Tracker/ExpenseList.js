@@ -26,38 +26,35 @@ const ExpenseItem = ({ index, expense, onDelete, onEdit }) => {
     }
   };
 
-  const content = isEditing ? (
-    <React.Fragment>
-      <td>
-        <input
-          type="text"
-          onChange={handleTitleChange}
-          value={title}
-          placeholder="Title"
-          style={{ width: "100%" }}
-        />
-      </td>
-      <td>
-        <input
-          type="number"
-          onChange={handleAmountChange}
-          value={amount}
-          placeholder="Amount"
-          style={{ width: "100%" }}
-        />
-      </td>
-    </React.Fragment>
-  ) : (
-    <React.Fragment>
-      <td>{expense.title}</td>
-      <td>{expense.amount}</td>
-    </React.Fragment>
-  );
-
   return (
     <tr>
       <td>{index}</td>
-      {content}
+      <td>
+        {isEditing ? (
+          <input
+            type="text"
+            onChange={handleTitleChange}
+            value={title}
+            placeholder="Title"
+            style={{ width: "100%" }}
+          />
+        ) : (
+          <React.Fragment>{expense.title}</React.Fragment>
+        )}
+      </td>
+      <td>
+        {isEditing ? (
+          <input
+            type="number"
+            onChange={handleAmountChange}
+            value={amount}
+            placeholder="Amount"
+            style={{ width: "100%" }}
+          />
+        ) : (
+          <React.Fragment>{expense.amount}</React.Fragment>
+        )}
+      </td>
       <td>
         <button onClick={handleClick}>{isEditing ? "Save" : "Edit"}</button>
       </td>
@@ -83,7 +80,7 @@ const ExpenseList = ({ expenses, onDeleteExpense, onEditExpense }) => {
       <tbody>
         {expenses.length === 0 ? (
           <tr>
-            <td colSpan="4">No Expense found</td>
+            <td colSpan="5">No Expense found</td>
           </tr>
         ) : (
           <React.Fragment>
