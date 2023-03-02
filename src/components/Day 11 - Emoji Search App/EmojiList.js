@@ -17,7 +17,7 @@ const EmojiList = ({ emojis }) => {
           </tr>
         ) : (
           <React.Fragment>
-            {emojis.map((emoji, index) => (
+            {emojis.slice(0, 21).map((emoji, index) => (
               <tr key={index}>
                 <td>{index}</td>
                 <td>{emoji.symbol}</td>
