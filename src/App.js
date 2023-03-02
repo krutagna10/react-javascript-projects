@@ -1,9 +1,9 @@
-import Reviews from "./components/Day 10 - Reviews/Reviews";
+import EmojiSearch from "./components/Day 11 - Emoji Search App/EmojiSearch";
 
 function App() {
   return (
     <div className="app">
-      <Reviews />
+      <EmojiSearch />
     </div>
   );
 }
