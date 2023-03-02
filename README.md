@@ -11,6 +11,7 @@
 - Day 8: Tours Component
 - Day 9: Expense Tracker
 - Day 10: Reviews
+- Day 11: Emoji Search
 
 ### Links
 
