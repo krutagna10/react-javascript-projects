@@ -1,4 +1,4 @@
-import Reviews from "./components/Days 10 - Reviews/Reviews";
+import Reviews from "./components/Day 10 - Reviews/Reviews";
 
 function App() {
   return (

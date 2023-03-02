@@ -1,0 +1,19 @@
+.reviews {
+  text-align: center;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+}
+
+.review {
+  max-width: 25rem;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.review__image {
+  border: 1px solid black;
+}
+

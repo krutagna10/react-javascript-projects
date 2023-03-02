@@ -1,5 +1,6 @@
 import data from "./data";
 import { useState } from "react";
+import classes from "./Reviews.module.css";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState(data);
@@ -18,32 +19,13 @@ const Reviews = () => {
   };
 
   return (
-    <div
-      style={{
-        textAlign: "center",
-        border: "1px solid black",
-        padding: "1rem",
-      }}
-    >
+    <div className={classes.reviews}>
       <h1>Reviews</h1>
-      <div
-        className="review"
-        style={{
-          maxWidth: "25rem",
-          textAlign: "center",
-          display: "grid",
-          placeItems: "center",
-        }}
-      >
+      <div className={classes.review}>
         <img
+          className={classes["review__image"]}
           src={reviews[index].image}
           alt="Bill Anderson"
-          style={{
-            width: "10rem",
-            height: "9rem",
-            border: "1px solid black",
-            borderRadius: "50%",
-          }}
         />
         <h3>{reviews[index].name}</h3>
         <p>{reviews[index].job}</p>
