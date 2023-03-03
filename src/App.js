@@ -1,9 +1,9 @@
-import EmojiSearch from "./components/Day 11 - Emoji Search App/EmojiSearch";
+import QuoteGenerator from "./components/Day 12 - Quote Generator/QuoteGenerator";
 
 function App() {
   return (
     <div className="app">
-      <EmojiSearch />
+      <QuoteGenerator />
     </div>
   );
 }

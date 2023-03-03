@@ -1,0 +1,11 @@
+.quote-generator {
+  text-align: center;
+  padding: 1.5rem;
+  border: 1px solid black;
+  max-width: 48rem;
+}
+
+.quote-author {
+  font-style: italic;
+  font-size: 1.125rem;
+}
