@@ -12,6 +12,8 @@
 - Day 9: Expense Tracker
 - Day 10: Reviews
 - Day 11: Emoji Search
+- Day 12: Quote Generator
+- Day 13: Video Player
 
 ### Links
 

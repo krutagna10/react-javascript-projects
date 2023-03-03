@@ -1,9 +1,9 @@
-import QuoteGenerator from "./components/Day 12 - Quote Generator/QuoteGenerator";
+import VideoPlayer from "./components/Day 13 - Video Player/VideoPlayer";
 
 function App() {
   return (
     <div className="app">
-      <QuoteGenerator />
+      <VideoPlayer />
     </div>
   );
 }
