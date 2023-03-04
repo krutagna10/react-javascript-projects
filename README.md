@@ -1,4 +1,4 @@
-# 100 Projects in 100 Days
+# 100 React Mini Projects in 100 Days
 
 ## Projects
 - Day 1: Search Filter
