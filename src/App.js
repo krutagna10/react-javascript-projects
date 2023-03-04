@@ -1,9 +1,9 @@
-import Calculator from "./components/Day 14 - Calculator/Calculator";
+import GithubSearch from "./components/Day 14 - Github User Search/GithubSearch";
 
 function App() {
   return (
     <div className="app">
-      <Calculator />
+      <GithubSearch />
     </div>
   );
 }
