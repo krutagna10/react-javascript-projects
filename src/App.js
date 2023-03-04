@@ -1,9 +1,9 @@
-import VideoPlayer from "./components/Day 13 - Video Player/VideoPlayer";
+import Calculator from "./components/Day 14 - Calculator/Calculator";
 
 function App() {
   return (
     <div className="app">
-      <VideoPlayer />
+      <Calculator />
     </div>
   );
 }
