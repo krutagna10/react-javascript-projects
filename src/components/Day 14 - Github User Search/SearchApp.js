@@ -1,19 +1,17 @@
 import User from "./User";
 import Search from "./Search";
 import React, { useEffect, useState } from "react";
-const url = "https://api.github.com";
+const url = "https://api.github.com/users";
 
 const SearchApp = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchData = (inputSearchTerm) => {
-    console.log(inputSearchTerm);
+  const fetchData = (username) => {
     setIsLoading(true);
-    fetch(`https://api.github.com/users/${inputSearchTerm}`)
+    fetch(`${url}/${username}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setUser(data);
         setIsLoading(false);
       });
@@ -23,8 +21,8 @@ const SearchApp = () => {
     fetchData("krutagna10");
   }, []);
 
-  const handleSubmit = (inputSearchTerm) => {
-    fetchData(inputSearchTerm);
+  const handleSubmit = (inputUsername) => {
+    fetchData(inputUsername);
   };
 
   return (
