@@ -17,7 +17,10 @@ const Search = ({ onSubmit }) => {
       <input
         type="text"
         placeholder="Enter the username"
-        style={{ width: "100%" }}
+        style={{
+          width: "100%",
+          padding: "0.5rem",
+        }}
         onChange={handleSearchChange}
         required
       />
