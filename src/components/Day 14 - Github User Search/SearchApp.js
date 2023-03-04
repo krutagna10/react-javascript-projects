@@ -1,15 +1,16 @@
 import User from "./User";
 import Search from "./Search";
 import React, { useEffect, useState } from "react";
-const url = "https://api.github.com/users";
+const url = "https://api.github.com";
 
 const SearchApp = () => {
   const [user, setUser] = useState({});
-  const [searchTerm, setSearchTerm] = useState("krutagna10");
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchData = () => {
-    fetch(`${url}/${searchTerm}`)
+  const fetchData = (inputSearchTerm) => {
+    console.log(inputSearchTerm);
+    setIsLoading(true);
+    fetch(`https://api.github.com/users/${inputSearchTerm}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -19,8 +20,12 @@ const SearchApp = () => {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData("krutagna10");
   }, []);
+
+  const handleSubmit = (inputSearchTerm) => {
+    fetchData(inputSearchTerm);
+  };
 
   return (
     <div className="user-search">
@@ -29,8 +34,8 @@ const SearchApp = () => {
       ) : (
         <React.Fragment>
           <h1 style={{ textAlign: "center" }}>Github User Search</h1>
-          <Search />
-          <User user={user} searchTerm={searchTerm} />
+          <Search onSubmit={handleSubmit} />
+          <User user={user} />
         </React.Fragment>
       )}
     </div>

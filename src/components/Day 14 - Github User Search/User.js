@@ -1,6 +1,6 @@
 import React from "react";
 
-const User = ({ user, searchTerm }) => {
+const User = ({ user }) => {
   return (
     <table>
       <thead>
@@ -24,9 +24,9 @@ const User = ({ user, searchTerm }) => {
               }}
             />
           </td>
-          <td>{searchTerm}</td>
+          <td>{user.login}</td>
           <td>
-            <a href={user["html_url"]}>{searchTerm}</a>
+            <a href={user["html_url"]}>{user.login}</a>
           </td>
           <td>{user.followers}</td>
           <td>{user.following}</td>
