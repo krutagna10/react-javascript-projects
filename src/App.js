@@ -1,9 +1,9 @@
-import GithubSearch from "./components/Day 14 - Github User Search/GithubSearch";
+import SearchApp from "./components/Day 14 - Github User Search/SearchApp";
 
 function App() {
   return (
     <div className="app">
-      <GithubSearch />
+      <SearchApp />
     </div>
   );
 }
