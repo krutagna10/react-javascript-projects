@@ -1,9 +1,9 @@
-import SearchApp from "./components/Day 14 - Github User Search/SearchApp";
+import ExpenseTracker from "./components/Day 9 - Expense Tracker/ExpenseTracker";
 
 function App() {
   return (
     <div className="app">
-      <SearchApp />
+      <ExpenseTracker />
     </div>
   );
 }
