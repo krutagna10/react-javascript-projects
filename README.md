@@ -12,8 +12,8 @@
 - Day 9: Expense Tracker
 - Day 10: Reviews
 - Day 11: Emoji Search
-- Day 12: Quote Generator
-- Day 13: Video Player
+- Day 12: Video Player
+- Day 13: Quote Generator
 - Day 14: Github User Search (Using useEffect and fetch)
 - Day 15 - Country Search (Using useReducer and fetch)
 
