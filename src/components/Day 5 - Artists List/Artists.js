@@ -4,9 +4,9 @@ import ArtistsForm from "./ArtistsForm";
 import uuid from "react-uuid";
 
 const initialArtists = [
-  { id: uuid(), name: "Marta Colvin Andrade" },
-  { id: uuid(), name: "Lamidi Olonade Fakeye" },
-  { id: uuid(), name: "Louise Nevelson" },
+  { id: crypto.randomUUID(), name: "Marta Colvin Andrade" },
+  { id: crypto.randomUUID(), name: "Lamidi Olonade Fakeye" },
+  { id: crypto.randomUUID(), name: "Louise Nevelson" },
 ];
 
 const Artists = () => {
@@ -14,7 +14,7 @@ const Artists = () => {
 
   const handleAddArtist = ({ name }, index) => {
     const newArtist = {
-      id: uuid(),
+      id: crypto.randomUUID(),
       name: name,
     };
 
