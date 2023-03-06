@@ -52,7 +52,7 @@ const ExpenseItem = ({ index, expense, onDelete, onEdit }) => {
             style={{ width: "100%" }}
           />
         ) : (
-          <React.Fragment>{expense.amount}</React.Fragment>
+          <React.Fragment>${expense.amount}</React.Fragment>
         )}
       </td>
       <td>

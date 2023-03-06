@@ -1,9 +1,9 @@
-import ExpenseTracker from "./components/Day 9 - Expense Tracker/ExpenseTracker";
+import TodoApp from "./components/Day 7 - Todo List/TodoApp";
 
 function App() {
   return (
     <div className="app">
-      <ExpenseTracker />
+      <TodoApp />
     </div>
   );
 }

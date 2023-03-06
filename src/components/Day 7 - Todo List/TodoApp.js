@@ -1,40 +1,57 @@
 import AddTodo from "./AddTodo";
 import TodoList from "./TodoList";
-import { useState } from "react";
-import uuid from "react-uuid";
+import { useReducer, useState } from "react";
 
 const initialTodos = [
-  { id: uuid(), title: "Buy Milk", done: true },
-  { id: uuid(), title: "Eat Tacos", done: false },
-  { id: uuid(), title: "Brew Tea", done: false },
+  { id: crypto.randomUUID(), title: "Buy Milk", done: true },
+  { id: crypto.randomUUID(), title: "Eat Tacos", done: false },
+  { id: crypto.randomUUID(), title: "Brew Tea", done: false },
 ];
 
+function reducer(todos, action) {
+  switch (action.type) {
+    case "add-todo": {
+      const newTodo = {
+        id: crypto.randomUUID(),
+        title: action.title,
+        done: false,
+      };
+      return [...todos, newTodo];
+    }
+
+    case "delete-todo": {
+      const nextTodos = todos.filter((todo) => {
+        return todo.id !== action.deleteId;
+      });
+      return nextTodos;
+    }
+
+    case "change-todo": {
+      const nextTodos = todos.map((todo) => {
+        return todo.id === action.nextTodo.id ? action.nextTodo : todo;
+      });
+      return nextTodos;
+    }
+
+    default: {
+      throw Error("Invalid action: " + action.type);
+    }
+  }
+}
+
 const TodoApp = () => {
-  const [todos, setTodos] = useState(initialTodos);
+  const [todos, dispatch] = useReducer(reducer, initialTodos);
 
   const handleAddTodo = ({ title }) => {
-    const newTodo = {
-      id: uuid(),
-      title: title,
-      done: false,
-    };
-    setTodos([...todos, newTodo]);
+    dispatch({ type: "add-todo", title: title });
   };
 
   const handleDeleteTodo = (deleteId) => {
-    setTodos((prevTodos) => {
-      const updatedTodos = prevTodos.filter((todo) => deleteId !== todo.id);
-      return updatedTodos;
-    });
+    dispatch({ type: "delete-todo", deleteId: deleteId });
   };
 
   const handleTodoChange = (nextTodo) => {
-    setTodos((prevTodos) => {
-      const updatedTodos = prevTodos.map((todo) => {
-        return nextTodo.id === todo.id ? nextTodo : todo;
-      });
-      return updatedTodos;
-    });
+    dispatch({ type: "change-todo", nextTodo: nextTodo });
   };
 
   return (
