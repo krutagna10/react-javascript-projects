@@ -1,4 +1,4 @@
-import SearchApp from "./components/Day 14 - Github User Search/SearchApp";
+import CountrySearchApp from "./components/Day 15 - Country Search/CountrySearchApp";
 
 function App() {
   return (

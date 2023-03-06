@@ -1,15 +1,9 @@
 import { useState } from "react";
 
-const Search = ({ onSubmit }) => {
+const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
   const handleSearchTermChange = (event) => {
     setSearchTerm(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSubmit(searchTerm);
   };
 
   return (
@@ -21,7 +15,7 @@ const Search = ({ onSubmit }) => {
           width: "100%",
           padding: "0.5rem",
         }}
-        onChange={handleSearchTermChange}
+        onChange={handleSearchChange}
         required
       />
       <button>Search</button>
