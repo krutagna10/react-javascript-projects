@@ -44,10 +44,8 @@ const CountrySearchApp = () => {
   }, []);
 
   const handleSearchCountry = (countryName) => {
-    getCountryData(countryName);
+    getCountryData(countryName.toLowerCase());
   };
-
-  console.log(isLoading);
 
   return (
     <div>

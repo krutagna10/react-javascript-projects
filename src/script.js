@@ -1,56 +1,35 @@
-// Promises
-const promise1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("The promise has been resolved");
-  }, 1000);
-}).then((result) => {
-  console.log(result);
-});
+// Rest Parameters revision
+const sum = (...args) => {
+  return args.reduce((acc, element) => {
+    return acc + element;
+  }, 0);
+};
 
-// Promise chaining
-const promise2 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(1), 1000);
-})
-  .then((result) => {
-    return result * 2;
-  })
-  .then((result) => {
-    return result * 2;
-  })
-  .then((result) => {
-    return result * 2;
-  })
-  .then((result) => {
-    console.log(`The final value is ${result}`);
-  });
+console.log(sum(1, 2, 3, 4, 5));
 
-// The following is not chaining
-const promise3 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(1), 1000);
-});
+// Spread revision
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [6, 7, 8, 9, 10];
+const arr3 = [...arr1, ...arr2];
 
-promise3.then((result) => {
-  return result * 2;
-});
+console.log(arr3);
 
-promise3.then((result) => {
-  return result * 2;
-});
+console.log(Math.max(...arr3));
 
-// Returning promises
-const promise4 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(1), 1000);
-})
-  .then((result) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => resolve(result * 2), 1000);
-    });
-  })
-  .then((result) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => resolve(result * 2), 1000);
-    });
-  })
-  .then((result) => {
-    console.log(`The final value is ${result}`);
-  });
+// Array.from converts an iterable(like a string) into an array
+let str = "Hello";
+console.log(Array.from(str));
+console.log([...str]);
+
+const arr4 = [1, 2, 3];
+const arr4Copy = [...arr4];
+
+console.log(JSON.stringify(arr4) === JSON.stringify(arr4Copy));
+
+console.log(arr4 === arr4Copy);
+
+arr4.push(4);
+console.log(arr4, arr4Copy);
+
+// Rest parameters are used to create functions that accept any number of arguments.
+// Spread syntax is used to pass an array to a function that requires many arguments.
