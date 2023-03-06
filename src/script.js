@@ -8,10 +8,21 @@ const promise = new Promise((resolve, reject) => {
 });
 
 // Promise chaining
-const chainedPromise = new Promise(function (resolve, reject) {
-  setTimeout(() => {
-    resolve(1);
-  }, 1000);
-}).then(function (result) {
-  console.log(result);
-});
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(1), 1000);
+})
+  .then((result) => {
+    console.log(result);
+    return result * 2;
+  })
+  .then((result) => {
+    console.log(result);
+    return result * 2;
+  })
+  .then((result) => {
+    console.log(result);
+    return result * 2;
+  })
+  .then((result) => {
+    console.log(result);
+  });
