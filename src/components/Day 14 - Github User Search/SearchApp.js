@@ -15,6 +15,7 @@ const SearchApp = () => {
         if (response.ok) {
           return response.json();
         }
+        // Throwing an error when user is not found
         throw new Error("User not found");
       })
       .then((data) => {
