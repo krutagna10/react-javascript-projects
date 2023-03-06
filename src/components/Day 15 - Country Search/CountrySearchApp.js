@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useReducer } from "react";
 import Search from "./Search";
+import Country from "./Country";
 
 const url = "https://restcountries.com/v3.1/name";
 
@@ -15,7 +16,7 @@ function reducer(country, action) {
 }
 
 const CountrySearchApp = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [country, dispatch] = useReducer(reducer, {});
 
   const getCountryData = (country) => {
@@ -52,6 +53,7 @@ const CountrySearchApp = () => {
         <React.Fragment>
           <h1>Country Search App</h1>
           <Search />
+          <Country country={country} />
         </React.Fragment>
       )}
     </div>
