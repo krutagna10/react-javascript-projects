@@ -1,9 +1,9 @@
-import TodoApp from "./components/Day 7 - Todo List/TodoApp";
+import SearchApp from "./components/Day 14 - Github User Search/SearchApp";
 
 function App() {
   return (
     <div className="app">
-      <TodoApp />
+      <SearchApp />
     </div>
   );
 }
