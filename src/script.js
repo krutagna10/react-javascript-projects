@@ -12,4 +12,6 @@ const chainedPromise = new Promise(function (resolve, reject) {
   setTimeout(() => {
     resolve(1);
   }, 1000);
-}).then(result);
+}).then(function (result) {
+  console.log(result);
+});
