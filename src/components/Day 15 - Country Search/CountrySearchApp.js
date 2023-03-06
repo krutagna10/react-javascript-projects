@@ -29,7 +29,6 @@ const CountrySearchApp = () => {
         throw new Error("Country not found");
       })
       .then((data) => {
-        console.log(data[0]);
         dispatch({ type: "set-country", data: data[0] });
       })
       .catch((error) => {
@@ -39,8 +38,6 @@ const CountrySearchApp = () => {
         setIsLoading(false);
       });
   };
-
-  console.log(country);
 
   useEffect(() => {
     getCountryData("india");
@@ -56,7 +53,7 @@ const CountrySearchApp = () => {
         <h2>Loading...</h2>
       ) : (
         <React.Fragment>
-          <h1>Country Search App</h1>
+          <h1 style={{ textAlign: "center" }}>Country Search App</h1>
           <Search onSearchCountry={handleSearchCountry} />
           <Country country={country} />
         </React.Fragment>
