@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
+
   const handleSearchTermChange = (event) => {
     setSearchTerm(event.target.value);
   };
