@@ -1,25 +1,24 @@
 import AddBookForm from "./AddBookForm";
 import BooksList from "./BooksList";
 import { useState } from "react";
-import uuid from "react-uuid";
 
 const INITIAL_BOOKS = [
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     name: "Game of Thrones",
     author: "George .R. Martin",
     pages: 900,
   },
   {
-    id: uuid(),
-    name: "Alice in Wonderland",
-    author: "Lewis Caroll",
+    id: crypto.randomUUID(),
+    name: "Lord of the Rings",
+    author: "J.R.R Tolkien",
     pages: 400,
   },
   {
-    id: uuid(),
-    name: "Gulliver Travels",
-    author: "Jonathan Swift",
+    id: crypto.randomUUID(),
+    name: "Harry Potter",
+    author: "JK Rowling",
     pages: 300,
   },
 ];
@@ -29,7 +28,7 @@ const OnlineLibrary = () => {
 
   const handleAddBook = ({ name, author, pages }) => {
     const newBook = {
-      id: uuid(),
+      id: crypto.randomUUID(),
       name: name,
       author: author,
       pages: Number(pages),
