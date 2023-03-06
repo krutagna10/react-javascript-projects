@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Search = () => {
+const Search = ({ onSearchCountry }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchTermChange = (event) => {
@@ -9,6 +9,8 @@ const Search = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    onSearchCountry(searchTerm);
+    setSearchTerm("");
   };
 
   return (
@@ -21,6 +23,7 @@ const Search = () => {
           padding: "0.5rem",
         }}
         onChange={handleSearchTermChange}
+        value={searchTerm}
         required
       />
       <button>Search</button>

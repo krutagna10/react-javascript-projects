@@ -19,8 +19,9 @@ const CountrySearchApp = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [country, dispatch] = useReducer(reducer, {});
 
-  const getCountryData = (country) => {
-    fetch(`${url}/${country}`)
+  const getCountryData = (countryName) => {
+    setIsLoading(true);
+    fetch(`${url}/${countryName}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -45,6 +46,10 @@ const CountrySearchApp = () => {
     getCountryData("india");
   }, []);
 
+  const handleSearchCountry = (countryName) => {
+    getCountryData(countryName);
+  };
+
   return (
     <div>
       {isLoading ? (
@@ -52,7 +57,7 @@ const CountrySearchApp = () => {
       ) : (
         <React.Fragment>
           <h1>Country Search App</h1>
-          <Search />
+          <Search onSearchCountry={handleSearchCountry} />
           <Country country={country} />
         </React.Fragment>
       )}
