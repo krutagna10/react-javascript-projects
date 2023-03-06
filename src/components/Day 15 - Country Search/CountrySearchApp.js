@@ -47,6 +47,8 @@ const CountrySearchApp = () => {
     getCountryData(countryName);
   };
 
+  console.log(isLoading);
+
   return (
     <div>
       {isLoading ? (
