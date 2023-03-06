@@ -7,16 +7,20 @@ const Search = () => {
     setSearchTerm(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <form style={{ display: "flex", gap: "1rem" }} onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Enter the username"
+        placeholder="Enter country name"
         style={{
           width: "100%",
           padding: "0.5rem",
         }}
-        onChange={handleSearchChange}
+        onChange={handleSearchTermChange}
         required
       />
       <button>Search</button>

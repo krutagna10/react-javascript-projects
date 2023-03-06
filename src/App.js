@@ -3,7 +3,7 @@ import CountrySearchApp from "./components/Day 15 - Country Search/CountrySearch
 function App() {
   return (
     <div className="app">
-      <SearchApp />
+      <CountrySearchApp />
     </div>
   );
 }

@@ -14,7 +14,8 @@
 - Day 11: Emoji Search
 - Day 12: Quote Generator
 - Day 13: Video Player
-- Day 14: Github User Search
+- Day 14: Github User Search (Using useEffect and fetch)
+- Day 15 - Country Search (Using useReducer and fetch)
 
 ### Links
 

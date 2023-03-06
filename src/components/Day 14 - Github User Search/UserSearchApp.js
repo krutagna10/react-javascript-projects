@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const url = "https://api.github.com/users";
 
-const SearchApp = () => {
+const UserSearchApp = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -52,4 +52,4 @@ const SearchApp = () => {
   );
 };
 
-export default SearchApp;
+export default UserSearchApp;
