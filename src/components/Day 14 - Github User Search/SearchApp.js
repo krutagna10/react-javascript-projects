@@ -1,6 +1,7 @@
 import User from "./User";
 import Search from "./Search";
 import React, { useEffect, useState } from "react";
+
 const url = "https://api.github.com/users";
 
 const SearchApp = () => {
@@ -10,9 +11,20 @@ const SearchApp = () => {
   const fetchData = (username) => {
     setIsLoading(true);
     fetch(`${url}/${username}`)
-      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("User not found");
+      })
       .then((data) => {
         setUser(data);
+      })
+      .catch((error) => {
+        alert(`${error.name}: ${error.message}`);
+      })
+      .finally(() => {
         setIsLoading(false);
       });
   };
