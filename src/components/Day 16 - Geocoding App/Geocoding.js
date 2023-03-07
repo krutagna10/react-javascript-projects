@@ -21,7 +21,9 @@ const Geocoding = () => {
         throw new Error("Country not found");
       })
       .then((data) => {
-        return fetch(`https://restcountries.com/v3.1/name/${data.getCountry}`);
+        const countryName = data.countryName.toLowerCase();
+
+        return fetch(`https://restcountries.com/v3.1/name/${countryName}`);
       })
       .then((response) => {
         if (response.ok) {
