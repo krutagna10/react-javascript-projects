@@ -35,8 +35,7 @@ const Geocoding = () => {
     latitude: nextLatitude,
     longitude: nextLongitude,
   }) => {
-    console.log(nextLatitude, nextLongitude);
-    // fetchData(nextLatitude, nextLongitude);
+    fetchData(nextLatitude, nextLongitude);
   };
 
   if (isLoading) {
