@@ -19,7 +19,7 @@ button {
   cursor: pointer;
 }
 
-/* Input Reset */
+/* Search Reset */
 input[type="checkbox"],
 input[type="radio"] {
   cursor: pointer;

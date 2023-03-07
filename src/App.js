@@ -1,9 +1,9 @@
-import FetchPractice from "./components/Day 16 - Fetch Practice/FetchPractice";
+import Geocoding from "./components/Day 16 - Geocoding App/Geocoding";
 
 function App() {
   return (
     <div className="app">
-      <FetchPractice />
+      <Geocoding />
     </div>
   );
 }
