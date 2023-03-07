@@ -26,7 +26,7 @@ const CountrySearchApp = () => {
         if (response.ok) {
           return response.json();
         }
-        throw new Error("Country not found");
+        throw new Error("Data not found");
       })
       .then((data) => {
         dispatch({ type: "set-country", data: data[0] });

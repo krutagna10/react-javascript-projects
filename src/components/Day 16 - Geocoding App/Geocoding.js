@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import Search from "./Search";
-import Country from "./Country";
+import Country from "../Day 15 - Country Search/Country";
 
 const url =
   "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=37.42159&longitude=-122.0837&localityLanguage=en";
 
 const Geocoding = () => {
-  const [data, setData] = useState({});
+  const [country, setCountry] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = (latitude, longitude) => {
@@ -20,10 +20,17 @@ const Geocoding = () => {
         }
         throw new Error("Country not found");
       })
-      .then((data) => setData(data))
-      .catch((error) => {
-        alert(`${error.name}: ${error.message}`);
+      .then((data) => {
+        return fetch(`https://restcountries.com/v3.1/name/${data.getCountry}`);
       })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Country not found");
+      })
+      .then((data) => setCountry(data[0]))
+      .catch((error) => alert(`${error.name}: ${error.message}`))
       .finally(() => setIsLoading(false));
   };
 
@@ -46,7 +53,7 @@ const Geocoding = () => {
     <div>
       <h1>Geocoding App</h1>
       <Search onSearchCountry={handleSearchCountry} />
-      <Country data={data} />
+      <Country country={country} />
     </div>
   );
 };

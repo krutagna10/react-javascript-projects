@@ -1,16 +1,36 @@
-// Promise API
-const promise1 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(1), 1000);
+async function func1() {
+  return 1;
+}
+
+const func2 = async () => {
+  return new Promise((resolve, reject) => {
+    resolve(1);
+  });
+};
+
+func1().then((result) => {
+  console.log(result);
 });
 
-const promise2 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(2), 2000);
+func2().then((result) => {
+  console.log(result);
 });
 
-const promise3 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(3), 3000);
-});
+const func3 = async () => {
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Promise resolved");
+    }, 1000);
+  });
 
-Promise.all([promise1, promise2, promise3]).then((result) => {
-  console.log(result.reduce((acc, element) => acc + element, 0));
-});
+  // let result = promise.then((result) => {
+  //   console.log(result);
+  // });
+
+  let result = await promise;
+  console.log(result);
+
+  // We cannot use await in regular functions
+};
+
+func3();
