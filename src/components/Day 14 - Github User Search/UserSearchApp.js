@@ -37,17 +37,16 @@ const UserSearchApp = () => {
     fetchData(inputUsername);
   };
 
+  // if isLoading is true
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
+
   return (
     <div className="user-search">
-      {isLoading ? (
-        <h2>Loading...</h2>
-      ) : (
-        <React.Fragment>
-          <h1 style={{ textAlign: "center" }}>Github User Search</h1>
-          <Search onSubmit={handleSubmit} />
-          <User user={user} />
-        </React.Fragment>
-      )}
+      <h1 style={{ textAlign: "center" }}>Github User Search</h1>
+      <Search onSubmit={handleSubmit} />
+      <User user={user} />
     </div>
   );
 };

@@ -1,9 +1,9 @@
-import CountrySearchApp from "./components/Day 15 - Country Search/CountrySearchApp";
+import FetchPractice from "./components/Day 16 - Fetch Practice/FetchPractice";
 
 function App() {
   return (
     <div className="app">
-      <CountrySearchApp />
+      <FetchPractice />
     </div>
   );
 }

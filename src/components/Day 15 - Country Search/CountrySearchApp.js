@@ -47,17 +47,16 @@ const CountrySearchApp = () => {
     getCountryData(countryName.toLowerCase());
   };
 
+  // When is loading is true
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
+
   return (
     <div>
-      {isLoading ? (
-        <h2>Loading...</h2>
-      ) : (
-        <React.Fragment>
-          <h1 style={{ textAlign: "center" }}>Country Search App</h1>
-          <Search onSearchCountry={handleSearchCountry} />
-          <Country country={country} />
-        </React.Fragment>
-      )}
+      <h1 style={{ textAlign: "center" }}>Country Search App</h1>
+      <Search onSearchCountry={handleSearchCountry} />
+      <Country country={country} />
     </div>
   );
 };
