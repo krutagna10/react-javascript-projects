@@ -16,6 +16,7 @@
 - Day 13: Quote Generator
 - Day 14: Github User Search (Using useEffect and fetch)
 - Day 15 - Country Search (Using useReducer and fetch)
+- Day 16 - Geocoding App
 
 ### Links
 
