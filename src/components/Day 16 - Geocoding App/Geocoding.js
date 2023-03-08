@@ -2,11 +2,17 @@ import { useState, useEffect } from "react";
 import Search from "./Search";
 import Country from "../Day 15 - Country Search/Country";
 
-const url =
-  "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=37.42159&longitude=-122.0837&localityLanguage=en";
-
 const Geocoding = () => {
   const [country, setCountry] = useState({});
+
+  const getPosition = function () {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+  };
+
+  getPosition().then((result) => console.log(result));
+
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = (latitude, longitude) => {

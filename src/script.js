@@ -1,21 +1,45 @@
-// Event loop in practice
-console.log("Test start");
+// Call stack and memory heap
 
-setTimeout(() => console.log("0 second timer"), 0);
+// Call stack => keep track of where we are in the code
 
-const promise1 = new Promise((resolve, reject) => {
-  resolve("Short promise has been resolved");
-}).then((result) => {
-  console.log(result);
-});
+// Memory heap => LIFO data structure that is used for function calls that
 
-const promise2 = new Promise((resolve, reject) => {
-  resolve("Long promise has been resolved");
-}).then((result) => {
-  for (let i = 0; i < 10000000000000; i++) {
-    let num = i * i * i;
-  }
-  console.log(result);
-});
+// Javascript Engine => Program that executes the javascript code
 
-console.log("Test end");
+// Creating promise
+
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if (Math.random() >= 0.5) {
+      resolve("The promise has been resolved, YOU WON!");
+    }
+    reject(new Error("The promise has been rejected"));
+  }, 2000);
+})
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(`${error.name}: ${error.message}, YOU LOSE!`);
+  });
+
+// Promisify
+const wait = function (seconds) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve("The promise is resolved"), 1000);
+  });
+};
+
+wait()
+  .then((result) => {
+    console.log(result);
+    return wait();
+  })
+  .then((result) => {
+    console.log(result);
+    return wait();
+  })
+  .then((result) => {
+    console.log(result);
+    return wait();
+  });
