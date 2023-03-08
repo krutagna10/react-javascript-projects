@@ -5,14 +5,6 @@ import Country from "../Day 15 - Country Search/Country";
 const Geocoding = () => {
   const [country, setCountry] = useState({});
 
-  const getPosition = function () {
-    return new Promise((resolve, reject) => {
-      navigator.geolocation.getCurrentPosition(resolve, reject);
-    });
-  };
-
-  getPosition().then((result) => console.log(result));
-
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = (latitude, longitude) => {
@@ -42,8 +34,27 @@ const Geocoding = () => {
       .finally(() => setIsLoading(false));
   };
 
+  const getPosition = function () {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => resolve(position),
+        (error) => reject(new Error("Access to location is denied"))
+      );
+    });
+  };
+
   useEffect(() => {
-    fetchData(20.5937, 78.9629);
+    getPosition()
+      .then((position) => {
+        const { latitude, longitude } = position.coords;
+        fetchData(latitude, longitude);
+      })
+
+      .catch((error) => {
+        // When access is denied, then fetch data according to following values
+        fetchData(20.5937, 78.9629);
+        console.error(`${error.name}: ${error.message}`);
+      });
   }, []);
 
   const handleSearchCountry = ({
