@@ -1,36 +1,21 @@
-async function func1() {
-  return 1;
-}
+// Event loop in practice
+console.log("Test start");
 
-const func2 = async () => {
-  return new Promise((resolve, reject) => {
-    resolve(1);
-  });
-};
+setTimeout(() => console.log("0 second timer"), 0);
 
-func1().then((result) => {
+const promise1 = new Promise((resolve, reject) => {
+  resolve("Short promise has been resolved");
+}).then((result) => {
   console.log(result);
 });
 
-func2().then((result) => {
+const promise2 = new Promise((resolve, reject) => {
+  resolve("Long promise has been resolved");
+}).then((result) => {
+  for (let i = 0; i < 10000000000000; i++) {
+    let num = i * i * i;
+  }
   console.log(result);
 });
 
-const func3 = async () => {
-  let promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("Promise resolved");
-    }, 1000);
-  });
-
-  // let result = promise.then((result) => {
-  //   console.log(result);
-  // });
-
-  let result = await promise;
-  console.log(result);
-
-  // We cannot use await in regular functions
-};
-
-func3();
+console.log("Test end");
