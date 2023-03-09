@@ -1,9 +1,9 @@
-import Geocoding from "./components/Day 16 - Geocoding App/Geocoding";
+import UserGenerator from "./components/Day 17 - Random User Generator/UserGenerator";
 
 function App() {
   return (
     <div className="app">
-      <Geocoding />
+      <UserGenerator />
     </div>
   );
 }
