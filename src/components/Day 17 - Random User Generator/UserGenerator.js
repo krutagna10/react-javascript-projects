@@ -8,22 +8,23 @@ const UserGenerator = () => {
 
   const fetchData = async () => {
     setIsLoading(true);
-    try {
-      const response = await fetch(url);
 
-      // Throwing
-      if (!response.ok) {
+    fetch(url)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
         throw new Error("User not found");
-      }
-
-      const data = await response.json();
-      setUser(data.results[0]);
-      console.log(data.results[0]);
-    } catch (error) {
-      alert(`${error.name}: ${error.message}`);
-    } finally {
-      setIsLoading(false);
-    }
+      })
+      .then((data) => {
+        setUser(data.results[0]);
+      })
+      .catch((error) => {
+        alert(`${error.name}: ${error.message}`);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   useEffect(() => {

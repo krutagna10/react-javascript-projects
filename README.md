@@ -17,7 +17,7 @@
 - Day 14: Github User Search (Using useEffect and fetch)
 - Day 15 - Data Search (Using useReducer and fetch)
 - Day 16 - Geocoding App 
-- Day 17 - User Generator (Using async, await)
+- Day 17 - User Generator 
 
 ### Links
 
