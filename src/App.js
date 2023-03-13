@@ -1,9 +1,9 @@
-import Accordion from "./components/Day 18 - Accordion/Accordion";
+import Timer from "./components/Day 19 - Countdown Timer/Timer";
 
 function App() {
   return (
     <div className="app">
-      <Accordion />
+      <Timer />
     </div>
   );
 }
