@@ -1,0 +1,9 @@
+.accordion__heading {
+  text-align: center;
+}
+
+.accordion__table {
+  width: 36rem;
+  height: 42rem;
+  text-align: left;
+}

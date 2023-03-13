@@ -1,9 +1,9 @@
-import UserGenerator from "./components/Day 17 - Random User Generator/UserGenerator";
+import Accordion from "./components/Day 18 - Accordion/Accordion";
 
 function App() {
   return (
     <div className="app">
-      <UserGenerator />
+      <Accordion />
     </div>
   );
 }
