@@ -13,7 +13,7 @@ const Accordion = () => {
 
   return (
     <div className="">
-      <h1 className={classes.accordion__heading}>Accordion</h1>
+      <h1 className={classes.accordion__heading}>Accordion Component</h1>
       <table className={classes.accordion__table}>
         <thead>
           <tr>

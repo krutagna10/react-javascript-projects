@@ -18,7 +18,7 @@
 - Day 15 - Data Search (Using useReducer and fetch)
 - Day 16 - Geocoding App 
 - Day 17 - User Generator
-- Day 18 - Accordion
+- Day 18 - Accordion Component
 
 ### Links
 
