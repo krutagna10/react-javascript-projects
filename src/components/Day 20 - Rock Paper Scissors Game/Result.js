@@ -1,5 +1,11 @@
 import React from "react";
 
+const winConditions = {
+  paper: "rock",
+  rock: "scissors",
+  scissors: "paper",
+};
+
 const Result = ({ userChoice, computerChoice }) => {
   return (
     <React.Fragment>
