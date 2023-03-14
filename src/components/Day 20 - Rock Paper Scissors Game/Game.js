@@ -19,27 +19,26 @@ const Game = () => {
 
   const handleResult = (userChoice, computerChoice) => {
     if (userChoice === computerChoice) {
-      setResult("draw");
+      return "draw";
     } else if (winConditions[userChoice] === computerChoice) {
-      setResult("win");
+      return "win";
     } else {
-      setResult("lose");
+      return "lose";
     }
   };
 
   const handleChoice = (userChoice, computerChoice) => {
-    setChoices((prevChoices) => {
-      const nextChoices = {
-        ...prevChoices,
-        user: userChoice,
-        computer: computerChoice,
-      };
-      return nextChoices;
-    });
+    setChoices({ user: userChoice, computer: computerChoice });
 
-    handleResult(userChoice, computerChoice);
+    const result = handleResult(userChoice, computerChoice);
+    setResult(result);
 
     setIsChoiceSelected(true);
+  };
+
+  const handlePlayAgain = () => {
+    setIsChoiceSelected(false);
+    setChoices({ user: "", computer: "" });
   };
 
   return (
@@ -50,6 +49,7 @@ const Game = () => {
           userChoice={choices.user}
           computerChoice={choices.computer}
           result={result}
+          onPlayAgain={handlePlayAgain}
         />
       ) : (
         <Choice onChoice={handleChoice} />

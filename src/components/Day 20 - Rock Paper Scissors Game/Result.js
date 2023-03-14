@@ -6,7 +6,7 @@ const resultText = {
   draw: "It's a Draw",
 };
 
-const Result = ({ userChoice, computerChoice, result }) => {
+const Result = ({ userChoice, computerChoice, result, onPlayAgain }) => {
   return (
     <React.Fragment>
       <h2>Result:</h2>
@@ -26,6 +26,12 @@ const Result = ({ userChoice, computerChoice, result }) => {
           </tr>
         </tbody>
       </table>
+      <button
+        style={{ marginTop: "1.75rem", width: "100%" }}
+        onClick={onPlayAgain}
+      >
+        Play Again
+      </button>
     </React.Fragment>
   );
 };
