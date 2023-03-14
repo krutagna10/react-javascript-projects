@@ -1,12 +1,12 @@
 import React from "react";
 
-const winConditions = {
-  paper: "rock",
-  rock: "scissors",
-  scissors: "paper",
+const resultText = {
+  win: "You Win",
+  lose: "You Lose",
+  draw: "It's a Draw",
 };
 
-const Result = ({ userChoice, computerChoice }) => {
+const Result = ({ userChoice, computerChoice, result }) => {
   return (
     <React.Fragment>
       <h2>Result:</h2>
@@ -22,7 +22,7 @@ const Result = ({ userChoice, computerChoice }) => {
           <tr>
             <td>{userChoice.toUpperCase()}</td>
             <td>{computerChoice.toUpperCase()}</td>
-            <td>You Win</td>
+            <td>{resultText[result]}</td>
           </tr>
         </tbody>
       </table>
