@@ -1,9 +1,9 @@
-import Game from "./components/Day 20 - Rock Paper Scissors Game/Game";
+import NavBar from "./components/Day 21 - Router Navigation/NavBar";
 
 function App() {
   return (
     <div className="app">
-      <Game />
+      <NavBar />
     </div>
   );
 }

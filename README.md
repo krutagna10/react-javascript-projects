@@ -21,6 +21,7 @@
 - Day 18 (March 12, 2023) - Accordion Component
 - Day 19 (March 13, 2023) - Countdown Timer
 - Day 20 (March 14, 2023) - Rock Paper Scissors Game
+- Day 21 (March 15, 2023) - Router Navigation
 
 ### Links
 
