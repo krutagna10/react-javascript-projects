@@ -57,7 +57,7 @@ const Quiz = () => {
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
+              <td>{currentQuestion + 1}</td>
               <td>{questions[currentQuestion].questionText}</td>
               {questions[currentQuestion].answerOptions.map(
                 (element, index) => (
