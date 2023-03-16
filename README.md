@@ -1,5 +1,8 @@
 # 100 React Mini Projects in 100 Days
 
+### Links
+- Live Site URL: [https://100-projects-in-100-days.vercel.app/]
+
 ## Projects
 - Day 1 (February 23, 2023) - Search Filter 
 - Day 2 (February 24, 2023) - Birthday Remainder
@@ -24,11 +27,6 @@
 - Day 21 (March 15, 2023) - Router Navigation
 - Day 22 (March 16, 2023) - Quiz App
 
-### Links
-
-- Live Site URL: [https://100-projects-in-100-days.vercel.app/]
-
 ### Built with
-
 - React
 
