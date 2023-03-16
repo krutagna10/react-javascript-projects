@@ -22,6 +22,7 @@
 - Day 19 (March 13, 2023) - Countdown Timer
 - Day 20 (March 14, 2023) - Rock Paper Scissors Game
 - Day 21 (March 15, 2023) - Router Navigation
+- Day 22 (March 16, 2023) - Quiz App
 
 ### Links
 
