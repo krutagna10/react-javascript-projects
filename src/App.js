@@ -1,9 +1,9 @@
-import NavBar from "./components/Day 21 - Router Navigation/NavBar";
+import Quiz from "./components/Day 22 - React Quiz/Quiz";
 
 function App() {
   return (
     <div className="app">
-      <NavBar />
+      <Quiz />
     </div>
   );
 }
