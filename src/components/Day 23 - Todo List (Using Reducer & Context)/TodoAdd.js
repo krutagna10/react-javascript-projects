@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TodosDispatchContext } from "./TodoContext";
 
-const AddTodo = ({ onAddTodo }) => {
+const TodoAdd = () => {
   const [title, setTitle] = useState("");
+  const dispatch = useContext(TodosDispatchContext);
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -11,8 +13,7 @@ const AddTodo = ({ onAddTodo }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Calling addTodoFunction with title as parameter
-    onAddTodo(title);
+    dispatch({ type: "add-todo", title: title });
 
     // Resetting the value of title
     setTitle("");
@@ -33,4 +34,4 @@ const AddTodo = ({ onAddTodo }) => {
   );
 };
 
-export default AddTodo;
+export default TodoAdd;

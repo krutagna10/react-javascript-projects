@@ -1,6 +1,7 @@
 import { useReducer } from "react";
-import AddTodo from "./AddTodo";
+import TodoAdd from "./TodoAdd";
 import TodoList from "./TodoList";
+import { TodosContext, TodosDispatchContext } from "./TodoContext";
 
 const initialTodos = [
   { id: crypto.randomUUID(), title: "Philosopher’s Path", isDone: true },
@@ -26,7 +27,7 @@ function reducer(todos, action) {
     }
     case "change-todo": {
       const nextTodos = todos.map((todo) => {
-        return action.newTodo.id === todo.id ? action.newTodo : todo;
+        return action.nextTodo.id === todo.id ? action.nextTodo : todo;
       });
       return nextTodos;
     }
@@ -39,27 +40,15 @@ function reducer(todos, action) {
 const TodoApp = () => {
   const [todos, dispatch] = useReducer(reducer, initialTodos);
 
-  const handleAddTodo = (title) => {
-    dispatch({ type: "add-todo", title: title });
-  };
-
-  const handleDeleteTodo = (deleteId) => {
-    dispatch({ type: "delete-todo", deleteId: deleteId });
-  };
-
-  const handleChangeTodo = (newTodo) => {
-    dispatch({ type: "change-todo", newTodo: newTodo });
-  };
-
   return (
     <div>
-      <h1>Todo App</h1>
-      <AddTodo onAddTodo={handleAddTodo} />
-      <TodoList
-        todos={todos}
-        onDeleteTodo={handleDeleteTodo}
-        onChangeTodo={handleChangeTodo}
-      />
+      <TodosContext.Provider value={todos}>
+        <TodosDispatchContext.Provider value={dispatch}>
+          <h1>Todo App</h1>
+          <TodoAdd />
+          <TodoList />
+        </TodosDispatchContext.Provider>
+      </TodosContext.Provider>
     </div>
   );
 };

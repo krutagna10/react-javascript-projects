@@ -1,54 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { TodosContext } from "./TodoContext";
+import TodoItem from "./TodoItem";
 
-const Todo = ({ todo, index, onChange, onDelete }) => {
-  const [isEditing, setIsEditing] = useState(false);
+const TodoList = () => {
+  const todos = useContext(TodosContext);
 
-  const handleClick = () => {
-    setIsEditing((prevIsEditing) => !prevIsEditing);
-  };
-
-  return (
-    <tr>
-      <td>{index}</td>
-      <td>
-        {isEditing ? (
-          <input
-            type="text"
-            value={todo.title}
-            onChange={(event) => {
-              onChange({ ...todo, title: event.target.value });
-            }}
-          />
-        ) : (
-          <React.Fragment>{todo.title}</React.Fragment>
-        )}
-      </td>
-      <td onChange={() => {}}>
-        <input
-          type="checkbox"
-          checked={todo.isDone}
-          onChange={(event) => {
-            onChange({ ...todo, isDone: event.target.checked });
-          }}
-        />
-      </td>
-      <td>
-        <button onClick={handleClick}>{isEditing ? "Save" : "Edit"}</button>
-      </td>
-      <td>
-        <button
-          onClick={() => {
-            onDelete(todo.id);
-          }}
-        >
-          Delete
-        </button>
-      </td>
-    </tr>
-  );
-};
-
-const TodoList = ({ todos, onDeleteTodo, onChangeTodo }) => {
   return (
     <table>
       <thead>
@@ -68,13 +24,7 @@ const TodoList = ({ todos, onDeleteTodo, onChangeTodo }) => {
         ) : (
           <React.Fragment>
             {todos.map((todo, index) => (
-              <Todo
-                key={todo.id}
-                onChange={onChangeTodo}
-                onDelete={onDeleteTodo}
-                todo={todo}
-                index={index}
-              />
+              <TodoItem key={todo.id} todo={todo} index={index} />
             ))}
           </React.Fragment>
         )}
