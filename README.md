@@ -29,6 +29,7 @@
 - Day 21 (March 15, 2023) - Router Navigation
 - Day 22 (March 16, 2023) - Quiz App
 - Day 23 (March 17, 2023) - TodoApp (Using useReducer and useContext)
+- Day 24 (March 18, 2023) - Temperature Control App
 
 ### Built with
 
