@@ -1,9 +1,9 @@
-import ContactsList from "./components/Day 25 - Contacts List/ContactsList";
+import ContactsApp from "./components/Day 25 - Contacts List/ContactsApp";
 
 function App() {
   return (
     <div className="app">
-      <ContactsList />
+      <ContactsApp />
     </div>
   );
 }
