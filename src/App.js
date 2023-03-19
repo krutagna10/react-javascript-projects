@@ -1,9 +1,8 @@
-import TodoList from "./components/Day 23 - Todo List (Using Reducer & Context)/TodoList";
-
+import TodoApp from "./components/Day 25 - Todo List (Using Reducer & Context)/TodoApp";
 function App() {
   return (
     <div className="app">
-      <TodoList />
+      <TodoApp />
     </div>
   );
 }

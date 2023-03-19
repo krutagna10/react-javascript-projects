@@ -44,7 +44,7 @@ const TodoApp = () => {
     <div>
       <TodosContext.Provider value={todos}>
         <TodosDispatchContext.Provider value={dispatch}>
-          <h1>Todo App</h1>
+          <h1 style={{ textAlign: "center" }}>Todo App</h1>
           <TodoAdd />
           <TodoList />
         </TodosDispatchContext.Provider>

@@ -26,11 +26,11 @@
 - Day 18 (March 12, 2023) - Accordion Component
 - Day 19 (March 13, 2023) - Countdown Timer
 - Day 20 (March 14, 2023) - Rock Paper Scissors Game
-- Day 21 (March 15, 2023) - Router Navigation
+- Day 21 (March 15, 2023) - Temperature Control App
 - Day 22 (March 16, 2023) - Quiz App
-- Day 23 (March 17, 2023) - TodoApp (Using useReducer and useContext)
-- Day 24 (March 18, 2023) - Temperature Control App
-- Day 25 (March 19, 2023) - Contacts List
+- Day 23 (March 17, 2023) - Router Navigation
+- Day 24 (March 18, 2023) - Contacts List
+- Day 25 (March 19, 2023) - TodoApp (Using useReducer and useContext)
 
 ### Built with
 
