@@ -1,4 +1,4 @@
-import TodoApp from "./components/Day 7 - Todo List (Using States)/TodoApp";
+import TodoApp from "./components/Day 23 - Todo List (Using Reducer & Context)/TodoApp";
 
 function App() {
   return (

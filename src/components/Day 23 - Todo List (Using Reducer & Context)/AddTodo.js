@@ -5,31 +5,30 @@ const AddTodo = ({ onAddTodo }) => {
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
+    event.preventDefault();
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    onAddTodo({ title: title });
+    // Calling addTodoFunction with title as parameter
+    onAddTodo(title);
 
+    // Resetting the value of title
     setTitle("");
   };
 
   return (
-    <form
-      className="todo__form"
-      onSubmit={handleSubmit}
-      style={{ display: "flex" }}
-    >
+    <form onSubmit={handleSubmit} style={{ display: "flex" }}>
       <input
         type="text"
-        placeholder="Add TodoApp"
-        value={title}
+        placeholder="Enter Todo"
         onChange={handleTitleChange}
-        style={{ width: "100%" }}
+        value={title}
         required
+        style={{ width: "100%" }}
       />
-      <button style={{ marginLeft: "0.5rem" }}>Add</button>
+      <button>Add</button>
     </form>
   );
 };
