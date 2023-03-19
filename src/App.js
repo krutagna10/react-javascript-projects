@@ -1,9 +1,9 @@
-import Quiz from "./components/Day 22 - React Quiz/Quiz";
+import TodoApp from "./components/Day 7 - Todo List (Using States)/TodoApp";
 
 function App() {
   return (
     <div className="app">
-      <Quiz />
+      <TodoApp />
     </div>
   );
 }

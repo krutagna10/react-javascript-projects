@@ -1,4 +1,4 @@
-# 100 React Mini Projects in 100 Days
+# 100 React Projects in 100 Days
 
 ### Links
 - Live Site URL: [https://100-projects-in-100-days.vercel.app/]
@@ -10,7 +10,7 @@
 - Day 4 (February 26, 2023) - Store 
 - Day 5 (February 27, 2023) - Artists List
 - Day 6 (February 28, 2023) - Online Library
-- Day 7 (March 01, 2023) - Todo List 
+- Day 7 (March 01, 2023) - Todo List (Using useState)
 - Day 8 (March 02, 2023) - Tours Component
 - Day 9 (March 03, 2023) - Expense Tracker
 - Day 10 (March 04, 2023) - Reviews
