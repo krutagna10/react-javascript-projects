@@ -1,4 +1,4 @@
-import RecipeApp from "./components/Day 26 - Recipe App";
+import RecipeApp from "./components/Day 26 - Recipe App/RecipeApp";
 
 function App() {
   return (
