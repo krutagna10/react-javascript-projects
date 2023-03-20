@@ -1,28 +1,18 @@
 import { useState } from "react";
 
-const Input = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-
+const Input = ({ onSearch }) => {
   const handleSearchTermChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setSearchTerm("");
+    onSearch(event.target.value);
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", gap: "0.75rem" }}>
-      <input
-        type="text"
-        onChange={handleSearchTermChange}
-        style={{ width: "100%" }}
-        required
-        value={searchTerm}
-      />
-      <button>Search</button>
-    </form>
+    <input
+      type="text"
+      onChange={handleSearchTermChange}
+      style={{ width: "100%", padding: "0.5rem" }}
+      required
+      placeholder="Search..."
+    />
   );
 };
 

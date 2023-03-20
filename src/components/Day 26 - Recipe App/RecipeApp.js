@@ -2,14 +2,13 @@ import Input from "./Input";
 import RecipeList from "./RecipeList";
 import { useState, useEffect } from "react";
 
-const appId = "57a4e977";
-const appKey = "9fcd7095a3aa0556565bbd33281979c1";
 const url =
   "https://api.edamam.com/api/recipes/v2?type=public&q=pizza&app_id=57a4e977&app_key=9fcd7095a3aa0556565bbd33281979c1";
 
 const RecipeApp = () => {
   const [recipes, setRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const getRecipes = () => {
     fetch(url)
@@ -36,11 +35,15 @@ const RecipeApp = () => {
     return <h2>Loading...</h2>;
   }
 
+  const handleSearch = (searchTerm) => {
+    setSearchTerm(searchTerm);
+  };
+
   return (
     <div style={{ maxWidth: "58.25rem" }}>
       <h1>Recipe App</h1>
-      <Input />
-      <RecipeList recipes={recipes} />
+      <Input onSearch={handleSearch} />
+      <RecipeList recipes={recipes} searchTerm={searchTerm} />
     </div>
   );
 };
