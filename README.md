@@ -31,7 +31,8 @@
 - Day 23 (March 17, 2023) - Router Navigation
 - Day 24 (March 18, 2023) - Contacts List
 - Day 25 (March 19, 2023) - TodoApp (Using useReducer and useContext)
-- Day 26 (March 20, 2023) - Recipe GameApp
+- Day 26 (March 20, 2023) - Recipe App
+- Day 27 (March 21, 2023) - Tic Tac Toe Game
 
 ### Built with
 

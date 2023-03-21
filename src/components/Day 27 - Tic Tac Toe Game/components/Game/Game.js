@@ -1,8 +1,6 @@
 import classes from "./Game.module.css";
 
 const Game = () => {
-  const [userChoicesArray, setUserChoicesArray] = use;
-
   return (
     <div>
       <h2>Game</h2>
