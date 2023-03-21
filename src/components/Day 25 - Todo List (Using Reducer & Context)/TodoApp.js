@@ -1,6 +1,6 @@
 import { useReducer } from "react";
-import TodoAdd from "./TodoAdd";
-import TodoList from "./TodoList";
+import TodoAdd from "./components/TodoAdd/TodoAdd";
+import TodoList from "./components/TodoList/TodoList";
 import { TodosContext, TodosDispatchContext } from "./TodoContext";
 
 const initialTodos = [

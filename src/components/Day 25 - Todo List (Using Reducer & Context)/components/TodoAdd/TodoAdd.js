@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { TodosDispatchContext } from "./TodoContext";
+import { TodosDispatchContext } from "../../TodoContext";
 
 const TodoAdd = () => {
   const [title, setTitle] = useState("");

@@ -1,5 +1,5 @@
-import Input from "./Input";
-import RecipeList from "./RecipeList";
+import Search from "./components/RecipeList/Search";
+import RecipeList from "./components/RecipeList/RecipeList";
 import { useState, useEffect } from "react";
 
 const url =
@@ -19,8 +19,6 @@ const RecipeApp = () => {
         throw new Error("Data not found");
       })
       .then((data) => {
-        console.log(data.hits);
-        console.log(data.hits[0].recipe);
         setRecipes(data.hits);
       })
       .catch((error) => alert(`${error.name}: ${error.message}`))
@@ -42,7 +40,7 @@ const RecipeApp = () => {
   return (
     <div style={{ maxWidth: "58.25rem" }}>
       <h1>Recipe App</h1>
-      <Input onSearch={handleSearch} />
+      <Search onSearch={handleSearch} />
       <RecipeList recipes={recipes} searchTerm={searchTerm} />
     </div>
   );

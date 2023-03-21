@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { TodosDispatchContext } from "./TodoContext";
+import { TodosDispatchContext } from "../../TodoContext";
 
 const TodoItem = ({ todo, index }) => {
   const [isEditing, setIsEditing] = useState(false);

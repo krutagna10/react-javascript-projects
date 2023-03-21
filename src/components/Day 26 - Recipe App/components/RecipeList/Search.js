@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-const Input = ({ onSearch }) => {
+const Search = ({ onSearch }) => {
   const handleSearchTermChange = (event) => {
     onSearch(event.target.value);
   };
@@ -16,4 +14,4 @@ const Input = ({ onSearch }) => {
   );
 };
 
-export default Input;
+export default Search;

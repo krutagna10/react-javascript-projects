@@ -21,17 +21,17 @@
 - Day 13 (March 07, 2023) - Quote Generator
 - Day 14 (March 08, 2023) - Github User Search (Using useEffect and fetch)
 - Day 15 (March 09, 2023) - Data Search (Using useReducer and fetch)
-- Day 16 (March 10, 2023) - Geocoding App
+- Day 16 (March 10, 2023) - Geocoding GameApp
 - Day 17 (March 11, 2023) - User Generator
 - Day 18 (March 12, 2023) - Accordion Component
 - Day 19 (March 13, 2023) - Countdown Timer
 - Day 20 (March 14, 2023) - Rock Paper Scissors Game
-- Day 21 (March 15, 2023) - Temperature Control App
-- Day 22 (March 16, 2023) - Quiz App
+- Day 21 (March 15, 2023) - Temperature Control GameApp
+- Day 22 (March 16, 2023) - Quiz GameApp
 - Day 23 (March 17, 2023) - Router Navigation
 - Day 24 (March 18, 2023) - Contacts List
 - Day 25 (March 19, 2023) - TodoApp (Using useReducer and useContext)
-- Day 26 (March 20, 2023) - Recipe App
+- Day 26 (March 20, 2023) - Recipe GameApp
 
 ### Built with
 
