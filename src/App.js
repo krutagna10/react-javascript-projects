@@ -1,9 +1,9 @@
-import GameApp from "./components/Day 27 - Tic Tac Toe Game/GameApp";
+import AdviceGenerator from "./components/Day 28 - Advice Generator/AdviceGenerator";
 
 function App() {
   return (
     <div className="app">
-      <GameApp />
+      <AdviceGenerator />
     </div>
   );
 }

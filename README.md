@@ -18,11 +18,11 @@
 - Day 10 (March 04, 2023) - Reviews
 - Day 11 (March 05, 2023) - Emoji Search
 - Day 12 (March 06, 2023) - Video Player
-- Day 13 (March 07, 2023) - Quote Generator
+- Day 13 (March 07, 2023) - Quote AdviceGenerator
 - Day 14 (March 08, 2023) - Github User Search (Using useEffect and fetch)
 - Day 15 (March 09, 2023) - Data Search (Using useReducer and fetch)
 - Day 16 (March 10, 2023) - Geocoding GameApp
-- Day 17 (March 11, 2023) - User Generator
+- Day 17 (March 11, 2023) - User AdviceGenerator
 - Day 18 (March 12, 2023) - Accordion Component
 - Day 19 (March 13, 2023) - Countdown Timer
 - Day 20 (March 14, 2023) - Rock Paper Scissors Game
@@ -33,7 +33,7 @@
 - Day 25 (March 19, 2023) - TodoApp (Using useReducer and useContext)
 - Day 26 (March 20, 2023) - Recipe App
 - Day 27 (March 21, 2023) - Tic Tac Toe Game
-- Day 28 (March 22, 2023) - Advice Generator
+- Day 28 (March 22, 2023) - Advice AdviceGenerator
 
 ### Built with
 
