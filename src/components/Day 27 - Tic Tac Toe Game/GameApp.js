@@ -1,7 +1,7 @@
 import Choice from "./components/Choice/Choice";
 import Game from "./components/Game/Game";
-import { UserContext } from "./Context";
-import { ComputerContext } from "./Context";
+import { UserContext } from "./context/Context";
+import { ComputerContext } from "./context/Context";
 import { useState } from "react";
 
 const GameApp = () => {
