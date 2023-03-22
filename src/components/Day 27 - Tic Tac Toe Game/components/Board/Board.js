@@ -11,8 +11,8 @@ const icons = {
 };
 
 const Board = ({ onUserChoice, userArray, computerArray }) => {
-  const user = useContext(UserContext);
-  const computer = useContext(ComputerContext);
+  const { choice: userChoice } = useContext(UserContext);
+  const { choice: computerChoice } = useContext(ComputerContext);
 
   const isIndexPresent = (index) => {
     const set = new Set([...userArray, ...computerArray]);
@@ -27,7 +27,9 @@ const Board = ({ onUserChoice, userArray, computerArray }) => {
             <button
               className={classes.game__btn}
               style={{
-                backgroundImage: icons.x,
+                backgroundImage: userArray.includes(index)
+                  ? icons[userChoice]
+                  : icons[computerChoice],
               }}
             />
           ) : (

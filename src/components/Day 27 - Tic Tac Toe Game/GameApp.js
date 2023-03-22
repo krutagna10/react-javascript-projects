@@ -7,6 +7,7 @@ import { useState } from "react";
 const GameApp = () => {
   const [userChoice, setUserChoice] = useState("x");
   const [computerChoice, setComputerChoice] = useState("o");
+  const [isGameFinished, setIsGameFinished] = useState(false);
 
   const handleChoice = ({ user: userChoice, computer: computerChoice }) => {
     setUserChoice(userChoice);
@@ -20,8 +21,8 @@ const GameApp = () => {
           value={{ name: "computer", choice: computerChoice }}
         >
           <h1>Tic Tac Toe Game</h1>
-          <Choice onChoice={handleChoice} />
-          <Game />
+          {isGameFinished && <Choice onChoice={handleChoice} />}
+          {!isGameFinished && <Game />}
         </ComputerContext.Provider>
       </UserContext.Provider>
     </div>
