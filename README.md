@@ -22,7 +22,7 @@
 - Day 14 (March 08, 2023) - Github User Search (Using useEffect and fetch)
 - Day 15 (March 09, 2023) - Data Search (Using useReducer and fetch)
 - Day 16 (March 10, 2023) - Geocoding GameApp
-- Day 17 (March 11, 2023) - User AdviceGenerator
+- Day 17 (March 11, 2023) - User Advice Generator
 - Day 18 (March 12, 2023) - Accordion Component
 - Day 19 (March 13, 2023) - Countdown Timer
 - Day 20 (March 14, 2023) - Rock Paper Scissors Game
