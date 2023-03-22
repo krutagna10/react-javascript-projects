@@ -1,4 +1,4 @@
-import Search from "./components/RecipeList/Search";
+import Search from "./components/Search/Search";
 import RecipeList from "./components/RecipeList/RecipeList";
 import { useState, useEffect } from "react";
 
