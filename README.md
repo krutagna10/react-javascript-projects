@@ -33,7 +33,7 @@
 - Day 25 (March 19, 2023) - TodoApp (Using useReducer and useContext)
 - Day 26 (March 20, 2023) - Recipe App
 - Day 27 (March 21, 2023) - Tic Tac Toe Game
-- Day 28 (March 22, 2023) - Advice AdviceGenerator
+- Day 28 (March 22, 2023) - Advice Generator
 
 ### Built with
 
