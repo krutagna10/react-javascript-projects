@@ -1,9 +1,9 @@
-import AdviceGenerator from "./components/Day 28 - Advice Generator/AdviceGenerator";
+import ShoppingApp from "./components/Day 29 - Shopping List App/ShoppingApp";
 
 function App() {
   return (
     <div className="app">
-      <AdviceGenerator />
+      <ShoppingApp />
     </div>
   );
 }

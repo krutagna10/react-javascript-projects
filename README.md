@@ -34,6 +34,7 @@
 - Day 26 (March 20, 2023) - Recipe App
 - Day 27 (March 21, 2023) - Tic Tac Toe Game
 - Day 28 (March 22, 2023) - Advice Generator
+- Day 29 (March 23, 2023) - Shopping List App
 
 ### Built with
 

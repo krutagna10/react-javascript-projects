@@ -17,6 +17,7 @@ picture {
 
 button {
   cursor: pointer;
+  white-space: nowrap;
 }
 
 /* Search Reset */
