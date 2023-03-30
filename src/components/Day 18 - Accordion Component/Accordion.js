@@ -1,6 +1,5 @@
 import data from "./data";
 import { useState } from "react";
-import classes from "./Accordion.module.css";
 
 const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -11,10 +10,16 @@ const Accordion = () => {
     });
   };
 
+  const style = {
+    width: "36rem",
+    height: "42rem",
+    textAlign: "left",
+  };
+
   return (
-    <div className="">
-      <h1 className={classes.accordion__heading}>Accordion Component</h1>
-      <table className={classes.accordion__table}>
+    <div>
+      <h1 style={{ textAlign: "center" }}>Accordion Component</h1>
+      <table style={style}>
         <thead>
           <tr>
             <th>Content</th>

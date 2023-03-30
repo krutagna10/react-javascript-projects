@@ -1,5 +1,5 @@
-import Choice from "./Choice";
-import Result from "./Result";
+import Choice from "./components/Choice/Choice";
+import Result from "./components/Result/Result";
 import { useState } from "react";
 
 const winConditions = {
