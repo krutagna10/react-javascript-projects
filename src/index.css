@@ -77,3 +77,12 @@ td {
 .flex-align-center {
   align-items: center;
 }
+
+.form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.form > input {
+  width: 100%;
+}

@@ -1,9 +1,9 @@
 import { Link, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import Contact from "./components/Contact";
-import Content from "./components/Content";
-import Locations from "./components/Locations";
-import About from "./components/About";
+import Home from "./components/Home/Home";
+import Contact from "./components/Contact/Contact";
+import Content from "./components/Content/Content";
+import Locations from "./components/Locations/Locations";
+import About from "./components/About/About";
 
 const NavBar = () => {
   return (

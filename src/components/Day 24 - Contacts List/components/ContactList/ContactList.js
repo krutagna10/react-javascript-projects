@@ -1,6 +1,6 @@
-import ContactItem from "./ContactItem";
+import ContactItem from "../ContactItem/ContactItem";
 import { useContext } from "react";
-import { AgeVisibleContext } from "./Context";
+import { AgeVisibleContext } from "../../ContactContext";
 
 const ContactList = ({ contacts }) => {
   const { isAgeVisible } = useContext(AgeVisibleContext);

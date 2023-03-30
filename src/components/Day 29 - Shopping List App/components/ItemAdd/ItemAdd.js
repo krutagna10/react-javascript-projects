@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddItem = ({ onAddItem }) => {
+const ItemAdd = ({ onAddItem }) => {
   const [title, setTitle] = useState("");
 
   const handleTitleChange = (event) => {
@@ -14,10 +14,9 @@ const AddItem = ({ onAddItem }) => {
   };
 
   return (
-    <form style={{ display: "flex" }} onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <input
         type="text"
-        style={{ width: "100%" }}
         value={title}
         onChange={handleTitleChange}
         placeholder="Enter Title"
@@ -27,4 +26,4 @@ const AddItem = ({ onAddItem }) => {
   );
 };
 
-export default AddItem;
+export default ItemAdd;

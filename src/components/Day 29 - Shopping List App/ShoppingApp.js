@@ -1,5 +1,5 @@
-import AddItem from "./AddItem";
-import ItemsList from "./ItemsList";
+import ItemAdd from "./components/ItemAdd/ItemAdd";
+import ItemsList from "./components/ItemList/ItemsList";
 import { useReducer, useState } from "react";
 
 const initialItems = [
@@ -73,7 +73,7 @@ const ShoppingApp = () => {
   return (
     <div>
       <h1>Shopping App</h1>
-      <AddItem onAddItem={handleAddItem} />
+      <ItemAdd onAddItem={handleAddItem} />
       <ItemsList
         items={items}
         onDeleteItem={handleDeleteItem}

@@ -1,9 +1,9 @@
-import ShoppingApp from "./components/Day 29 - Shopping List App/ShoppingApp";
+import WeatherApp from "./components/Day 30 - Weather App/WeatherApp";
 
 function App() {
   return (
     <div className="app">
-      <ShoppingApp />
+      <WeatherApp />
     </div>
   );
 }

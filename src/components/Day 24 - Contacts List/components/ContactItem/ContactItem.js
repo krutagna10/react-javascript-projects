@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { AgeVisibleContext } from "./Context";
+import { AgeVisibleContext } from "../../ContactContext";
 
 const ContactItem = ({ index, contact }) => {
   const { isAgeVisible, setIsAgeVisible } = useContext(AgeVisibleContext);

@@ -20,14 +20,13 @@ const TodoAdd = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex" }}>
+    <form className="form">
       <input
         type="text"
         placeholder="Enter Todo"
         onChange={handleTitleChange}
         value={title}
         required
-        style={{ width: "100%" }}
       />
       <button>Add</button>
     </form>

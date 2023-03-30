@@ -1,10 +1,10 @@
-import ContactList from "./ContactList";
-import { AgeVisibleContext } from "./Context";
+import ContactList from "./components/ContactList/ContactList";
+import { AgeVisibleContext } from "./ContactContext";
 import { useEffect, useState } from "react";
 
 const url = "https://randomuser.me/api/?results=5";
 
-const ContactsApp = () => {
+const ContactApp = () => {
   const [contacts, setContacts] = useState([]);
   const [isAgeVisible, setIsAgeVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -39,4 +39,4 @@ const ContactsApp = () => {
   );
 };
 
-export default ContactsApp;
+export default ContactApp;
