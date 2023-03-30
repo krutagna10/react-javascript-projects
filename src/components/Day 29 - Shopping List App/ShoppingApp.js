@@ -19,6 +19,32 @@ function reducer(items, action) {
       };
       return [...items, newItem];
     }
+
+    case "delete-item": {
+      const nextItems = items.filter((item) => {
+        return action.deleteId !== item.id;
+      });
+      return nextItems;
+    }
+
+    case "increment-quantity": {
+      const nextItems = items.map((item) => {
+        return action.incrementId === item.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item;
+      });
+      return nextItems;
+    }
+
+    case "decrement-quantity": {
+      const nextItems = items.map((item) => {
+        return action.decrementId === item.id
+          ? { ...item, quantity: item.quantity - 1 }
+          : item;
+      });
+      return nextItems;
+    }
+
     default: {
       throw new Error("Invalid action: " + action.type);
     }
@@ -32,11 +58,28 @@ const ShoppingApp = () => {
     dispatch({ type: "add-item", title: title });
   }
 
+  function handleDeleteItem(deleteId) {
+    dispatch({ type: "delete-item", deleteId: deleteId });
+  }
+
+  function handleQuantityIncrement(incrementId) {
+    dispatch({ type: "increment-quantity", incrementId: incrementId });
+  }
+
+  function handleQuantityDecrement(decrementId) {
+    dispatch({ type: "decrement-quantity", decrementId: decrementId });
+  }
+
   return (
     <div>
       <h1>Shopping App</h1>
       <AddItem onAddItem={handleAddItem} />
-      <ItemsList items={items} />
+      <ItemsList
+        items={items}
+        onDeleteItem={handleDeleteItem}
+        onQuantityIncrement={handleQuantityIncrement}
+        onQuantityDecrement={handleQuantityDecrement}
+      />
     </div>
   );
 };

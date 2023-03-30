@@ -1,4 +1,9 @@
-const ItemsList = ({ items }) => {
+const ItemsList = ({
+  items,
+  onQuantityIncrement,
+  onQuantityDecrement,
+  onDeleteItem,
+}) => {
   const total = items.reduce((acc, item) => {
     return acc + item.quantity;
   }, 0);
@@ -12,6 +17,7 @@ const ItemsList = ({ items }) => {
           <th>Quantity</th>
           <th>Increment Button</th>
           <th>Decrement Button</th>
+          <th>Delete Button</th>
         </tr>
       </thead>
       <tbody>
@@ -21,14 +27,35 @@ const ItemsList = ({ items }) => {
             <td>{item.title}</td>
             <td>{item.quantity}</td>
             <td>
-              <button>Increment</button>
+              <button
+                onClick={() => {
+                  onQuantityIncrement(item.id);
+                }}
+              >
+                Increment
+              </button>
             </td>
             <td>
-              <button>Decrement</button>
+              <button
+                onClick={() => {
+                  onQuantityDecrement(item.id);
+                }}
+              >
+                Decrement
+              </button>
+            </td>
+            <td>
+              <button
+                onClick={() => {
+                  onDeleteItem(item.id);
+                }}
+              >
+                Delete
+              </button>
             </td>
           </tr>
         ))}
-        <td colSpan="5">
+        <td colSpan="6">
           <h3>Total Quantity : {total} </h3>
         </td>
       </tbody>
