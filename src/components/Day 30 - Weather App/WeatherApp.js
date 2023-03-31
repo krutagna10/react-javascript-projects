@@ -6,14 +6,16 @@ const key = "6c0bc0f5b804009fa50fdc3fc2936835";
 const WeatherApp = () => {
   const [data, setData] = useState([]);
 
-  let cityName = "vapi";
+  let cityName = "london";
 
   useEffect(() => {
     fetchData();
   }, []);
 
   function fetchData() {
-    fetch(`${url}?q=${cityName}&appid=${key}`)
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={${key}}`
+    )
       .then((response) => {
         return response.json();
       })
