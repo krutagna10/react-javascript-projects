@@ -1,4 +1,27 @@
+import { useState, useEffect } from "react";
+
+const url = "https://api.openweathermap.org/data/2.5/weather";
+const key = "6c0bc0f5b804009fa50fdc3fc2936835";
+
 const WeatherApp = () => {
+  const [data, setData] = useState([]);
+
+  let cityName = "vapi";
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  function fetchData() {
+    fetch(`${url}?q=${cityName}&appid=${key}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      });
+  }
+
   return (
     <div>
       <h1>Weather App</h1>

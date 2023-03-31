@@ -1,9 +1,9 @@
-import Accordion from "./components/Day 18 - Accordion Component/Accordion";
+import WeatherApp from "./components/Day 30 - Weather App/WeatherApp";
 
 function App() {
   return (
     <div className="app">
-      <Accordion />
+      <WeatherApp />
     </div>
   );
 }
