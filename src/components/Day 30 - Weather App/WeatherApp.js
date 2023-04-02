@@ -1,36 +1,73 @@
 import { useState, useEffect } from "react";
 
 const url = "https://api.openweathermap.org/data/2.5/weather";
-const key = "6c0bc0f5b804009fa50fdc3fc2936835";
+const key = "5e0eb43ecfa14cc9ea41028486ede9e1";
 
 const WeatherApp = () => {
-  const [data, setData] = useState([]);
-
-  let cityName = "london";
+  const [data, setData] = useState({});
+  const [city, setCity] = useState("Vapi");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchData();
+    fetchData(city);
   }, []);
 
-  function fetchData() {
+  function fetchData(cityName) {
+    setIsLoading(true);
+
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={${key}}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}&units=metric`
     )
       .then((response) => {
-        return response.json();
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("City not found");
       })
-      .then((data) => {
-        console.log(data);
-      });
+      .then((data) => setData(data))
+      .catch((error) => alert(`${error.name}: ${error.message}`))
+      .finally(() => setIsLoading(false));
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    fetchData(city);
+  }
+
+  if (isLoading) {
+    return <h2>Loading...</h2>;
   }
 
   return (
     <div>
       <h1>Weather App</h1>
-      <form className="form">
-        <input type="text" placeholder="Search" />
+      <form className="form" onSubmit={handleSubmit}>
+        <input type="text" placeholder="Search" onChange={handleCityChange} />
         <button>Search</button>
       </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th>Temperature</th>
+            <th>Weather</th>
+            <th>Wind Speed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{data.name}</td>
+            <td>{data.main.temp}&#8451;</td>
+            <td>{data.weather[0].main}</td>
+            <td>{data.wind.speed} m/s</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
