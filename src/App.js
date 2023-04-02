@@ -1,10 +1,9 @@
-import AdviceGenerator from "./components/Day 28 - Advice Generator/AdviceGenerator";
-import UserGenerator from "./components/Day 17 - Random User Generator/UserGenerator";
+import TabsApp from "./components/Day 32 - Tabs App/TabsApp";
 
 function App() {
   return (
     <div className="app">
-      <UserGenerator />
+      <TabsApp />
     </div>
   );
 }
