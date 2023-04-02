@@ -1,9 +1,9 @@
-import WeatherApp from "./components/Day 30 - Weather App/WeatherApp";
+import MenuApp from "./components/Day 31 - Menu App/MenuApp";
 
 function App() {
   return (
     <div className="app">
-      <WeatherApp />
+      <MenuApp />
     </div>
   );
 }
