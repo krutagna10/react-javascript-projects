@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
+import WeatherSearch from "./components/WeatherSearch/WeatherSearch";
+import WeatherTable from "./components/WeatherTable/WeatherTable";
 
-const url = "https://api.openweathermap.org/data/2.5/weather";
 const key = "5e0eb43ecfa14cc9ea41028486ede9e1";
 
-const WeatherApp = () => {
+function WeatherApp() {
   const [data, setData] = useState({});
-  const [city, setCity] = useState("Vapi");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchData(city);
+    fetchData("vapi");
   }, []);
 
   function fetchData(cityName) {
@@ -29,14 +29,8 @@ const WeatherApp = () => {
       .finally(() => setIsLoading(false));
   }
 
-  function handleCityChange(event) {
-    setCity(event.target.value);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    fetchData(city);
+  function handleSearch(cityName) {
+    fetchData(cityName);
   }
 
   if (isLoading) {
@@ -46,30 +40,10 @@ const WeatherApp = () => {
   return (
     <div>
       <h1>Weather App</h1>
-      <form className="form" onSubmit={handleSubmit}>
-        <input type="text" placeholder="Search" onChange={handleCityChange} />
-        <button>Search</button>
-      </form>
-      <table>
-        <thead>
-          <tr>
-            <th>Location</th>
-            <th>Temperature</th>
-            <th>Weather</th>
-            <th>Wind Speed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{data.name}</td>
-            <td>{data.main.temp}&#8451;</td>
-            <td>{data.weather[0].main}</td>
-            <td>{data.wind.speed} m/s</td>
-          </tr>
-        </tbody>
-      </table>
+      <WeatherSearch onSearch={handleSearch} />
+      <WeatherTable data={data} />
     </div>
   );
-};
+}
 
 export default WeatherApp;
