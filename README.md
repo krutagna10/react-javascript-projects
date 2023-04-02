@@ -36,6 +36,7 @@
 - Day 28 (March 22, 2023) - Advice Generator
 - Day 29 (March 23, 2023) - Shopping List App
 - Day 30 (March 24, 2023) - Weather App
+- Day 31 (March 25, 2023) - Menu App
 
 ### Built with
 
