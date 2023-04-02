@@ -1,9 +1,9 @@
-import MenuApp from "./components/Day 31 - Menu App/MenuApp";
+import TabsApp from "./components/Day 32 - Tabs App/TabsApp";
 
 function App() {
   return (
     <div className="app">
-      <MenuApp />
+      <TabsApp />
     </div>
   );
 }

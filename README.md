@@ -37,6 +37,7 @@
 - Day 29 (March 23, 2023) - Shopping List App
 - Day 30 (March 24, 2023) - Weather App
 - Day 31 (March 25, 2023) - Menu App
+- Day 32 (March 26, 2023) - Tabs App
 
 ### Built with
 
