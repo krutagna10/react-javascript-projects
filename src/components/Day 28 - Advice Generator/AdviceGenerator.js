@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import classes from "./AdviceGenerator.module.css";
 
 const url = "https://api.adviceslip.com/advice";
 
@@ -40,11 +39,24 @@ const AdviceGenerator = () => {
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>Advice Generator</h1>
-      <div className={classes.advice__generator}>
-        <p>ADVICE #{data.id}</p>
-        <h2 className={classes.advice}>"{data.advice}"</h2>
-        <button onClick={handleClick}>Generate Advice</button>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Advice Number</th>
+            <th>Advice</th>
+            <th>Generate Advice Button</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{data.id}</td>
+            <td>{data.advice}</td>
+            <td>
+              <button onClick={handleClick}>Generate Advice</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

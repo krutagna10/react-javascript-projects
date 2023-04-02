@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Search from "./Search";
-import Country from "../Day 15 - Country Search/Country";
+import Search from "../../Search";
+import Country from "../../../Day 15 - Country Search/components/Country/Country";
 
 const Geocoding = () => {
   const [country, setCountry] = useState({});

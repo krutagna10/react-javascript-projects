@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import classes from "./QuoteGenerator.module.css";
 
 const QuoteGenerator = () => {
   const [quotes, setQuotes] = useState([]);
@@ -20,17 +19,31 @@ const QuoteGenerator = () => {
     setIndex(random);
   };
 
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
+
   return (
     <div>
-      {isLoading ? (
-        <h2>Loading...</h2>
-      ) : (
-        <div className={classes["quote-generator"]}>
-          <button onClick={handleClick}>New Quote</button>
-          <h1>"{quotes[index].text}"</h1>
-          <p className={classes["quote-author"]}>- {quotes[index].author}</p>
-        </div>
-      )}
+      <h1>Quote Generator</h1>
+      <table style={{ maxWidth: "42rem" }}>
+        <thead>
+          <tr>
+            <th>Author</th>
+            <th>Quote</th>
+            <th>Generate Quote Button</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{quotes[index].author}</td>
+            <td>{quotes[index].text}</td>
+            <td>
+              <button onClick={handleClick}>New Quote</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

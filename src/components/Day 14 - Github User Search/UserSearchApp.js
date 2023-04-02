@@ -1,5 +1,5 @@
-import User from "./User";
-import Search from "./Search";
+import User from "./components/User/User";
+import Search from "./components/Search/Search";
 import React, { useEffect, useState } from "react";
 
 const url = "https://api.github.com/users";

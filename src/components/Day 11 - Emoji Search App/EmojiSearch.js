@@ -1,7 +1,6 @@
 import data from "./data.json";
 import React, { useState } from "react";
-import EmojiList from "./EmojiList";
-import classes from "./EmojiSearch.module.css";
+import EmojiList from "./components/EmojiList/EmojiList";
 
 const EmojiSearch = () => {
   const [emojis, setEmojis] = useState(data);
@@ -16,10 +15,10 @@ const EmojiSearch = () => {
   );
 
   return (
-    <div className={classes["emoji-search"]}>
+    <div style={{ minWidth: "32rem" }}>
       <h1>Emoji Search</h1>
       <input
-        className={classes["emoji-search__input"]}
+        style={{ width: "100%" }}
         onChange={handleSearchTermChange}
         type="text"
         placeholder="Search..."

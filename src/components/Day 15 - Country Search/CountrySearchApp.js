@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useReducer } from "react";
-import Search from "./Search";
-import Country from "./Country";
+import Search from "./components/Search/Search";
+import Country from "./components/Country/Country";
 
 const url = "https://restcountries.com/v3.1/name";
 

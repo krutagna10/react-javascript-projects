@@ -1,6 +1,5 @@
-import Video from "./Video";
-import ChoiceForm from "./ChoiceForm";
-import classes from "./VideoPlayer.module.css";
+import Video from "./components/Video/Video";
+import ChoiceForm from "./components/ChoiceForm/ChoiceForm";
 import { useState } from "react";
 
 const videos = {
@@ -22,7 +21,7 @@ const VideoPlayer = () => {
   };
 
   return (
-    <div className={classes["video-player"]}>
+    <div style={{ maxWidth: "36rem", textAlign: "center" }}>
       <h1>Video Player</h1>
       <ChoiceForm
         videoNames={videoNames}
