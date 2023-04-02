@@ -1,9 +1,9 @@
-import TabsApp from "./components/Day 32 - Tabs App/TabsApp";
+import OnlineLibrary from "./components/Day 33 - Online Library/OnlineLibrary";
 
 function App() {
   return (
     <div className="app">
-      <TabsApp />
+      <OnlineLibrary />
     </div>
   );
 }

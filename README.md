@@ -11,7 +11,7 @@
 - Day 3 (February 25, 2023) - Counter
 - Day 4 (February 26, 2023) - Store
 - Day 5 (February 27, 2023) - Artists List
-- Day 6 (February 28, 2023) - Online Library
+- Day 6 (February 28, 2023) - Online Library (Using useState)
 - Day 7 (March 01, 2023) - TodoApp (Using useState)
 - Day 8 (March 02, 2023) - Tours Component
 - Day 9 (March 03, 2023) - Expense Tracker
@@ -38,6 +38,7 @@
 - Day 30 (March 24, 2023) - Weather App
 - Day 31 (March 25, 2023) - Menu App
 - Day 32 (March 26, 2023) - Tabs App
+- Day 33 (March 27, 2023) - Online Library (Using useReducer and useContext)
 
 ### Built with
 

@@ -45,7 +45,7 @@ const OnlineLibrary = () => {
   };
 
   return (
-    <div className="library">
+    <div>
       <AddBookForm onAddBook={handleAddBook} />
       <BooksList books={books} onDelete={handleDelete} />
     </div>
