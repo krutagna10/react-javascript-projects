@@ -1,5 +1,5 @@
-import AddTodo from "./AddTodo";
-import TodoList from "./TodoList";
+import AddTodo from "./components/AddTodo/AddTodo";
+import TodoList from "./components/TodoList/TodoList";
 import { useReducer, useState } from "react";
 
 const initialTodos = [

@@ -1,5 +1,5 @@
-import AddExpense from "./AddExpense";
-import ExpenseList from "./ExpenseList";
+import AddExpense from "./components/AddExpense/AddExpense";
+import ExpenseList from "./components/ExpenseList/ExpenseList";
 import { useReducer } from "react";
 
 const INITIAL_EXPENSES = [

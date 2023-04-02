@@ -1,9 +1,9 @@
-import TabsApp from "./components/Day 32 - Tabs App/TabsApp";
+import Reviews from "./components/Day 10 - Reviews/Reviews";
 
 function App() {
   return (
     <div className="app">
-      <TabsApp />
+      <Reviews />
     </div>
   );
 }

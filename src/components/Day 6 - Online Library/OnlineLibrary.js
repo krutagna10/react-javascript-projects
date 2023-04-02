@@ -1,5 +1,5 @@
-import AddBookForm from "./AddBookForm";
-import BooksList from "./BooksList";
+import AddBookForm from "./components/AddBookForm/AddBookForm";
+import BooksList from "./components/BooksList/BooksList";
 import { useState } from "react";
 
 const INITIAL_BOOKS = [

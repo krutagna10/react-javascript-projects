@@ -23,17 +23,13 @@ const AddExpense = ({ onAddExpense }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ display: "flex", flexDirection: "row", gap: "0.75rem" }}
-    >
+    <form onSubmit={handleSubmit} className="form">
       <input
         type="text"
         onChange={handleTitleChange}
         value={title}
         required
         placeholder="Title"
-        style={{ width: "100%" }}
       />
       <input
         type="number"
@@ -41,7 +37,6 @@ const AddExpense = ({ onAddExpense }) => {
         value={amount}
         required
         placeholder="Amount"
-        style={{ width: "100%" }}
       />
       <button>Submit</button>
     </form>

@@ -16,20 +16,15 @@ const AddTodo = ({ onAddTodo }) => {
   };
 
   return (
-    <form
-      className="todo__form"
-      onSubmit={handleSubmit}
-      style={{ display: "flex" }}
-    >
+    <form className="form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Add TodoApp"
         value={title}
         onChange={handleTitleChange}
-        style={{ width: "100%" }}
         required
       />
-      <button style={{ marginLeft: "0.5rem" }}>Add</button>
+      <button>Add</button>
     </form>
   );
 };
