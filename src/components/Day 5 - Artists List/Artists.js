@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ArtistsList from "./ArtistsList";
-import ArtistsForm from "./ArtistsForm";
+import ArtistsList from "./components/ArtistsList/ArtistsList";
+import ArtistsForm from "./components/ArtistsForm/ArtistsForm";
 const initialArtists = [
   { id: crypto.randomUUID(), name: "Marta Colvin Andrade" },
   { id: crypto.randomUUID(), name: "Lamidi Olonade Fakeye" },

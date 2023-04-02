@@ -68,6 +68,7 @@ td {
 
 .flex {
   display: flex;
+  gap: 1rem;
 }
 
 .flex--justify-space {
@@ -75,6 +76,11 @@ td {
 }
 
 .flex-align-center {
+  align-items: center;
+}
+
+.flex--center {
+  justify-content: center;
   align-items: center;
 }
 

@@ -5,13 +5,11 @@ import { useState } from "react";
 
 function MenuApp() {
   const [menuItems, setMenuItems] = useState(menu);
-  const [categories, setCategories] = useState([]);
 
   return (
     <div>
-      <h1>Menu App</h1>
-      <Categories />
-      <Menu items={menuItems} />
+      <h1 style={{ textAlign: "center" }}>Menu App</h1>
+      <Categories items={menuItems} />
     </div>
   );
 }
