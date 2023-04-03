@@ -1,62 +1,67 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 
-function BookForm() {
-  const [values, setValues] = useState({
-    name: "",
+function reducer(values, action) {
+  switch (action.type) {
+    case "title-change": {
+      return { ...values, title: action.title };
+    }
+    case "author-change": {
+      return { ...values, author: action.author };
+    }
+    case "pages-change": {
+      return { ...values, pages: action.pages };
+    }
+    case "isRead-change": {
+      return { ...values, isRead: action.isRead };
+    }
+    case "reset-values": {
+      return { title: "", author: "", pages: "", isRead: false };
+    }
+    default: {
+      throw new Error("Invalid action: " + action.type);
+    }
+  }
+}
+
+function BookForm({ onAddBook }) {
+  const [values, dispatch] = useReducer(reducer, {
+    title: "",
     author: "",
     pages: "",
     isRead: false,
   });
 
-  function handleNameChange(event) {
-    setValues((prevValues) => {
-      return {
-        ...prevValues,
-        name: event.target.value,
-      };
-    });
+  function handleTitleChange(event) {
+    dispatch({ type: "title-change", title: event.target.value });
   }
 
   function handleAuthorChange(event) {
-    setValues((prevValues) => {
-      return {
-        ...prevValues,
-        author: event.target.value,
-      };
-    });
+    dispatch({ type: "author-change", author: event.target.value });
   }
 
   function handlePagesChange(event) {
-    setValues((prevValues) => {
-      return {
-        ...prevValues,
-        pages: event.target.value,
-      };
-    });
+    dispatch({ type: "pages-change", pages: event.target.value });
   }
 
   function handleIsReadChange(event) {
-    setValues((prevValues) => {
-      return {
-        ...prevValues,
-        isRead: event.target.checked,
-      };
-    });
+    dispatch({ type: "isRead-change", isRead: event.target.checked });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    console.log(values);
+    onAddBook({ ...values });
+
+    dispatch({ type: "reset-values" });
   }
 
   return (
     <form className="form" onSubmit={handleSubmit}>
       <input
         type="text"
-        value={values.name}
-        onChange={handleNameChange}
-        placeholder="Book Name"
+        value={values.title}
+        onChange={handleTitleChange}
+        placeholder="Book Title"
         required
       />
       <input

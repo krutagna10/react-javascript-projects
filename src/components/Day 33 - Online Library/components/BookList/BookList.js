@@ -1,4 +1,6 @@
-function BookList({ books }) {
+import BookItem from "../BookItem/BookItem";
+
+function BookList({ books, onEditBook, onDeleteBook }) {
   return (
     <table>
       <thead>
@@ -14,21 +16,13 @@ function BookList({ books }) {
       </thead>
       <tbody>
         {books.map((book, index) => (
-          <tr key={book.id}>
-            <td>{index}</td>
-            <td>{book.name}</td>
-            <td>{book.author}</td>
-            <td>{book.pages}</td>
-            <td>
-              <input type="checkbox" checked={book.isRead} />
-            </td>
-            <td>
-              <button>Edit Book</button>
-            </td>
-            <td>
-              <button>Delete Book</button>
-            </td>
-          </tr>
+          <BookItem
+            key={book.id}
+            index={index}
+            book={book}
+            onEditBook={onEditBook}
+            onDeleteBook={onDeleteBook}
+          />
         ))}
       </tbody>
     </table>
