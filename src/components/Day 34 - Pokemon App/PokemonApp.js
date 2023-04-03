@@ -4,7 +4,7 @@ import PokemonTable from "./components/PokemonTable/PokemonTable";
 
 function PokemonApp() {
   const [pokemon, setPokemon] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     searchPokemon("pikachu");
@@ -38,7 +38,7 @@ function PokemonApp() {
     <div>
       <h1>Pokemon Stats App</h1>
       <PokemonSearch onSearch={handleSearch} />
-      <PokemonTable />
+      <PokemonTable pokemon={pokemon} />
     </div>
   );
 }

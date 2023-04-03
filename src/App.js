@@ -1,9 +1,9 @@
-import PokemonApp from "./components/Day 34 - Pokemon App/PokemonApp";
+import LoginApp from "./components/Day 35 - Login App/LoginApp";
 
 function App() {
   return (
     <div className="app">
-      <PokemonApp />
+      <LoginApp />
     </div>
   );
 }

@@ -45,7 +45,7 @@
 - Day 37 (March 31, 2023) - 
 - Day 38 (April 1, 2023) - 
 - Day 39 (April 2, 2023) - 
-- Day 40 (April 3, 2023)
+- Day 40 (April 3, 2023) - 
 
 ### Built with
 
