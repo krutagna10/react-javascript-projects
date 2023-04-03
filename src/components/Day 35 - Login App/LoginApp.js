@@ -1,7 +1,20 @@
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import { useState } from "react";
+
 function LoginApp() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <div>
-      <h1>Login App</h1>
+      {isLoggedIn ? (
+        <Home />
+      ) : (
+        <div>
+          <h1 style={{ textAlign: "center" }}>Login</h1>
+          <Login />
+        </div>
+      )}
     </div>
   );
 }
