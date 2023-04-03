@@ -1,7 +1,8 @@
 import BookForm from "./components/BookForm/BookForm";
 import BookList from "./components/BookList/BookList";
-import INITIAL_BOOKS from "./data";
 import { useReducer, useState } from "react";
+import { BookContext } from "./context/BookContext";
+import INITIAL_BOOKS from "./data";
 
 function reducer(books, action) {
   switch (action.type) {
@@ -50,13 +51,11 @@ function OnlineLibrary() {
 
   return (
     <div>
-      <h1>Online Library</h1>
-      <BookForm onAddBook={handleAddBook} />
-      <BookList
-        books={books}
-        onEditBook={handleEditBook}
-        onDeleteBook={handleDeleteBook}
-      />
+      <BookContext.Provider value={{ books: books }}>
+        <h1>Online Library</h1>
+        <BookForm onAddBook={handleAddBook} />
+        <BookList onEditBook={handleEditBook} onDeleteBook={handleDeleteBook} />
+      </BookContext.Provider>
     </div>
   );
 }

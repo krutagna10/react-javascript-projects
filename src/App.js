@@ -1,9 +1,9 @@
-import OnlineLibrary from "./components/Day 33 - Online Library/OnlineLibrary";
+import PokemonApp from "./components/Day 34 - Pokemon App/PokemonApp";
 
 function App() {
   return (
     <div className="app">
-      <OnlineLibrary />
+      <PokemonApp />
     </div>
   );
 }

@@ -39,6 +39,13 @@
 - Day 31 (March 25, 2023) - Menu App
 - Day 32 (March 26, 2023) - Tabs App
 - Day 33 (March 27, 2023) - Online Library (Using useReducer and useContext)
+- Day 34 (March 28, 2023) - Pokemon App
+- Day 35 (March 29, 2023) - Login App
+- Day 36 (March 30, 2023) - 
+- Day 37 (March 31, 2023) - 
+- Day 38 (April 1, 2023) - 
+- Day 39 (April 2, 2023) - 
+- Day 40 (April 3, 2023)
 
 ### Built with
 
