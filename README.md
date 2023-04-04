@@ -32,7 +32,7 @@
 - Day 24 (March 23, 2023) - Contacts List
 - Day 25 (March 25, 2023) - TodoApp (Using useReducer and useContext)
 - Day 26 (March 25, 2023) - Recipe App
-- Day 27 (March 26, 2023) - Tic Tac Toe Game
+- Day 27 (March 26, 2023) - Tic Tac Toe Game (Not Finished)
 - Day 28 (March 27, 2023) - Advice Generator
 - Day 29 (March 28, 2023) - Shopping List App
 - Day 30 (March 29, 2023) - Weather App
@@ -41,6 +41,7 @@
 - Day 33 (April 1, 2023) - Online Library (Using useReducer and useContext)
 - Day 34 (April 2, 2023) - Pokemon App
 - Day 35 (April 3, 2023) - Login App
+- Day 36 (April 4, 2023) - Expense Tracker (With additional features)
 
 ### Built with
 

@@ -31,7 +31,12 @@ const ContactApp = () => {
 
   return (
     <div>
-      <AgeVisibleContext.Provider value={{ isAgeVisible, setIsAgeVisible }}>
+      <AgeVisibleContext.Provider
+        value={{
+          isAgeVisible: isAgeVisible,
+          setIsAgeVisible: setIsAgeVisible,
+        }}
+      >
         <h1>Contacts List App</h1>
         <ContactList contacts={contacts} />
       </AgeVisibleContext.Provider>

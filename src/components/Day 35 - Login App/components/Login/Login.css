@@ -1,0 +1,11 @@
+.error input {
+  border: 1px solid red;
+}
+
+.error > input::placeholder {
+  color: red;
+}
+
+.error > input {
+  color: red;
+}

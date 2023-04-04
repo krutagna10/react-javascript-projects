@@ -1,21 +1,19 @@
-import Home from "./components/Home/Home";
-import Login from "./components/Login/Login";
+import Main from "./components/Main/Main";
+import { LoginContext } from "./context/LoginContext";
 import { useState } from "react";
 
 function LoginApp() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div>
-      {isLoggedIn ? (
-        <Home />
-      ) : (
-        <div>
-          <h1 style={{ textAlign: "center" }}>Login</h1>
-          <Login />
-        </div>
-      )}
-    </div>
+    <LoginContext.Provider
+      value={{
+        isLoggedIn: isLoggedIn,
+        setIsLoggedIn: setIsLoggedIn,
+      }}
+    >
+      <Main />
+    </LoginContext.Provider>
   );
 }
 
