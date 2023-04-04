@@ -1,9 +1,9 @@
-import LoginApp from "./components/Day 35 - Login App/LoginApp";
+import ExpenseTracker from "./components/Day 36 - Expense Tracker (With additional features)/ExpenseTracker";
 
 function App() {
   return (
     <div className="app">
-      <LoginApp />
+      <ExpenseTracker />
     </div>
   );
 }
