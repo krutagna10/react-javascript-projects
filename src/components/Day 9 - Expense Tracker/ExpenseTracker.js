@@ -3,11 +3,20 @@ import ExpenseList from "./components/ExpenseList/ExpenseList";
 import { useReducer } from "react";
 
 const INITIAL_EXPENSES = [
-  { id: crypto.randomUUID(), title: "Food", amount: 50 },
-  { id: crypto.randomUUID(), title: "Movie", amount: 30 },
+  {
+    id: crypto.randomUUID(),
+    title: "Food",
+    amount: 50,
+    date: new Date(2023, 0, 31),
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Movie",
+    amount: 30,
+    date: new Date(2023, 1, 28),
+  },
 ];
 
-// Parameters of reducer => (state, action)
 function reducer(expenses, action) {
   switch (action.type) {
     case "add-expense": {

@@ -80,6 +80,11 @@ td {
   width: 100%;
 }
 
+/* Text Utility */
+.text--center {
+  text-align: center;
+}
+
 /* Flex Utility */
 .flex {
   display: flex;
