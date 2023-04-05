@@ -4,15 +4,23 @@ import { ExpensesContext } from "../../context/ExpensesContext";
 
 function Expenses({ onDeleteExpense }) {
   const { expenses } = useContext(ExpensesContext);
+  const [searchTerm, setSearchTerm] = useState("");
   const [sortByAmount, setSortByAmount] = useState(false);
+
+  function handleSearchTermChange(event) {
+    setSearchTerm(event.target.value.toLowerCase());
+  }
 
   function handleSortByAmountChange(event) {
     setSortByAmount(event.target.checked);
   }
 
-  let sortedExpenses = [...expenses];
+  let modifiedExpenses = expenses.filter((expense) => {
+    return expense.title.toLowerCase().includes(searchTerm);
+  });
+
   if (sortByAmount) {
-    sortedExpenses = sortedExpenses.sort((expenseA, expenseB) => {
+    modifiedExpenses = modifiedExpenses.sort((expenseA, expenseB) => {
       return expenseA.amount - expenseB.amount;
     });
   }
@@ -21,17 +29,18 @@ function Expenses({ onDeleteExpense }) {
     <div>
       <h2 style={{ textAlign: "center" }}>Expenses List</h2>
       <form className="flex flex--center">
-        <input type="text" placeholder="Search Expense..." />
+        <input
+          type="text"
+          placeholder="Search Expense..."
+          onChange={handleSearchTermChange}
+        />
         <label>
           Sort by Amount:{" "}
           <input type="checkbox" onChange={handleSortByAmountChange} />
         </label>
-        <label>
-          Sort by Date: <input type="checkbox" />
-        </label>
       </form>
       <ExpenseList
-        expenses={sortedExpenses}
+        expenses={modifiedExpenses}
         onDeleteExpense={onDeleteExpense}
       />
     </div>
