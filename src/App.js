@@ -1,9 +1,9 @@
-import ExpenseTracker from "./components/Day 36 - Expense Tracker (With additional features)/ExpenseTracker";
+import BMIApp from "./components/Day 37 - BMI Calculator/BMIApp";
 
 function App() {
   return (
     <div className="app">
-      <ExpenseTracker />
+      <BMIApp />
     </div>
   );
 }

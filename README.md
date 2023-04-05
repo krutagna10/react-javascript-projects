@@ -42,6 +42,7 @@
 - Day 34 (April 2, 2023) - Pokemon App
 - Day 35 (April 3, 2023) - Login App
 - Day 36 (April 4, 2023) - Expense Tracker (With additional features)
+- Day 37 (April 5, 2023) - BMI Calculator
 
 ### Built with
 
