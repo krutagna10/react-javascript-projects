@@ -2,9 +2,7 @@ import ExpenseDate from "../ExpenseDate/ExpenseDate";
 import { ExpensesContext } from "../../context/ExpensesContext";
 import { useContext } from "react";
 
-function ExpenseList({ onDeleteExpense }) {
-  const { expenses } = useContext(ExpensesContext);
-
+function ExpenseList({ expenses, onDeleteExpense }) {
   return (
     <table>
       <thead>

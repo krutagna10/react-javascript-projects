@@ -15,7 +15,7 @@ const getMonthName = {
 
 function ExpenseDate({ date }) {
   let day = date.getDate();
-  let month = getMonthName[date.getMonth() + 1];
+  let month = getMonthName[date.getMonth()];
   let year = date.getFullYear();
 
   return (

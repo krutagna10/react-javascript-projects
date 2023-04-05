@@ -10,7 +10,12 @@ function Expenses({ onDeleteExpense }) {
     setSortByAmount(event.target.checked);
   }
 
-  let sortedExpenses;
+  let sortedExpenses = [...expenses];
+  if (sortByAmount) {
+    sortedExpenses = sortedExpenses.sort((expenseA, expenseB) => {
+      return expenseA.amount - expenseB.amount;
+    });
+  }
 
   return (
     <div>
@@ -25,7 +30,10 @@ function Expenses({ onDeleteExpense }) {
           Sort by Date: <input type="checkbox" />
         </label>
       </form>
-      <ExpenseList onDeleteExpense={onDeleteExpense} />
+      <ExpenseList
+        expenses={sortedExpenses}
+        onDeleteExpense={onDeleteExpense}
+      />
     </div>
   );
 }
