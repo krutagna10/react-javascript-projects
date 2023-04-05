@@ -33,25 +33,31 @@ function ExpenseAdd({ onAddExpense }) {
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <>
       <h2 className="text--center">Add Expense</h2>
-      <input
-        type="text"
-        value={title}
-        onChange={handleTitleChange}
-        placeholder="Enter Title"
-        required
-      />
-      <input
-        type="number"
-        value={amount}
-        onChange={handleAmountChange}
-        placeholder="Enter Amount"
-        required
-      />
-      <input type="date" value={date} onChange={handleDateChange} required />
-      <button>Add Expense</button>
-    </form>
+      <form
+        className="form"
+        onSubmit={handleSubmit}
+        style={{ marginBottom: "3rem" }}
+      >
+        <input
+          type="text"
+          value={title}
+          onChange={handleTitleChange}
+          placeholder="Enter Title"
+          required
+        />
+        <input
+          type="number"
+          value={amount}
+          onChange={handleAmountChange}
+          placeholder="Enter Amount"
+          required
+        />
+        <input type="date" value={date} onChange={handleDateChange} required />
+        <button>Add Expense</button>
+      </form>
+    </>
   );
 }
 
