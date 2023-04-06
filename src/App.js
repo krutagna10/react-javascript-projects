@@ -1,9 +1,9 @@
-import BMIApp from "./components/Day 37 - BMI Calculator/BMIApp";
+import JokesFetcher from "./components/Day 38 - Jokes Fetcher/JokesFetcher";
 
 function App() {
   return (
     <div className="app">
-      <BMIApp />
+      <JokesFetcher />
     </div>
   );
 }
