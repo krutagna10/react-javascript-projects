@@ -20,7 +20,6 @@ function JokesFetcher() {
       }
       const data = await response.json();
       setJoke(data);
-      console.log(data);
     } catch (error) {
       alert(`${error.name}: ${error.message}`);
     } finally {
