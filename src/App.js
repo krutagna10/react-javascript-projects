@@ -1,9 +1,9 @@
-import JokesFetcher from "./components/Day 38 - Jokes Fetcher/JokesFetcher";
+import DictionaryApp from "./components/Day 39 - Dictionary App/DictionaryApp";
 
 function App() {
   return (
     <div className="app">
-      <JokesFetcher />
+      <DictionaryApp />
     </div>
   );
 }
