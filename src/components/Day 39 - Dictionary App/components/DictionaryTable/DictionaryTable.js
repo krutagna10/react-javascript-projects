@@ -4,7 +4,6 @@ function DictionaryTable({ word, meanings, phonetics, sourceUrls }) {
   const audioRef = useRef(null);
 
   function handlePlay() {
-    setIsPlaying(true);
     audioRef.current.play();
   }
 
