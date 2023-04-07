@@ -1,10 +1,18 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
 function DictionaryTable({ word, meanings, phonetics, sourceUrls }) {
   const audioRef = useRef(null);
+  let audioSrc = "";
 
   function handlePlay() {
     audioRef.current.play();
+  }
+
+  for (const phonetic of phonetics) {
+    if (phonetic.audio !== "") {
+      audioSrc = phonetic.audio;
+      break;
+    }
   }
 
   return (
@@ -17,7 +25,7 @@ function DictionaryTable({ word, meanings, phonetics, sourceUrls }) {
         <tr>
           <th>Audio</th>
           <td>
-            <audio ref={audioRef} src={phonetics[0].audio} />
+            <audio ref={audioRef} src={audioSrc} />
             <button onClick={handlePlay}>Play</button>
           </td>
         </tr>
@@ -30,9 +38,7 @@ function DictionaryTable({ word, meanings, phonetics, sourceUrls }) {
         <tr>
           <th>Source</th>
           <td>
-            <a href={sourceUrls[0]} target="_blank">
-              {sourceUrls[0]}
-            </a>
+            <a href={sourceUrls[0]}>{sourceUrls[0]}</a>
           </td>
         </tr>
       </tbody>

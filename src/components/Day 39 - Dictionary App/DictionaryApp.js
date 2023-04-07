@@ -21,7 +21,6 @@ function DictionaryApp() {
         throw new Error("Data not found");
       }
       const data = await response.json();
-      console.log(data[0]);
       setData(data[0]);
     } catch (error) {
       alert(`${error.name}: ${error.message}`);
