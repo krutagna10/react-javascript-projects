@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 
 function DictionaryTable({ word, meanings, phonetics, sourceUrls }) {
-  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
   function handlePlay() {
