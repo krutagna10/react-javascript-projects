@@ -1,9 +1,9 @@
-import DictionaryApp from "./components/Day 39 - Dictionary App/DictionaryApp";
+import FoodOrderApp from "./components/Day 40 - Food Order App/FoodOrderApp";
 
 function App() {
   return (
     <div className="app">
-      <DictionaryApp />
+      <FoodOrderApp />
     </div>
   );
 }
