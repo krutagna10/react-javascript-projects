@@ -45,6 +45,7 @@
 - Day 37 (April 5, 2023) - BMI Calculator
 - Day 38 (April 6, 2023) - Jokes Fetcher
 - Day 39 (April 7, 2023) - Dictionary App
+- Day 40 (April 8, 2023) - Food Order App
 
 ### Built with
 
