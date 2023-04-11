@@ -46,7 +46,6 @@
 - Day 38 (April 7, 2023) - Jokes Fetcher
 - Day 39 (April 8, 2023) - Dictionary App
 - Day 40 (April 9, 2023) - Age Calculator
-- Day 41 (April 10, 2023) - Github List App
 
 ### Built with
 
