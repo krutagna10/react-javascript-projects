@@ -1,35 +1,35 @@
 import { useState } from "react";
 
-const Counter = () => {
-  const [counter, setCounter] = useState(0);
+function Counter() {
+  const [count, setCount] = useState(0);
 
-  const handleIncrement = () => {
-    setCounter((prevCounter) => prevCounter + 1);
-  };
+  function handleIncrement() {
+    setCount((prevCounter) => prevCounter + 1);
+  }
 
-  const handleDecrement = () => {
-    setCounter((prevCounter) => prevCounter - 1);
-  };
+  function handleDecrement() {
+    setCount((prevCounter) => prevCounter - 1);
+  }
 
-  const handleReset = () => {
-    setCounter(0);
-  };
+  function handleReset() {
+    setCount(0);
+  }
 
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Counter</h1>
+      <h1 className="text--center">Counter</h1>
       <table>
         <thead>
           <tr>
-            <td>Counter Value</td>
-            <td>Increment Button</td>
-            <td>Decrement Button</td>
-            <td>Reset Buttton</td>
+            <th>Counter Value</th>
+            <th>Increment Button</th>
+            <th>Decrement Button</th>
+            <th>Reset Button</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>{counter}</td>
+            <td>{count}</td>
             <td>
               <button onClick={handleIncrement}>Increment</button>
             </td>
@@ -44,6 +44,6 @@ const Counter = () => {
       </table>
     </div>
   );
-};
+}
 
 export default Counter;

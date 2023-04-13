@@ -1,9 +1,10 @@
-import TodoApp from "./components/25 - Todo List (Using Reducer & Context)/TodoApp";
+import Counter from "./components/1 - Counter/Counter";
+import BirthdayRemainder from "./components/2 - Birthday Remainder/BirthdayRemainder";
 
 function App() {
   return (
     <div className="app">
-      <TodoApp />
+      <BirthdayRemainder />
     </div>
   );
 }

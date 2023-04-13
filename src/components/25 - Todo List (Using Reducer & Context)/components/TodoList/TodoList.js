@@ -1,10 +1,7 @@
 import React, { useContext } from "react";
-import TodoContext from "../../context/TodoContext";
 import TodoItem from "../TodoItem/TodoItem";
 
-function TodoList() {
-  const { todos } = useContext(TodoContext);
-
+function TodoList({ todos }) {
   return (
     <table>
       <thead>

@@ -6,9 +6,9 @@
 
 ## Projects
 
-- 1 - Search Filter
+- 1 - Counter
 - 2 - Birthday Remainder
-- 3 - Counter
+- 3 - Search Filter
 - 4 - Store
 - 5 - Artists List
 - 6 - Online Library (Using useState)
