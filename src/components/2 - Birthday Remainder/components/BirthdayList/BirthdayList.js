@@ -1,4 +1,6 @@
-function BirthdayList({ persons }) {
+import BirthdayItem from "../BirthdayItem/BirthdayItem";
+
+function BirthdayList({ persons, onRemovePerson }) {
   return (
     <>
       <h2 className="text--center">Birthday List</h2>
@@ -8,20 +10,26 @@ function BirthdayList({ persons }) {
             <th>Index</th>
             <th>Name</th>
             <th>Age</th>
-            <th>Remove</th>
+            <th>Remove Button</th>
           </tr>
         </thead>
         <tbody>
-          {persons.map((person, index) => (
-            <tr key={person.id}>
-              <td>{index + 1}</td>
-              <td>{person.name}</td>
-              <td>{person.age}</td>
-              <td>
-                <button>Remove</button>
-              </td>
+          {persons.length === 0 ? (
+            <tr>
+              <td colSpan="4">No Birthday Remainders</td>
             </tr>
-          ))}
+          ) : (
+            <>
+              {persons.map((person, index) => (
+                <BirthdayItem
+                  key={person.id}
+                  index={index}
+                  {...person}
+                  onRemovePerson={onRemovePerson}
+                />
+              ))}
+            </>
+          )}
         </tbody>
       </table>
     </>

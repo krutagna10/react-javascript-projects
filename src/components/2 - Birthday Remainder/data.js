@@ -1,26 +1,26 @@
 const data = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     name: "Bertie Yates",
     age: 29,
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     name: "Hester Hogan",
     age: 32,
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     name: "Larry Little",
     age: 36,
   },
   {
-    id: 4,
+    id: crypto.randomUUID(),
     name: "Sean Walsh",
     age: 34,
   },
   {
-    id: 5,
+    id: crypto.randomUUID(),
     name: "Lola Gardner",
     age: 29,
   },
