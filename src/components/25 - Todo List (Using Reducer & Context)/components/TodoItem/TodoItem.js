@@ -25,7 +25,7 @@ function TodoItem({ todo, index }) {
 
   return (
     <tr>
-      <td>{index}</td>
+      <td>{index + 1}</td>
       <td>
         {isEditing ? (
           <input type="text" value={todo.title} onChange={handleTitleChange} />
