@@ -1,19 +1,6 @@
 import TodoContext from "./TodoContext";
+import INITIAL_TODOS from "./data";
 import { useReducer } from "react";
-
-const INITIAL_TODOS = [
-  { id: crypto.randomUUID(), title: "Go to Grocery Store", isDone: true },
-  {
-    id: crypto.randomUUID(),
-    title: "Study useContext hook in React",
-    isDone: false,
-  },
-  {
-    id: crypto.randomUUID(),
-    title: "Study for university examinations",
-    isDone: false,
-  },
-];
 
 function reducer(todos, action) {
   switch (action.type) {
@@ -21,9 +8,15 @@ function reducer(todos, action) {
       const newTodo = {
         id: crypto.randomUUID(),
         title: action.title,
-        isDone: false,
+        isCompleted: false,
       };
       return [...todos, newTodo];
+    }
+    case "edit-todo": {
+      const nextTodos = todos.map((todo) => {
+        return action.editedTodo.id === todo.id ? action.editedTodo : todo;
+      });
+      return nextTodos;
     }
     case "delete-todo": {
       const nextTodos = todos.filter((todo) => {
@@ -44,6 +37,10 @@ function TodoProvider({ children }) {
     dispatch({ type: "add-todo", title: title });
   }
 
+  function handleEditTodo(editedTodo) {
+    dispatch({ type: "edit-todo", editedTodo: editedTodo });
+  }
+
   function handleDeleteTodo(deleteId) {
     dispatch({ type: "delete-todo", deleteId: deleteId });
   }
@@ -51,6 +48,7 @@ function TodoProvider({ children }) {
   const value = {
     todos: todos,
     onAddTodo: handleAddTodo,
+    onEditTodo: handleEditTodo,
     onDeleteTodo: handleDeleteTodo,
   };
 

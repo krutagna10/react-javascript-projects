@@ -11,7 +11,7 @@ function TodoList() {
         <tr>
           <th>Index</th>
           <th>Title</th>
-          <th>Done</th>
+          <th>Completed</th>
           <th>Edit/Save Button</th>
           <th>Delete Button</th>
         </tr>

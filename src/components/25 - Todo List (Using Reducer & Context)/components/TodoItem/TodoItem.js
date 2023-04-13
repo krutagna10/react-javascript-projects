@@ -3,27 +3,47 @@ import TodoContext from "../../context/TodoContext";
 
 function TodoItem({ todo, index }) {
   const [isEditing, setIsEditing] = useState(false);
-  const { onDeleteTodo } = useContext(TodoContext);
+  const { onEditTodo, onDeleteTodo } = useContext(TodoContext);
 
-  const handleDeleteTodo = (deleteId) => {
+  function handleChangeIsEditing() {
+    setIsEditing((prevIsEditing) => !prevIsEditing);
+  }
+
+  function handleIsCompletedChange(event) {
+    const editedTodo = { ...todo, isCompleted: event.target.checked };
+    onEditTodo(editedTodo);
+  }
+
+  function handleTitleChange(event) {
+    const editedTodo = { ...todo, title: event.target.value };
+    onEditTodo(editedTodo);
+  }
+
+  function handleDeleteTodo(deleteId) {
     onDeleteTodo(deleteId);
-  };
+  }
 
   return (
     <tr>
       <td>{index}</td>
       <td>
         {isEditing ? (
-          <input type="text" value={todo.title} />
+          <input type="text" value={todo.title} onChange={handleTitleChange} />
         ) : (
-          <React.Fragment>{todo.title}</React.Fragment>
+          <>{todo.title}</>
         )}
       </td>
-      <td onChange={() => {}}>
-        <input type="checkbox" checked={todo.isDone} />
+      <td>
+        <input
+          type="checkbox"
+          checked={todo.isCompleted}
+          onChange={handleIsCompletedChange}
+        />
       </td>
       <td>
-        <button>{isEditing ? "Save" : "Edit"}</button>
+        <button onClick={handleChangeIsEditing}>
+          {isEditing ? "Save" : "Edit"}
+        </button>
       </td>
       <td>
         <button
