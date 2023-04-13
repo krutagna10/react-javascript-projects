@@ -6,7 +6,7 @@ const UserGenerator = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchData = async () => {
+  const fetchData = () => {
     setIsLoading(true);
 
     fetch(url)
