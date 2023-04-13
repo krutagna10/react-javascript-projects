@@ -1,8 +1,8 @@
-# 100 React Projects in 100 Days
+# React Javascript Projects
 
 ### Links
 
-- Live Site URL: [https://100-projects-in-100-days.vercel.app/]
+- Live Site URL: [https://react-javascript-projects-10.vercel.app/]
 
 ## Projects
 
