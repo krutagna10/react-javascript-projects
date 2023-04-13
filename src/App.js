@@ -1,9 +1,9 @@
-import DictionaryApp from "./components/39 - Dictionary App/DictionaryApp";
+import TodoApp from "./components/25 - Todo List (Using Reducer & Context)/TodoApp";
 
 function App() {
   return (
     <div className="app">
-      <DictionaryApp />
+      <TodoApp />
     </div>
   );
 }
