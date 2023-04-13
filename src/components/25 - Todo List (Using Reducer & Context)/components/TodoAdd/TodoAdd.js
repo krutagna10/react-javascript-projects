@@ -1,26 +1,23 @@
 import { useContext, useState } from "react";
-import { TodosDispatchContext } from "../../TodoContext";
+import TodoContext from "../../context/TodoContext";
 
-const TodoAdd = () => {
+function TodoAdd() {
   const [title, setTitle] = useState("");
-  const dispatch = useContext(TodosDispatchContext);
+  const { onAddTodo } = useContext(TodoContext);
 
-  const handleTitleChange = (event) => {
+  function handleTitleChange(event) {
     setTitle(event.target.value);
     event.preventDefault();
-  };
+  }
 
-  const handleSubmit = (event) => {
+  function handleSubmit(event) {
     event.preventDefault();
-
-    dispatch({ type: "add-todo", title: title });
-
-    // Resetting the value of title
+    onAddTodo(title);
     setTitle("");
-  };
+  }
 
   return (
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Enter Todo"
@@ -31,6 +28,6 @@ const TodoAdd = () => {
       <button>Add</button>
     </form>
   );
-};
+}
 
 export default TodoAdd;

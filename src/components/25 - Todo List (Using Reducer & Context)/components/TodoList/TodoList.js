@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
-import { TodosContext } from "../../TodoContext";
+import React, { useContext } from "react";
+import TodoContext from "../../context/TodoContext";
 import TodoItem from "../TodoItem/TodoItem";
 
-const TodoList = () => {
-  const todos = useContext(TodosContext);
+function TodoList() {
+  const { todos } = useContext(TodoContext);
 
   return (
     <table>
@@ -22,15 +22,15 @@ const TodoList = () => {
             <td colSpan="5">No Tasks Found</td>
           </tr>
         ) : (
-          <React.Fragment>
+          <>
             {todos.map((todo, index) => (
-              <TodoItem key={todo.id} todo={todo} index={index} />
+              <TodoItem key={todo.id} index={index} todo={todo} />
             ))}
-          </React.Fragment>
+          </>
         )}
       </tbody>
     </table>
   );
-};
+}
 
 export default TodoList;
