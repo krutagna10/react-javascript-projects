@@ -2,7 +2,7 @@ const data = [
   {
     id: crypto.randomUUID(),
     name: "Bertie Yates",
-    age: 52,
+    age: 29,
   },
   {
     id: crypto.randomUUID(),
@@ -17,7 +17,7 @@ const data = [
   {
     id: crypto.randomUUID(),
     name: "Sean Walsh",
-    age: 42,
+    age: 34,
   },
   {
     id: crypto.randomUUID(),

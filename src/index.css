@@ -85,6 +85,14 @@ td {
   gap: 0.5rem;
 }
 
+.flex--gap-200 {
+  gap: 2rem;
+}
+
+.flex--gap-100 {
+  gap: 1rem;
+}
+
 .flex--justify-center {
   justify-content: center;
 }
@@ -93,7 +101,7 @@ td {
   justify-content: space-between;
 }
 
-.flex-align-center {
+.flex--align-center {
   align-items: center;
 }
 

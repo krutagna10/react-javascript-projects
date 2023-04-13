@@ -1,7 +1,7 @@
+import BirthdayList from "./components/BirthdayList/BirthdayList";
 import data from "./data";
 import { useState } from "react";
 import BirthdayAdd from "./components/BirthdayAdd/BirthdayAdd";
-import Birthdays from "./components/Birthdays/Birthdays";
 
 function BirthdayRemainder() {
   const [persons, setPersons] = useState(data);
@@ -10,12 +10,13 @@ function BirthdayRemainder() {
     const newPerson = {
       id: crypto.randomUUID(),
       name: name,
-      age: Number(age),
+      age: age,
     };
     setPersons((prevPersons) => [...prevPersons, newPerson]);
   }
 
   function handleRemovePerson(removeId) {
+    console.log(removeId);
     setPersons((prevPersons) => {
       const nextPersons = prevPersons.filter((person) => {
         return removeId !== person.id;
@@ -24,19 +25,22 @@ function BirthdayRemainder() {
     });
   }
 
-  const handleResetPersons = () => {
+  const handleClick = () => {
     setPersons([]);
   };
 
   return (
     <div>
       <h1 className="text--center">Birthday Remainder</h1>
-      <BirthdayAdd onAddPerson={handleAddPerson} />
-      <Birthdays
+      <BirthdayAdd />
+      <BirthdayList
         persons={persons}
+        onAddPerson={handleAddPerson}
         onRemovePerson={handleRemovePerson}
-        onResetPersons={handleResetPersons}
       />
+      <button className="width-100 margin-200" onClick={handleClick}>
+        Clear All
+      </button>
     </div>
   );
 }

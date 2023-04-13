@@ -78,7 +78,7 @@ function BookForm({ onAddBook }) {
         placeholder="Book Pages"
         required
       />
-      <label className="flex flex-align-center" style={{ gap: "0.15rem" }}>
+      <label className="flex flex--align-center" style={{ gap: "0.15rem" }}>
         Read{" "}
         <input
           type="checkbox"

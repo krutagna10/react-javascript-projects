@@ -3,6 +3,7 @@ import BirthdayItem from "../BirthdayItem/BirthdayItem";
 function BirthdayList({ persons, onRemovePerson }) {
   return (
     <>
+      <h2 className="text--center">Birthday List</h2>
       <table>
         <thead>
           <tr>
