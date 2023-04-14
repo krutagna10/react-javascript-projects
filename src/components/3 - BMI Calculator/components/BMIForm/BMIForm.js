@@ -25,7 +25,6 @@ function BMIForm({ calculateBMIMetric, calculateBMIImperial }) {
       });
       return;
     }
-    console.log("Hey");
     // When unit is imperial
     setImperialValues((prevImperialValues) => {
       return { ...prevImperialValues, weight: event.target.value };
