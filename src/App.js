@@ -1,10 +1,9 @@
-import Counter from "./components/1 - Counter/Counter";
-import BirthdayRemainder from "./components/2 - Birthday Remainder/BirthdayRemainder";
+import BMICalculator from "./components/3 - BMI Calculator/BMI Calculator";
 
 function App() {
   return (
     <div className="app">
-      <BirthdayRemainder />
+      <BMICalculator />
     </div>
   );
 }

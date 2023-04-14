@@ -8,6 +8,7 @@
 
 - 1 - Counter
 - 2 - Birthday Remainder
+- 3 - BMI Calculator
 
 ### Built with
 

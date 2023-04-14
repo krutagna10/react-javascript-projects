@@ -8,10 +8,10 @@ function Birthdays({ persons, onRemovePerson, onResetPersons }) {
     setIsSorted(event.target.checked);
   }
 
-  let filteredPersons = persons;
+  let filteredPersons = [...persons];
 
   if (isSorted) {
-    filteredPersons = filteredPersons.sort((personA, personB) => {
+    filteredPersons = [...filteredPersons].sort((personA, personB) => {
       return personA.age - personB.age;
     });
   }
