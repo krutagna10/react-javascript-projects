@@ -1,8 +1,14 @@
 import { useState } from "react";
+import UnitSelector from "../UnitSelector/UnitSelector";
 
 function BMIForm({ calculateBMI }) {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
+  const [unit, setUnit] = useState("metric");
+
+  function handleUnitChange(value) {
+    setUnit(value);
+  }
 
   function handleWeightChange(event) {
     setWeight(event.target.value);
@@ -21,18 +27,10 @@ function BMIForm({ calculateBMI }) {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <div className="flex flex--align-center" style={{ whiteSpace: "nowrap" }}>
-        <h3 style={{ margin: "0" }}>Unit System : </h3>
-        <label>
-          Metric <input type="radio" name="form-radio" defaultChecked />
-        </label>
-        <label>
-          Imperial <input type="radio" name="form-radio" />
-        </label>
-      </div>
+      <UnitSelector unit={unit} onUnitChange={handleUnitChange} />
       <input
         type="number"
-        placeholder="Enter weight in kg"
+        placeholder={unit === "metric" ? "Weight in kg" : "Weight in pounds"}
         onChange={handleWeightChange}
         value={weight}
         required
