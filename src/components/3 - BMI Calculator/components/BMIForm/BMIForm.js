@@ -1,7 +1,7 @@
 import UnitContext from "../../context/UnitContext";
 import UnitSelector from "../UnitSelector/UnitSelector";
 import { metricReducer, imperialReducer } from "./reducers";
-import { useState, useContext, useReducer } from "react";
+import { useContext, useReducer } from "react";
 
 function BMIForm({ calculateBMIMetric, calculateBMIImperial }) {
   const [metricValues, metricDispatch] = useReducer(metricReducer, {
