@@ -3,7 +3,13 @@ import BMITable from "./components/BMITable/BMITable";
 import { useState, useEffect } from "react";
 
 function BMIApp() {
-  const [values, setValues] = useState({
+  const [metricValues, setMetricValues] = useState({
+    weight: 0,
+    height: 0,
+    bmi: 0,
+  });
+
+  const [imperialValues, setImperialValues] = useState({
     weight: 0,
     height: 0,
     bmi: 0,
@@ -11,7 +17,7 @@ function BMIApp() {
 
   function handleFindBMI(weight, height) {
     const currentBMI = Math.floor(weight / (height * height));
-    setValues((prevValues) => {
+    setMetricValues((prevValues) => {
       return {
         ...prevValues,
         weight: weight,
@@ -29,7 +35,7 @@ function BMIApp() {
     <div>
       <h1>BMI App</h1>
       <BMIForm onFindBMI={handleFindBMI} />
-      <BMITable {...values} />
+      <BMITable metricValues={metricValues} imperialValues={imperialValues} />
     </div>
   );
 }

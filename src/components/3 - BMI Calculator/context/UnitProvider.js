@@ -6,7 +6,6 @@ function UnitProvider({ children }) {
 
   function handleUnitChange(value) {
     setUnit(value);
-    console.log(value);
   }
 
   const value = {

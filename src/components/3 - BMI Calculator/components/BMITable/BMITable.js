@@ -1,8 +1,13 @@
 import UnitContext from "../../context/UnitContext";
 import { useContext } from "react";
 
-function BMITable({ weight, height, bmi }) {
+function BMITable({ metricValues, imperialValues }) {
   const { unit } = useContext(UnitContext);
+
+  let imperialHeight;
+  if (unit === "imperial") {
+    imperialHeight = `${imperialValues.height.feet}'${imperialValues.height.inches}"`;
+  }
 
   return (
     <>
@@ -23,9 +28,15 @@ function BMITable({ weight, height, bmi }) {
         </thead>
         <tbody>
           <tr>
-            <td>{weight}</td>
-            <td>{height}</td>
-            <td>{bmi.toFixed(1)}</td>
+            <td>
+              {unit === "metric" ? metricValues.weight : imperialValues.weight}
+            </td>
+            <td>{unit === "metric" ? metricValues.height : imperialHeight}</td>
+            <td>
+              {unit === "metric"
+                ? metricValues.bmi.toFixed(1)
+                : imperialValues.bmi.toFixed(1)}
+            </td>
           </tr>
         </tbody>
       </table>

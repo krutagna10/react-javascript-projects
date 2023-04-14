@@ -4,24 +4,52 @@ import BMITable from "./components/BMITable/BMITable";
 import { useState } from "react";
 
 function BMICalculator() {
-  const [values, setValues] = useState({
+  const [metricValues, setMetricValues] = useState({
     weight: 0,
     height: 0,
     bmi: 0,
   });
 
-  function calculateBMI(weight, height) {
+  const [imperialValues, setImperialValues] = useState({
+    weight: 0,
+    height: {
+      feet: 0,
+      inches: 0,
+    },
+    bmi: 0,
+  });
+
+  function calculateBMIMetric(weight, height) {
     const heightInMetres = height / 100;
     const bmi = weight / (heightInMetres * heightInMetres);
-    setValues({ weight: weight, height: height, bmi: bmi });
+    setMetricValues({ weight: weight, height: height, bmi: bmi });
+  }
+
+  function calculateBMIImperial(weight, feet, inches) {
+    const weightInKg = 0.453592 * weight;
+    const heightInMetres = feet * 0.3048 + inches * 0.0254;
+
+    const bmi = weightInKg / (heightInMetres * heightInMetres);
+
+    setImperialValues({
+      weight: weight,
+      height: {
+        feet: feet,
+        inches: inches,
+      },
+      bmi: bmi,
+    });
   }
 
   return (
     <div>
       <UnitProvider>
         <h1 className="text--center">BMI Calculator</h1>
-        <BMIForm calculateBMI={calculateBMI} />
-        <BMITable {...values} />
+        <BMIForm
+          calculateBMIMetric={calculateBMIMetric}
+          calculateBMIImperial={calculateBMIImperial}
+        />
+        <BMITable metricValues={metricValues} imperialValues={imperialValues} />
       </UnitProvider>
     </div>
   );
