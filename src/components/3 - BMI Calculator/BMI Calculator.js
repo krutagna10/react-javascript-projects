@@ -1,3 +1,4 @@
+import UnitProvider from "./context/UnitProvider";
 import BMIForm from "./components/BMIForm/BMIForm";
 import BMITable from "./components/BMITable/BMITable";
 import { useState } from "react";
@@ -17,9 +18,11 @@ function BMICalculator() {
 
   return (
     <div>
-      <h1 className="text--center">BMI Calculator</h1>
-      <BMIForm calculateBMI={calculateBMI} />
-      <BMITable {...values} />
+      <UnitProvider>
+        <h1 className="text--center">BMI Calculator</h1>
+        <BMIForm calculateBMI={calculateBMI} />
+        <BMITable {...values} />
+      </UnitProvider>
     </div>
   );
 }

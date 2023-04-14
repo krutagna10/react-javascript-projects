@@ -1,4 +1,9 @@
-function UnitSelector({ unit, onUnitChange }) {
+import UnitContext from "../../context/UnitContext";
+import { useContext } from "react";
+
+function UnitSelector() {
+  const { unit, onUnitChange } = useContext(UnitContext);
+
   function handleUnitChange(event) {
     onUnitChange(event.target.value);
   }

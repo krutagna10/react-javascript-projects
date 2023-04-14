@@ -1,14 +1,11 @@
-import { useState } from "react";
+import UnitContext from "../../context/UnitContext";
 import UnitSelector from "../UnitSelector/UnitSelector";
+import { useState, useContext } from "react";
 
 function BMIForm({ calculateBMI }) {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
-  const [unit, setUnit] = useState("metric");
-
-  function handleUnitChange(value) {
-    setUnit(value);
-  }
+  const { unit } = useContext(UnitContext);
 
   function handleWeightChange(event) {
     setWeight(event.target.value);
@@ -27,21 +24,31 @@ function BMIForm({ calculateBMI }) {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <UnitSelector unit={unit} onUnitChange={handleUnitChange} />
+      <UnitSelector />
       <input
         type="number"
-        placeholder={unit === "metric" ? "Weight in kg" : "Weight in pounds"}
+        placeholder={
+          unit === "metric" ? "Enter weight(kg)" : "Enter weight(lb)"
+        }
         onChange={handleWeightChange}
         value={weight}
         required
       />
-      <input
-        type="number"
-        placeholder="Enter height in cm"
-        onChange={handleHeightChange}
-        value={height}
-        required
-      />
+      {unit === "metric" ? (
+        <input
+          type="number"
+          placeholder="Enter Height(cm)"
+          onChange={handleHeightChange}
+          value={height}
+          required
+        />
+      ) : (
+        <>
+          <input type="number" placeholder="Enter feet" />
+          <input type="number" placeholder="Enter inches" min="0" max="12" />
+        </>
+      )}
+
       <button>Calculate BMI</button>
     </form>
   );
