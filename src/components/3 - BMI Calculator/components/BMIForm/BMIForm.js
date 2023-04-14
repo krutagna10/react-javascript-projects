@@ -1,14 +1,15 @@
 import UnitContext from "../../context/UnitContext";
 import UnitSelector from "../UnitSelector/UnitSelector";
-import { useState, useContext } from "react";
+import { metricReducer, imperialReducer } from "./reducers";
+import { useState, useContext, useReducer } from "react";
 
 function BMIForm({ calculateBMIMetric, calculateBMIImperial }) {
-  const [metricValues, setMetricValues] = useState({
+  const [metricValues, metricDispatch] = useReducer(metricReducer, {
     weight: "",
     height: "",
   });
 
-  const [imperialValues, setImperialValues] = useState({
+  const [imperialValues, imperialDispatch] = useReducer(imperialReducer, {
     weight: "",
     height: {
       feet: "",
@@ -19,46 +20,21 @@ function BMIForm({ calculateBMIMetric, calculateBMIImperial }) {
   const { unit } = useContext(UnitContext);
 
   function handleWeightChange(event) {
-    if (unit === "metric") {
-      setMetricValues((prevMetricValues) => {
-        return { ...prevMetricValues, weight: event.target.value };
-      });
-      return;
-    }
-    // When unit is imperial
-    setImperialValues((prevImperialValues) => {
-      return { ...prevImperialValues, weight: event.target.value };
-    });
+    unit === "metric"
+      ? metricDispatch({ type: "weight-change", weight: event.target.value })
+      : imperialDispatch({ type: "weight-change", weight: event.target.value });
   }
 
   function handleInCentimeterChange(event) {
-    setMetricValues((prevMetricValues) => {
-      return { ...prevMetricValues, height: event.target.value };
-    });
+    metricDispatch({ type: "height-change", height: event.target.value });
   }
 
-  function handleFootChange(event) {
-    setImperialValues((prevImperialValues) => {
-      return {
-        ...prevImperialValues,
-        height: {
-          ...prevImperialValues.height,
-          feet: event.target.value,
-        },
-      };
-    });
+  function handleFeetChange(event) {
+    imperialDispatch({ type: "feet-change", feet: event.target.value });
   }
 
   function handleInchesChange(event) {
-    setImperialValues((prevImperialValues) => {
-      return {
-        ...prevImperialValues,
-        height: {
-          ...prevImperialValues.height,
-          inches: event.target.value,
-        },
-      };
-    });
+    imperialDispatch({ type: "inches-change", inches: event.target.value });
   }
 
   function handleSubmit(event) {
@@ -68,7 +44,7 @@ function BMIForm({ calculateBMIMetric, calculateBMIImperial }) {
         Number(metricValues.weight),
         Number(metricValues.height)
       );
-      setMetricValues({ height: "", weight: "" });
+      metricDispatch({ type: "reset-values" });
       return;
     }
 
@@ -78,6 +54,7 @@ function BMIForm({ calculateBMIMetric, calculateBMIImperial }) {
       Number(imperialValues.height.feet),
       Number(imperialValues.height.inches)
     );
+    imperialDispatch({ type: "reset-values" });
   }
 
   return (
@@ -109,7 +86,7 @@ function BMIForm({ calculateBMIMetric, calculateBMIImperial }) {
             value={imperialValues.height.feet}
             placeholder="Enter feet"
             min="0"
-            onChange={handleFootChange}
+            onChange={handleFeetChange}
             required
           />
           <input
