@@ -18,7 +18,6 @@ function BMITable({ weight, height, bmi }) {
                 ? "Height(in metres)"
                 : "Height (in feet and inches) "}
             </th>
-            <th>Height(in cm)</th>
             <th>BMI(kg/m&sup2;)</th>
           </tr>
         </thead>

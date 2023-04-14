@@ -33,6 +33,7 @@ function BMIForm({ calculateBMI }) {
         onChange={handleWeightChange}
         value={weight}
         required
+        min="0"
       />
       {unit === "metric" ? (
         <input
@@ -41,6 +42,7 @@ function BMIForm({ calculateBMI }) {
           onChange={handleHeightChange}
           value={height}
           required
+          min="0"
         />
       ) : (
         <>
