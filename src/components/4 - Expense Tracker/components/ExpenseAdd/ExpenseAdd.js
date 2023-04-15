@@ -21,7 +21,7 @@ function ExpenseAdd({ onAddExpense }) {
     event.preventDefault();
 
     // Calling onAddExpense with title, amount and date as parameters
-    onAddExpense(title, amount, date);
+    onAddExpense(title, Number(amount), date);
 
     // Resetting the values
     setTitle("");

@@ -21,8 +21,6 @@ function ExpenseDate({ expenseDate }) {
   const year = expenseDate.getFullYear();
   const dateString = `${month} ${date}, ${year}`;
 
-  console.log({ date, month, year });
-
   return <>{dateString}</>;
 }
 
