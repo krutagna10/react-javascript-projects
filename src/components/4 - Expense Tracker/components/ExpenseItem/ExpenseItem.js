@@ -1,6 +1,10 @@
 import ExpenseDate from "../ExpenseDate/ExpenseDate";
 
-function ExpenseItem({ index, expense }) {
+function ExpenseItem({ index, expense, onEditExpense, onDeleteExpense }) {
+  function handleDeleteExpense() {
+    onDeleteExpense(expense.id);
+  }
+
   return (
     <tr>
       <td>{index + 1}</td>
@@ -13,7 +17,7 @@ function ExpenseItem({ index, expense }) {
         <button>Edit Expense</button>
       </td>
       <td>
-        <button>Delete Expense</button>
+        <button onClick={handleDeleteExpense}>Delete Expense</button>
       </td>
     </tr>
   );

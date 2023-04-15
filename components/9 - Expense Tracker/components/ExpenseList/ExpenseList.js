@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ExpenseItem = ({ index, expense, onDelete, onEdit }) => {
+const ExpenseItem = ({ index, expense }) => {
   const [title, setTitle] = useState(expense.title);
   const [amount, setAmount] = useState(expense.amount);
   const [isEditing, setIsEditing] = useState(false);
