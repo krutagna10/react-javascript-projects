@@ -44,7 +44,7 @@ function BMICalculator() {
   return (
     <div>
       <UnitProvider>
-        <h1 className="text--center">BMI Calculator</h1>
+        <h1>BMI Calculator</h1>
         <BMIForm
           calculateBMIMetric={calculateBMIMetric}
           calculateBMIImperial={calculateBMIImperial}

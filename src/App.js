@@ -1,9 +1,9 @@
-import BMICalculator from "./components/3 - BMI Calculator/BMI Calculator";
+import ExpenseTracker from "./components/4 - Expense Tracker/ExpenseTracker";
 
 function App() {
   return (
     <div className="app">
-      <BMICalculator />
+      <ExpenseTracker />
     </div>
   );
 }

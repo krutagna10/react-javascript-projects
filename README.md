@@ -9,6 +9,7 @@
 - 1 - Counter
 - 2 - Birthday Remainder
 - 3 - BMI Calculator
+- 4 - Expense Tracker
 
 ### Built with
 

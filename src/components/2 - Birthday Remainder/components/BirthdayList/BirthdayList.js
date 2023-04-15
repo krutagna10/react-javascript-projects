@@ -2,36 +2,34 @@ import BirthdayItem from "../BirthdayItem/BirthdayItem";
 
 function BirthdayList({ persons, onRemovePerson }) {
   return (
-    <>
-      <table>
-        <thead>
+    <table>
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Remove Button</th>
+        </tr>
+      </thead>
+      <tbody>
+        {persons.length === 0 ? (
           <tr>
-            <th>Index</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Remove Button</th>
+            <td colSpan="4">No Birthday Remainders</td>
           </tr>
-        </thead>
-        <tbody>
-          {persons.length === 0 ? (
-            <tr>
-              <td colSpan="4">No Birthday Remainders</td>
-            </tr>
-          ) : (
-            <>
-              {persons.map((person, index) => (
-                <BirthdayItem
-                  key={person.id}
-                  index={index}
-                  {...person}
-                  onRemovePerson={onRemovePerson}
-                />
-              ))}
-            </>
-          )}
-        </tbody>
-      </table>
-    </>
+        ) : (
+          <>
+            {persons.map((person, index) => (
+              <BirthdayItem
+                key={person.id}
+                index={index}
+                {...person}
+                onRemovePerson={onRemovePerson}
+              />
+            ))}
+          </>
+        )}
+      </tbody>
+    </table>
   );
 }
 

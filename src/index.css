@@ -16,6 +16,11 @@ picture {
   display: block;
 }
 
+h1,
+h2 {
+  text-align: center;
+}
+
 button {
   cursor: pointer;
   white-space: nowrap;
@@ -23,8 +28,14 @@ button {
   font-weight: 600;
 }
 
+/* Input Reset */
 input[type="checkbox"],
-input[type="radio"] {
+input[type="radio"],
+input[type="date"] {
+  cursor: pointer;
+}
+
+input::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 

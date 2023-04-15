@@ -18,7 +18,7 @@ function Birthdays({ persons, onRemovePerson, onResetPersons }) {
 
   return (
     <div>
-      <h2 className="text--center">Birthday List</h2>
+      <h2>Birthday List</h2>
       <div className="flex flex--justify-center flex--align-center flex--gap-200">
         <label>
           Sort by Age <input type="checkbox" onChange={handleIsSortedChange} />

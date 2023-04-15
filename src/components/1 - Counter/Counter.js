@@ -17,7 +17,7 @@ function Counter() {
 
   return (
     <div>
-      <h1 className="text--center">Counter</h1>
+      <h1>Counter</h1>
       <table>
         <thead>
           <tr>

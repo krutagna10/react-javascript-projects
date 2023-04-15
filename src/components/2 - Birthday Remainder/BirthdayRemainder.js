@@ -30,7 +30,7 @@ function BirthdayRemainder() {
 
   return (
     <div>
-      <h1 className="text--center">Birthday Remainder</h1>
+      <h1>Birthday Remainder</h1>
       <BirthdayAdd onAddPerson={handleAddPerson} />
       <Birthdays
         persons={persons}

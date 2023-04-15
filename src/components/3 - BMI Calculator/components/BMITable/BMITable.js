@@ -11,7 +11,7 @@ function BMITable({ metricValues, imperialValues }) {
 
   return (
     <>
-      <h2 className="text--center">BMI Data</h2>
+      <h2>BMI Data</h2>
       <table>
         <thead>
           <tr>
