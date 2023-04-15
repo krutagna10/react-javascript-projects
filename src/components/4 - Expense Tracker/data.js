@@ -14,7 +14,7 @@ const INITIAL_EXPENSES = [
   {
     id: crypto.randomUUID(),
     title: "New Laptop",
-    amount: 3000,
+    amount: 2500,
     date: new Date(2023, 2, 31),
   },
   {

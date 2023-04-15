@@ -50,7 +50,11 @@ function ExpenseItem({ index, expense, onEditExpense, onDeleteExpense }) {
         )}
       </td>
       <td>
-        <ExpenseDate expenseDate={expense.date} />
+        {isEditing ? (
+          <input type="date" value={expense.date} />
+        ) : (
+          <ExpenseDate expenseDate={expense.date} />
+        )}
       </td>
       <td>
         <button onClick={toggleIsEditing}>

@@ -9,7 +9,7 @@ function ExpensesList({ expenses, onEditExpense, onDeleteExpense }) {
           <th>Title</th>
           <th>Amount</th>
           <th>Date</th>
-          <th>Edit Button</th>
+          <th>Edit/Save Button</th>
           <th>Delete Button</th>
         </tr>
       </thead>

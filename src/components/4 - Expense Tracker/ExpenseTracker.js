@@ -34,8 +34,6 @@ function ExpenseTracker() {
     });
   }
 
-  console.log(expenses);
-
   return (
     <div>
       <h1>Expense Tracker</h1>
