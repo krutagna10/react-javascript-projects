@@ -24,8 +24,6 @@ function Expenses({ expenses, onEditExpense, onDeleteExpense }) {
     });
   }
 
-  console.log({ searchTerm, isSorted });
-
   return (
     <div>
       <h2>Expenses List</h2>

@@ -18,9 +18,19 @@ function ExpenseItem({ index, expense, onEditExpense, onDeleteExpense }) {
     onEditExpense(editedExpense);
   }
 
+  function handleDateChange(event) {
+    const editedExpenses = { ...expense, date: new Date(event.target.value) };
+    onEditExpense(editedExpenses);
+  }
+
   function handleDeleteExpense() {
     onDeleteExpense(expense.id);
   }
+
+  const day = expense.date.getDate().toString().padStart(2, "0");
+  const month = (expense.date.getMonth() + 1).toString().padStart(2, "0");
+  const year = expense.date.getFullYear();
+  const dateString = `${year}-${month}-${day}`;
 
   return (
     <tr>
@@ -51,7 +61,7 @@ function ExpenseItem({ index, expense, onEditExpense, onDeleteExpense }) {
       </td>
       <td>
         {isEditing ? (
-          <input type="date" value={expense.date} />
+          <input type="date" value={dateString} onChange={handleDateChange} />
         ) : (
           <ExpenseDate expenseDate={expense.date} />
         )}
