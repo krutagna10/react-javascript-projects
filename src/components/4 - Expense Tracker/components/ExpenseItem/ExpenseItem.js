@@ -58,7 +58,7 @@ function ExpenseItem({ index, expense }) {
             onChange={handleAmountChange}
           />
         ) : (
-          <>{expense.amount}</>
+          <>${expense.amount}</>
         )}
       </td>
       <td>
