@@ -29,6 +29,12 @@ const INITIAL_EXPENSES = [
     amount: 3000,
     date: new Date(2023, 4, 31),
   },
+  {
+    id: crypto.randomUUID(),
+    title: "Grocery",
+    amount: 300,
+    date: new Date(2023, 0, 1),
+  },
 ];
 
 export default INITIAL_EXPENSES;
