@@ -1,8 +1,9 @@
-function ExpensesFilter({
-  onSearchTermChange,
-  onIsSortedChange,
-  onResetExpenses,
-}) {
+import ExpensesContext from "../../context/ExpensesContext";
+import { useContext } from "react";
+
+function ExpensesFilter({ onSearchTermChange, onIsSortedChange }) {
+  const { onResetExpenses } = useContext(ExpensesContext);
+
   function handleSearchTermChange(event) {
     onSearchTermChange(event.target.value.toLowerCase());
   }

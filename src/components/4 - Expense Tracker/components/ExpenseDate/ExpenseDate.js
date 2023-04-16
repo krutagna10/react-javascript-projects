@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 const monthObject = {
   0: "January",
   1: "February",

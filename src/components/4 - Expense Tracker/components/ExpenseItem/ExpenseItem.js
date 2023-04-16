@@ -1,7 +1,9 @@
+import ExpensesContext from "../../context/ExpensesContext";
 import ExpenseDate from "../ExpenseDate/ExpenseDate";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
-function ExpenseItem({ index, expense, onEditExpense, onDeleteExpense }) {
+function ExpenseItem({ index, expense }) {
+  const { onEditExpense, onDeleteExpense } = useContext(ExpensesContext);
   const [isEditing, setIsEditing] = useState(false);
 
   function toggleIsEditing() {

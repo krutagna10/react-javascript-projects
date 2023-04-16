@@ -1,13 +1,11 @@
+import ExpensesContext from "../../context/ExpensesContext";
 import ExpensesList from "../ExpensesList/ExpensesList";
 import ExpensesFilter from "../ExpenseFilter/ExpensesFilter";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
-function Expenses({
-  expenses,
-  onEditExpense,
-  onDeleteExpense,
-  onResetExpenses,
-}) {
+function Expenses() {
+  const { expenses } = useContext(ExpensesContext);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [isSorted, setIsSorted] = useState(false);
 
@@ -35,13 +33,8 @@ function Expenses({
       <ExpensesFilter
         onSearchTermChange={handleSearchTermChange}
         onIsSortedChange={handleIsSortedChange}
-        onResetExpenses={onResetExpenses}
       />
-      <ExpensesList
-        expenses={filteredExpenses}
-        onEditExpense={onEditExpense}
-        onDeleteExpense={onDeleteExpense}
-      />
+      <ExpensesList expenses={filteredExpenses} />
     </div>
   );
 }

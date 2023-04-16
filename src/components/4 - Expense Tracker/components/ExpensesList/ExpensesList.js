@@ -1,6 +1,6 @@
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
 
-function ExpensesList({ expenses, onEditExpense, onDeleteExpense }) {
+function ExpensesList({ expenses }) {
   return (
     <table>
       <thead>
@@ -21,13 +21,7 @@ function ExpensesList({ expenses, onEditExpense, onDeleteExpense }) {
         ) : (
           <>
             {expenses.map((expense, index) => (
-              <ExpenseItem
-                key={expense.id}
-                index={index}
-                expense={expense}
-                onEditExpense={onEditExpense}
-                onDeleteExpense={onDeleteExpense}
-              />
+              <ExpenseItem key={expense.id} index={index} expense={expense} />
             ))}
           </>
         )}

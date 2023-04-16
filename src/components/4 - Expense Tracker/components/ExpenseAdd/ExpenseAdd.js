@@ -1,6 +1,9 @@
-import { useState } from "react";
+import ExpensesContext from "../../context/ExpensesContext";
+import { useState, useContext } from "react";
 
-function ExpenseAdd({ onAddExpense }) {
+function ExpenseAdd() {
+  const { onAddExpense } = useContext(ExpensesContext);
+
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
