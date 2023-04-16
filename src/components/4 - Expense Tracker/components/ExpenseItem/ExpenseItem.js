@@ -67,12 +67,10 @@ function ExpenseItem({ index, expense, onEditExpense, onDeleteExpense }) {
         )}
       </td>
       <td>
-        <button onClick={toggleIsEditing}>
-          {isEditing ? "Save" : "Edit"} Expense
-        </button>
+        <button onClick={toggleIsEditing}>{isEditing ? "Save" : "Edit"}</button>
       </td>
       <td>
-        <button onClick={handleDeleteExpense}>Delete Expense</button>
+        <button onClick={handleDeleteExpense}>Delete</button>
       </td>
     </tr>
   );

@@ -148,6 +148,14 @@ td {
 }
 
 /* Width */
+.width-300 {
+  width: 64rem;
+}
+
+.width-200 {
+  width: 48rem;
+}
+
 .width-100 {
-  width: 100%;
+  width: 36rem;
 }
