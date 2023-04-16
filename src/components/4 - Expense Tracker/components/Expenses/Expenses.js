@@ -5,25 +5,31 @@ import { useState, useContext } from "react";
 
 function Expenses() {
   const { expenses } = useContext(ExpensesContext);
+  const [sortBy, setSortBy] = useState("");
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [isSorted, setIsSorted] = useState(false);
 
   function handleSearchTermChange(nextSearchTerm) {
     setSearchTerm(nextSearchTerm);
   }
 
-  function handleIsSortedChange(nextIsSorted) {
-    setIsSorted(nextIsSorted);
+  function handleSortByChange(nextSortBy) {
+    setSortBy(nextSortBy);
   }
 
   let filteredExpenses = expenses.filter((expense) => {
     return expense.title.toLowerCase().includes(searchTerm);
   });
 
-  if (isSorted) {
+  if (sortBy === "amount") {
     filteredExpenses = [...filteredExpenses].sort((expenseA, expenseB) => {
       return expenseA.amount - expenseB.amount;
+    });
+  }
+
+  if (sortBy === "date") {
+    filteredExpenses = [...filteredExpenses].sort((expenseA, expenseB) => {
+      return expenseA.date - expenseB.date;
     });
   }
 
@@ -32,7 +38,7 @@ function Expenses() {
       <h2>Expenses List</h2>
       <ExpensesFilter
         onSearchTermChange={handleSearchTermChange}
-        onIsSortedChange={handleIsSortedChange}
+        onSortByChange={handleSortByChange}
       />
       <ExpensesList expenses={filteredExpenses} />
     </div>
