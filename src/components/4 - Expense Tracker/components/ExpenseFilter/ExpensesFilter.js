@@ -1,4 +1,8 @@
-function ExpensesFilter({ onSearchTermChange, onIsSortedChange }) {
+function ExpensesFilter({
+  onSearchTermChange,
+  onIsSortedChange,
+  onResetExpenses,
+}) {
   function handleSearchTermChange(event) {
     onSearchTermChange(event.target.value.toLowerCase());
   }
@@ -8,7 +12,7 @@ function ExpensesFilter({ onSearchTermChange, onIsSortedChange }) {
   }
 
   return (
-    <div className="flex flex--justify-center flex--gap-200">
+    <div className="flex flex--justify-center flex--align-center flex--gap-200">
       <input
         type="text"
         placeholder="Search..."
@@ -18,6 +22,7 @@ function ExpensesFilter({ onSearchTermChange, onIsSortedChange }) {
         Sort by amount:{" "}
         <input type="checkbox" onChange={handleIsSortedChange} />
       </label>
+      <button onClick={onResetExpenses}>Reset Expenses</button>
     </div>
   );
 }

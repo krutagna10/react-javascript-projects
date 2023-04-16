@@ -22,6 +22,9 @@ function reducer(expenses, action) {
       });
       return updatedExpenses;
     }
+    case "reset-expenses": {
+      return [];
+    }
     default: {
       throw new Error("Invalid action: " + action.type);
     }
@@ -49,6 +52,10 @@ function ExpenseTracker() {
     dispatch({ type: "delete-expense", deleteId: deleteId });
   }
 
+  function handleResetExpenses() {
+    dispatch({ type: "reset-expenses" });
+  }
+
   return (
     <div className="width-200">
       <h1>Expense Tracker</h1>
@@ -57,6 +64,7 @@ function ExpenseTracker() {
         expenses={expenses}
         onEditExpense={handleEditExpense}
         onDeleteExpense={handleDeleteExpense}
+        onResetExpenses={handleResetExpenses}
       />
     </div>
   );
