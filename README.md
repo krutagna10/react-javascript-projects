@@ -10,6 +10,8 @@
 - 2 - Birthday Remainder
 - 3 - BMI Calculator
 - 4 - Expense Tracker
+- 5 - Rock Paper Scissors Game
+- 6 - Tic Tac Toe Game
 
 ### Built with
 
