@@ -1,9 +1,9 @@
-import ExpenseTracker from "./components/4 - Expense Tracker/ExpenseTracker";
+import RPSGame from "./components/5 - Rock Paper Scissors/RPSGame";
 
 function App() {
   return (
     <div className="app">
-      <ExpenseTracker />
+      <RPSGame />
     </div>
   );
 }
