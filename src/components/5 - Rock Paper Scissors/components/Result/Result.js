@@ -7,7 +7,7 @@ function Result({ onPlayAgain }) {
   console.log(choices);
 
   return (
-    <div className="margin-300">
+    <div className="m-8">
       <h2>Game Result</h2>
       <table>
         <thead>

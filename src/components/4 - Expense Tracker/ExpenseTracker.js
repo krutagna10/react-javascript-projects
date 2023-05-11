@@ -6,7 +6,7 @@ import { useReducer, useState } from "react";
 
 function ExpenseTracker() {
   return (
-    <div className="width-200">
+    <div>
       <ExpensesProvider>
         <h1>Expense Tracker</h1>
         <ExpenseAdd />

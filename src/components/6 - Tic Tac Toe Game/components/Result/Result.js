@@ -40,14 +40,14 @@ function Result({ onPlayAgain, onQuit }) {
             <img
               src={icons[choices.user]}
               alt="user choice"
-              style={{ width: "2rem", marginInline: "auto" }}
+              className="w-8 m-auto"
             />
           </td>
           <td>
             <img
               src={icons[choices.computer]}
               alt="computer choice"
-              style={{ width: "2rem", marginInline: "auto" }}
+              className="w-8 m-auto"
             />
           </td>
           <td>{result}</td>

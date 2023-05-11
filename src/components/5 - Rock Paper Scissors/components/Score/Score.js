@@ -5,7 +5,7 @@ function Score() {
   const { scores } = useContext(GameContext);
 
   return (
-    <div className="margin-300">
+    <div className="m-8">
       <h2>Score</h2>
       <table>
         <thead>

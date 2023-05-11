@@ -15,13 +15,13 @@ function ExpensesFilter({ onSearchTermChange, onSortByChange }) {
   }
 
   return (
-    <div className="flex flex--justify-center flex--align-center flex--gap-200">
+    <div className="flex items-center justify-center gap-4">
       <input
         type="text"
         placeholder="Search Expense..."
         onChange={handleSearchTermChange}
       />
-      <div className="flex flex--align-center">
+      <div className="flex items-center">
         <h4>Sort By =></h4>
         {arr.map((item) => (
           <label>

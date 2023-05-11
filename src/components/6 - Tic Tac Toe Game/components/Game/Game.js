@@ -91,7 +91,7 @@ function Game({ onGameFinished }) {
         userArray={userArray}
         computerArray={computerArray}
       />
-      <div className="grid grid--items-center margin-200">
+      <div className="grid place-items-center m-6">
         <button onClick={handleRestart}>Restart Game</button>
       </div>
       <Score />

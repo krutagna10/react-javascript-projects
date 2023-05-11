@@ -9,8 +9,8 @@ function UnitSelector() {
   }
 
   return (
-    <div className="flex flex--align-center" style={{ whiteSpace: "nowrap" }}>
-      <h3 style={{ margin: "0" }}>Unit System : </h3>
+    <div className="flex items-center whitespace-nowrap">
+      <h3 className="m-0">Unit System : </h3>
       <label>
         Metric
         <input
